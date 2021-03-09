@@ -13,7 +13,7 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 
 ## Outline:
-[1 - Introduction to Bioinformatics](https://github.com/sandragodinhosilva/microbiomes2021/blob/main/01_Bioinformatics/README.md) \
+[1 - Introduction to Bioinformatics](bioinformatics-intro) \
 1.1 - Most used programming languages (examples: Python, R, bash) \
 1.1.1 - An introduction to R \
 1.2 - The importance of reproducible research 
