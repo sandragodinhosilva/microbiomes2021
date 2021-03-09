@@ -1,1 +1,3 @@
-# microbiome2021_materials
+# Microbiomes 2021
+
+Repo file for the course materials.
