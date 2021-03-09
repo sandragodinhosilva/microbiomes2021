@@ -28,7 +28,8 @@ twitter_username: SandraGodSilva
 github_username:  sandragodinhosilva
 
 # Build settings
-theme: minima
+# Remove minima jekyll-theme-minimal and copied files to manually change them
+#theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
