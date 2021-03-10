@@ -32,12 +32,14 @@ RStudio needs R and therefore both need to be installed on your computer.
 Please ensure you have completed the installation and setup of RStudio and R.
 
 
-## Verify R correct installation
+## Verify correct installation
 
 
 ```{r}
 version
 ```
+
+# The R basics
 
 We can now get started with the R command prompt open.
 
@@ -112,12 +114,10 @@ Where are these files now?
     [@RLangTips])
 
 
-
-Sources: 
-- [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)
+[Credits](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)
 
 
-# [Home](https://sandragodinhosilva.github.io/microbiomes2021_course)
+### [Home](https://sandragodinhosilva.github.io/microbiomes2021_course/)
 
 
 
