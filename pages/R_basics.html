@@ -2875,7 +2875,10 @@ div.tocify {
 <div id="r-and-rstudio" class="section level1">
 <h1>R and RStudio</h1>
 <p>R is a programming language originally designed by statisticians. Now it is a common programming language for scientific applications.</p>
-<p>In this course we will use R through the RStudio interface. Your instructor will demonstrate how to access and log into the RStudio server for this class.</p>
+<p>Please ensure you have completed the installation and setup of RStudio and R.</p>
+</div>
+<div id="installing-r" class="section level1">
+<h1>Installing R</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>version</span></code></pre></div>
 <pre><code>##                _                           
 ## platform       x86_64-pc-linux-gnu         
@@ -2892,7 +2895,7 @@ div.tocify {
 ## language       R                           
 ## version.string R version 3.6.3 (2020-02-29)
 ## nickname       Holding the Windsock</code></pre>
-<p>We can now get started with the R command promp open.</p>
+<p>We can now get started with the R command prompt open.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x=<span class="dv">2</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">print</span>(x) <span class="co">##Print method</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
@@ -2947,22 +2950,41 @@ div.tocify {
 <div id="read-tabletabcsvtxt-text-files" class="section level1">
 <h1>Read table/tab/csv/txt text files:</h1>
 <p>read.table() read.csv() read.delim()</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>cars =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv&#39;</span>, <span class="dt">header=</span>T, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>) <span class="co"># Read a comma separated values file</span></span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>cars =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv&#39;</span>, <span class="dt">header=</span>T, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>) <span class="co"># Read a comma separated values file</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="kw">head</span>(cars)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["model"],"name":[1],"type":["fct"],"align":["left"]},{"label":["mpg"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[3],"type":["int"],"align":["right"]},{"label":["disp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[5],"type":["int"],"align":["right"]},{"label":["drat"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[9],"type":["int"],"align":["right"]},{"label":["am"],"name":[10],"type":["int"],"align":["right"]},{"label":["gear"],"name":[11],"type":["int"],"align":["right"]},{"label":["carb"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"Mazda RX4","2":"21.0","3":"6","4":"160","5":"110","6":"3.90","7":"2.620","8":"16.46","9":"0","10":"1","11":"4","12":"4","_rn_":"1"},{"1":"Mazda RX4 Wag","2":"21.0","3":"6","4":"160","5":"110","6":"3.90","7":"2.875","8":"17.02","9":"0","10":"1","11":"4","12":"4","_rn_":"2"},{"1":"Datsun 710","2":"22.8","3":"4","4":"108","5":"93","6":"3.85","7":"2.320","8":"18.61","9":"1","10":"1","11":"4","12":"1","_rn_":"3"},{"1":"Hornet 4 Drive","2":"21.4","3":"6","4":"258","5":"110","6":"3.08","7":"3.215","8":"19.44","9":"1","10":"0","11":"3","12":"1","_rn_":"4"},{"1":"Hornet Sportabout","2":"18.7","3":"8","4":"360","5":"175","6":"3.15","7":"3.440","8":"17.02","9":"0","10":"0","11":"3","12":"2","_rn_":"5"},{"1":"Valiant","2":"18.1","3":"6","4":"225","5":"105","6":"2.76","7":"3.460","8":"20.22","9":"1","10":"0","11":"3","12":"1","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["X"],"name":[1],"type":["int"],"align":["right"]},{"label":["model"],"name":[2],"type":["fct"],"align":["left"]},{"label":["mpg"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[4],"type":["int"],"align":["right"]},{"label":["disp"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[6],"type":["int"],"align":["right"]},{"label":["drat"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[10],"type":["int"],"align":["right"]},{"label":["am"],"name":[11],"type":["int"],"align":["right"]},{"label":["gear"],"name":[12],"type":["int"],"align":["right"]},{"label":["carb"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"Mazda RX4","3":"21.0","4":"6","5":"160","6":"110","7":"3.90","8":"2.620","9":"16.46","10":"0","11":"1","12":"4","13":"4","_rn_":"1"},{"1":"2","2":"Mazda RX4 Wag","3":"21.0","4":"6","5":"160","6":"110","7":"3.90","8":"2.875","9":"17.02","10":"0","11":"1","12":"4","13":"4","_rn_":"2"},{"1":"3","2":"Datsun 710","3":"22.8","4":"4","5":"108","6":"93","7":"3.85","8":"2.320","9":"18.61","10":"1","11":"1","12":"4","13":"1","_rn_":"3"},{"1":"4","2":"Hornet 4 Drive","3":"21.4","4":"6","5":"258","6":"110","7":"3.08","8":"3.215","9":"19.44","10":"1","11":"0","12":"3","13":"1","_rn_":"4"},{"1":"5","2":"Hornet Sportabout","3":"18.7","4":"8","5":"360","6":"175","7":"3.15","8":"3.440","9":"17.02","10":"0","11":"0","12":"3","13":"2","_rn_":"5"},{"1":"6","2":"Valiant","3":"18.1","4":"6","5":"225","6":"105","7":"2.76","8":"3.460","9":"20.22","10":"1","11":"0","12":"3","13":"1","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>cars =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv&#39;</span>)</span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>cars =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv&#39;</span>)</span>
 <span id="cb28-2"><a href="#cb28-2"></a></span>
-<span id="cb28-3"><a href="#cb28-3"></a>cars =<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&#39;https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv&#39;</span>, <span class="dt">sep=</span><span class="st">&#39;,&#39;</span>)</span></code></pre></div>
+<span id="cb28-3"><a href="#cb28-3"></a>cars =<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&#39;https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv&#39;</span>, <span class="dt">sep=</span><span class="st">&#39;,&#39;</span>)</span></code></pre></div>
 </div>
 <div id="write-files" class="section level1">
 <h1>Write Files</h1>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">write.table</span>(cars, <span class="dt">file=</span><span class="st">&#39;mtcars.tab&#39;</span>)</span>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="kw">write.csv</span>(cars, <span class="dt">file=</span><span class="st">&#39;mtcars.csv&#39;</span>)</span></code></pre></div>
 <p>Where are these files now?</p>
+<div id="more-resources" class="section level2">
+<h2>More resources</h2>
+<div id="more-about-r" class="section level4">
+<h4>More about R</h4>
+<ul>
+<li>The <a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">Introduction to R</a> can also be dense for people with little programming experience but it is a good place to understand the underpinnings of the R language.</li>
+<li>The <a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html">R FAQ</a> is dense and technical but it is full of useful information.</li>
+<li>To stay up to date, follow <code>#rstats</code> on twitter. Twitter can also be a way to get questions answered and learn about useful R packages and tipps (e.g., <span class="citation">[@RLangTips]</span>)</li>
+</ul>
+</div>
+<div id="how-to-ask-good-programming-questions" class="section level4">
+<h4>How to ask good programming questions?</h4>
+<ul>
+<li>The rOpenSci community call “How to ask questions so they get answered”, (<a href="https://ropensci.org/commcalls/2017-03-07/">rOpenSci site</a> and <a href="https://vimeo.com/208749032">video recording</a>) includes a presentation of the reprex package and of its philosophy.</li>
+<li><a href="https://blog.revolutionanalytics.com/2014/01/how-to-ask-for-r-help.html">blog.Revolutionanalytics.com</a> and <a href="https://codeblog.jonskeet.uk/2010/08/29/writing-the-perfect-question/">codeblog.jonskeet.uk</a> provide advice on how to ask programming questions.</li>
+<li><a href="http://codeblog.jonskeet.uk/2010/08/29/writing-the-perfect-question/">This blog post by Jon Skeet</a> has comprehensive advice on how to ask programming questions.</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="home" class="section level1">
 <h1><a href="https://sandragodinhosilva.github.io/microbiomes2021_course">Home</a></h1>

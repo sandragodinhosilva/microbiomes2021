@@ -21,12 +21,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # R and RStudio
 
-R is a programming language originally designed by statisticians. Now it is a common programming language for scientific applications. 
+The term "`R`" is used to refer to both the programming language and the
+software that interprets the scripts written using it.
 
-In this course we will use R through the RStudio interface. Your instructor will demonstrate how to access and log into the RStudio server for this class.
+[RStudio](https://rstudio.com) is currently a very popular way to not only write
+your R scripts but also to interact with the R software. To function correctly,
+RStudio needs R and therefore both need to be installed on your computer.
 
 
-# Installing R
+Please ensure you have completed the installation and setup of RStudio and R.
+
+
+## Verify R correct installation
 
 
 ```{r}
@@ -67,23 +73,23 @@ class(y)
 ```
 
 
-# Read table/tab/csv/txt text files:
+## Read table/tab/csv/txt text files:
 read.table()
 read.csv()
 read.delim()
 
 ```{r}
-cars = read.table('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
+cars = read.table('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
 head(cars)
 
-cars = read.csv('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv')
+cars = read.csv('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv')
 
-cars = read.delim('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv', sep=',')
+cars = read.delim('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv', sep=',')
 
 
 ```
 
-# Write Files
+## Write Files
 
 ```{r}
 write.table(cars, file='mtcars.tab')
@@ -95,8 +101,20 @@ Where are these files now?
 
 
 
+# More resources
+
+### More about R
+
+-   [Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
+-   [R FAQ](https://cran.r-project.org/doc/FAQ/R-FAQ.html)
+-   To stay up to date, follow `#rstats` on twitter. Twitter can also be a way
+    to get questions answered and learn about useful R packages and tipps (e.g.,
+    [@RLangTips])
 
 
+
+Sources: 
+- [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)
 
 
 # [Home](https://sandragodinhosilva.github.io/microbiomes2021_course)
