@@ -16,7 +16,7 @@ sandragodinhosilva@tecnico.ulisboa.pt
 [1 - Introduction to Bioinformatics](bioinformatics-intro) \
 1.1 - Most used programming languages (examples: Python, R, bash) \
 1.1.1 - An introduction to R \
-### <a href='./R_basics.html'> Tutorial 1: Getting started with R
+### <a href='pages/R_basics.html'> Tutorial 1: Getting started with R
 
 
 1.2 - The importance of reproducible research 
