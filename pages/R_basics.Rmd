@@ -25,11 +25,15 @@ R is a programming language originally designed by statisticians. Now it is a co
 
 In this course we will use R through the RStudio interface. Your instructor will demonstrate how to access and log into the RStudio server for this class.
 
+
+# Installing R
+
+
 ```{r}
 version
 ```
 
-We can now get started with the R command promp open.
+We can now get started with the R command prompt open.
 
 ```{r}
 x=2
