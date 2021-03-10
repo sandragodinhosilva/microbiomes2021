@@ -110,4 +110,4 @@ up to date:
 [Credits](https://datacarpentry.org/R-ecology-lesson/#Install_R_and_RStudio)
 
 
-### [Home](https://sandragodinhosilva.github.io/microbiomes2021_course/)
+### [Home](https://sandragodinhosilva.github.io/microbiomes2021/)

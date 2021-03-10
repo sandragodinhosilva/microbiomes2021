@@ -81,12 +81,12 @@ read.csv()
 read.delim()
 
 ```{r}
-cars = read.table('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
+cars = read.table('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
 head(cars)
 
-cars = read.csv('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv')
+cars = read.csv('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv')
 
-cars = read.delim('https://raw.githubusercontent.com/sandragodinhosilva/microbiome2021_materials/main/data/mtcars.csv', sep=',')
+cars = read.delim('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv', sep=',')
 
 
 ```
@@ -117,7 +117,7 @@ Where are these files now?
 [Credits](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)
 
 
-### [Home](https://sandragodinhosilva.github.io/microbiomes2021_course/)
+### [Home](https://sandragodinhosilva.github.io/microbiomes2021/)
 
 
 

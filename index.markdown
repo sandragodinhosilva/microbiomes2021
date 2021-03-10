@@ -5,7 +5,7 @@
 layout: home
 ---
 
-# Course materials - Microbiomes
+# Description
 
 Teaching materials for the 2021 Microbiomes course at IST \
 Author: Sandra Godinho Silva \
@@ -13,31 +13,27 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 
 ## Outline:
-[1 - Introduction to Bioinformatics](bioinformatics-intro) \
-1.1 - Most used programming languages (examples: Python, R, bash) \
-1.1.1 - An introduction to R \
-
-R Setup
+### <a href='pages/Bioinformatics_intro.html'> 1 - Introduction to Bioinformatics
+Topics included:
+* Most used programming languages (examples: Python, R, bash) \
+* An introduction to R \
+* The importance of reproducible research 
 ### <a href='pages/R_setup.html'> Tutorial 0: R Setup
 ### <a href='pages/R_basics.html'> Tutorial 1: Getting started with R
 
+### <a href='pages/Genome_annotation.html'> 2 - Genome annotation
+Topics included:
+* Databases and underlying principles \
+### <a href='pages/R_annotation.html'> Tutorial 2: MAGS Annotation 
 
-1.2 - The importance of reproducible research 
-
-[2 - Genome annotation](#2) \
-2.1 - Databases and underlying principles \
-2.2 - Hands-on project: Annotation of MAGs using the MeLanGE platform(?) R software?
-
-[3 - Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)](#3) 
-3.1 - Introduction \
-3.2 - Study case: the marine bacterial ***Aquimarina*** genus \
-3.3 - Hands-on project: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
+### <a href='pages/SM-BGCs.html'> 3 - Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
+Topics included:
+* Natural products
+* Study case: the marine bacterial *Aquimarina* genus \
+### <a href='pages/SM-BGCs_pratical.html'> Tutorial 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
 
 
 ## Sources
-There are incredibly usefull learning sources freely available on the internet. The construction of the learning materials for this course was inpired in the following sources:
-
-* An Introductory Undergraduate course in Bioinformatics by Prof. Rob Harbert  (https://github.com/rsh249)
-https://rsh249.github.io/bioinformatics/
-
+The construction of the learning materials for this was inspired in the following sources: \
+* [An Introductory Undergraduate course in Bioinformatics](https://rsh249.github.io/bioinformatics/) by [Prof. Rob Harbert](https://github.com/rsh249)
 * R Carpentries
