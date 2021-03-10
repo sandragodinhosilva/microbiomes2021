@@ -22,7 +22,7 @@ title: Microbiome course materials 2021
 email: sandragodinhosilva@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Course materials
-baseurl: "/microbiome2021_materials" # the subpath of your site, e.g. /blog
+baseurl: "/microbiomes2021" # the subpath of your site, e.g. /blog
 url: "https://sandragodinhosilva.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: SandraGodSilva
 github_username:  sandragodinhosilva
