@@ -1,0 +1,107 @@
+---
+title: "Getting started with R"
+author: "Sandra Godinho Silva"
+date: "2021-04"
+output: 
+  html_document:
+    theme: cosmo
+    highlight: tango
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_depth: 4
+  
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# R and RStudio
+
+R is a programming language originally designed by statisticians. Now it is a common programming language for scientific applications. 
+
+In this course we will use R through the RStudio interface. Your instructor will demonstrate how to access and log into the RStudio server for this class.
+
+```{r}
+version
+```
+
+We can now get started with the R command promp open.
+
+```{r}
+x=2
+print(x) ##Print method
+class(x)
+
+x=seq(1:10) # Create a vector
+class(x)
+print(x)
+print(x[1]) # First index of vector
+print(x[1:5])
+
+y = matrix(nrow=5, ncol=5) # create a 5x5 matrix
+print(y)
+class(y)
+y[1,1] = 5
+print(y)
+y[,1]= x[1:5]
+print(y)
+class(y[,1])
+
+y = cbind(seq(1:5), 
+seq(1:5),
+seq(1:5),
+seq(1:5),
+seq(1:5))
+
+class(y)
+
+
+```
+
+
+# Read table/tab/csv/txt text files:
+read.table()
+read.csv()
+read.delim()
+
+```{r}
+cars = read.table('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
+head(cars)
+
+cars = read.csv('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv')
+
+cars = read.delim('https://raw.githubusercontent.com/rsh249/bioinformatics/master/data/mtcars.csv', sep=',')
+
+
+```
+
+# Write Files
+
+```{r}
+write.table(cars, file='mtcars.tab')
+write.csv(cars, file='mtcars.csv')
+```
+
+Where are these files now?
+
+
+
+
+
+
+
+
+# [Home](https://sandragodinhosilva.github.io/microbiomes2021_course)
+
+
+
+
+
+
+
+
+
