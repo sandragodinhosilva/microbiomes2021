@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
+
+{
+	"markdown.marp.themes": [
+	  "https://example.com/foo/bar/custom-theme.css",
+	  "./themes/your-theme.css"
+	]
+  }

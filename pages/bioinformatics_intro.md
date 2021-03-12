@@ -1,22 +1,27 @@
 ---
-layout: "default"
+marp: true
+theme: gaia
+_class: gaia
 title: "Bioinformatics intro"
 permalink: bioinformatics-intro
 ---
 
-## 1. Introduction to Bioinformatics
+# 1. Introduction to Bioinformatics
 
-### 1.1 Most used programming languages (examples: Python, R, bash) 
+---
+
+# Most used programming languages 
+Python, R, bash
+---
+---
+
+# R
+
+---
+# 1.2 The importance of reproducible research 
 
 
-### 1.1.1 An introduction to R 
 
-Materials:
-
-
-### 1.2 The importance of reproducible research 
-
-**Materials:** \
 Snakemake: https://snakemake.readthedocs.io/ \
 The Snakemake workflow management system is a tool to create reproducible and scalable data analyses. Workflows are described via a human readable, Python based language. 
  
