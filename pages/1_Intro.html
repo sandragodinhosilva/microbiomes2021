@@ -4,29 +4,84 @@
     <title>Genome annotation</title>
     <meta charset="utf-8" />
     <meta name="author" content="Sandra Godinho Silva" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <meta name="description" content="Intro"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="sandragodinhosilva/microbiomes2021"/>
+    <meta name="twitter:title" content="Intro 1"/>
+    <meta name="twitter:description" content="Intro"/>
+    <meta name="twitter:url" content="https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1"/>
+    <meta name="twitter:image:src" content="https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png"/>
+    <meta name="twitter:image:alt" content="Title slide"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@SandraGodSilva"/>
+    <meta name="twitter:site" content="@SandraGodSilva"/>
+    <meta property="og:title" content="Intro 1"/>
+    <meta property="og:description" content="Intro"/>
+    <meta property="og:url" content="https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png"/>
+    <meta property="og:image:alt" content="Title slide"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Sandra Godinho Silva"/>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="slides-style.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
+
+
+
+
+
+class: title-slide, right, top
+background-image: url(img/genedx-bioinformatics-web.jpg)
+background-position:  10% 75%
+background-size: 50%, cover
+
+.right-column[
 # Genome annotation
-## Microbiomes2021
-### Sandra Godinho Silva
-### Instituto Superior Técnico
-### (updated: 2021-03-29)
+### Microbiomes2021
+
+**Sandra Godinho Silva**&lt;br&gt;
+(updated: `r Sys.Date()`)
+]
 
 ---
+name: about-me
+class: center, middle
 
 
+## About me: Sandra Godinho Silva
 
+&lt;img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/&gt;
+
+## 
+
+### PhD Student @ Institute for Bioengineering and Biosciences
+
+.fade[Instituto Superior Técnico&lt;br&gt;Lisbon, Portugal]
 
 ---
-
-
 
 
 
@@ -38,14 +93,19 @@ class: inverse, center, middle
 
 ---
 
-class: center, middle
 
 # Bash
+* Default login shell for most Linux distributions.
+* Simple bash scripts are really usefull for data manipulation
+
+
+.pull-left[
+&lt;img src="img/bash.png" width="60%" /&gt;
+]
 
 ---
 
 # Python
-
 * Python is a clear and powerful object-oriented programming language.
 * Portable – runs just about anywhere
 * Clear syntax – relatively easy to learn
@@ -86,7 +146,6 @@ class: center, middle
 .pull-left[
 &lt;img src="img/Rlogo.png" width="70%" /&gt;
 ]
-
 .pull-right[
 .midi[Source: [https://www.r-project.org//](https://biopython.org/)
 ]
@@ -102,7 +161,6 @@ class: center, middle
 .pull-left[
 &lt;img src="img/rstudio.png" width="100%" /&gt;
 ]
-
 .pull-right[
 .midi[Source: [https://biopython.org/](https://biopython.org/)
 ]
@@ -116,15 +174,82 @@ class: center, middle
 
 ---
 
+# And much more!
+
+&lt;img src="img/programming_languages.jpeg" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
 # A note on Reproducible research
 
+
+How to ensure reproducibility:
+* Automation (write script to do the tasks, avoid manual editing)
+
+* Git version control code and data.
+
+* Jupyter/R Notebook, documentation
+
+* Containers (docker, singularity, biocontainers)
 ---
 
 # Genome Annotation
 
+
+
+---
+## Introduction into File Formats
+.panelset[
+
+.panel[.panel-name[FASTA]
+
+DNA and protein sequences are written in FASTA format where you have in the first line a "&gt;" followed by the description. In the second line the sequence starts.
+
+&lt;img src="img/fasta.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[GFF3]
+
+The general feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
+
+&lt;img src="img/gff3_format.png" width="70%" style="display: block; margin: auto;" /&gt;
+]
+
+
+.panel[.panel-name[GENBANK]
+
+The genbank sequence format is a rich format for storing sequences and associated annotations.
+
+&lt;img src="img/gb_full.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+
+???
+Source: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html
+
+--
 ---
 
 
+# Functional Annotation
+
+Functional gene annotation means the description of the biochemical and biological function of proteins. 
+
+Possible analyses to annotate genes can be:
+
+* similarity searches
+* gene cluster prediction for secondary metabolites
+* identification of transmembrane domains in protein sequences
+* finding gene ontology terms
+* pathway information
+
+
+E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins in a protein database.
 
 ---
 

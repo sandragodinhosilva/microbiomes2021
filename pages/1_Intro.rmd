@@ -6,6 +6,7 @@ institute: "Instituto Superior Técnico"
 date: "(updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
+    seal: false
     lib_dir: libs
     css: ["xaringan-themer.css", "slides-style.css"]
     nature:
@@ -19,9 +20,25 @@ output:
           </div>
         </div>
 ---
-```{r child = "setup.Rmd"}
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Intro",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "sandragodinhosilva/microbiomes2021") %>% 
+  meta_social(
+    title = "Intro 1",
+    url = "https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1",
+    image = "https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png",
+    image_alt = "Title slide",
+    og_type = "website",
+    og_author = "Sandra Godinho Silva",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@SandraGodSilva"
+  )
 ```
-
 ```{r set-theme, include=FALSE}
 library(xaringanthemer)
 style_duo_accent(
@@ -34,13 +51,68 @@ style_duo_accent(
 )
 ```
 
-```{r load-packages, message=FALSE, echo=FALSE, include=FALSE}
-library(tidyverse)
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
 library(broom)
 library(scales)
 library(openintro)
 library(jsonlite)
+library(tidyverse)
+library(xaringanExtra)
+library(nhsrtheme)
+library(NHSRdatasets)
+# set default options
+opts_chunk$set(echo=FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+# set engines
+knitr::knit_engines$set("markdown")
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_webcam()
+xaringanExtra::use_broadcast()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+
 ```
+class: title-slide, right, top
+background-image: url(img/genedx-bioinformatics-web.jpg)
+background-position:  10% 75%
+background-size: 50%, cover
+
+.right-column[
+# `r rmarkdown::metadata$title`
+### `r rmarkdown::metadata$subtitle`
+
+**`r rmarkdown::metadata$author`**<br>
+`r rmarkdown::metadata$date`
+]
+
+---
+name: about-me
+class: center, middle
+
+
+## About me: Sandra Godinho Silva
+
+<img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/>
+
+## 
+
+### PhD Student @ Institute for Bioengineering and Biosciences
+
+.fade[Instituto Superior Técnico<br>Lisbon, Portugal]
+
+---
+
+
 
 class: inverse, center, middle
 
@@ -50,14 +122,21 @@ class: inverse, center, middle
 
 ---
 
-class: center, middle
 
 # Bash
+* Default login shell for most Linux distributions.
+* Simple bash scripts are really usefull for data manipulation
+
+
+.pull-left[
+```{r bash, echo=FALSE, out.width="60%"}
+knitr::include_graphics("img/bash.png")
+```
+]
 
 ---
 
 # Python
-
 * Python is a clear and powerful object-oriented programming language.
 * Portable – runs just about anywhere
 * Clear syntax – relatively easy to learn
@@ -104,7 +183,6 @@ knitr::include_graphics("img/Biopython_logo.svg")
 knitr::include_graphics("img/Rlogo.png")
 ```
 ]
-
 .pull-right[
 .midi[Source: [https://www.r-project.org//](https://biopython.org/)
 ]
@@ -122,7 +200,6 @@ knitr::include_graphics("img/Rlogo.png")
 knitr::include_graphics("img/rstudio.png")
 ```
 ]
-
 .pull-right[
 .midi[Source: [https://biopython.org/](https://biopython.org/)
 ]
@@ -136,15 +213,90 @@ knitr::include_graphics("img/rstudio.png")
 
 ---
 
+# And much more!
+
+```{r programming, echo=FALSE, out.width="70%",fig.align = "center"}
+knitr::include_graphics("img/programming_languages.jpeg")
+```
+
+
+
+---
+
 # A note on Reproducible research
 
+
+How to ensure reproducibility:
+* Automation (write script to do the tasks, avoid manual editing)
+
+* Git version control code and data.
+
+* Jupyter/R Notebook, documentation
+
+* Containers (docker, singularity, biocontainers)
 ---
 
 # Genome Annotation
 
+
+
+---
+## Introduction into File Formats
+.panelset[
+
+.panel[.panel-name[FASTA]
+
+DNA and protein sequences are written in FASTA format where you have in the first line a ">" followed by the description. In the second line the sequence starts.
+
+```{r fasta, echo=FALSE, out.width="50%",fig.align = "center"}
+knitr::include_graphics("img/fasta.png")
+```
+
+]
+
+.panel[.panel-name[GFF3]
+
+The general feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
+
+```{r gff3, echo=FALSE, out.width="70%",fig.align = "center"}
+knitr::include_graphics("img/gff3_format.png")
+```
+]
+
+
+.panel[.panel-name[GENBANK]
+
+The genbank sequence format is a rich format for storing sequences and associated annotations.
+
+```{r genbank, echo=FALSE, out.width="50%",fig.align = "center"}
+knitr::include_graphics("img/gb_full.png")
+```
+
+]
+]
+
+
+???
+Source: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html
+
+--
 ---
 
 
+# Functional Annotation
+
+Functional gene annotation means the description of the biochemical and biological function of proteins. 
+
+Possible analyses to annotate genes can be:
+
+* similarity searches
+* gene cluster prediction for secondary metabolites
+* identification of transmembrane domains in protein sequences
+* finding gene ontology terms
+* pathway information
+
+
+E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins in a protein database.
 
 ---
 
