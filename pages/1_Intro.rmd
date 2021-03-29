@@ -51,7 +51,6 @@ style_duo_accent(
 )
 ```
 
-
 ```{r setup, include = FALSE}
 options(htmltools.dir.version = FALSE)
 library(knitr)
@@ -83,9 +82,8 @@ xaringanExtra::style_share_again(
 
 ```
 class: title-slide, right, top
-background-image: url(img/genedx-bioinformatics-web.jpg)
-background-position:  10% 75%
-background-size: 50%, cover
+background-image: url(img/dna.html)
+
 
 .right-column[
 # `r rmarkdown::metadata$title`
@@ -122,10 +120,20 @@ class: inverse, center, middle
 
 ---
 
+# Data Science
+```{r datascience, echo=FALSE, out.width="75%", fig.align="center"}
+knitr::include_graphics("img/data-analysis.jpg")
+```
+
+.footnote[Caption: Allison Horst [@allison_horst](https://twitter.com/allison_horst)
+Adapted from Wickham & Grolemund 2017
+]
+---
+
 
 # Bash
-* Default login shell for most Linux distributions.
-* Simple bash scripts are really usefull for data manipulation
+* Default login shell for most Linux distributions;
+* Simple bash scripts are really useful for data manipulation.
 
 
 .pull-left[
@@ -137,9 +145,9 @@ knitr::include_graphics("img/bash.png")
 ---
 
 # Python
-* Python is a clear and powerful object-oriented programming language.
-* Portable – runs just about anywhere
-* Clear syntax – relatively easy to learn
+* Clear and powerful object-oriented programming language;
+* Portable – runs just about anywhere;
+* Clear syntax – relatively easy to learn.
 
 .pull-left[
 ```{r python, echo=FALSE, out.width="60%"}
@@ -148,7 +156,7 @@ knitr::include_graphics("img/python.png")
 ]
 
 .pull-right[
-.midi[Source: [https://www.python.org/](https://www.python.org/)]
+.midi[Source: [https://www.python.org/](https://www.python.org)]
 ]
 
 
@@ -156,7 +164,7 @@ knitr::include_graphics("img/python.png")
 
 # Biopython
 
-* Collection of python modules that provide functions to deal with DNA, RNA & protein sequence operations.
+* Collection of .blue[Python] modules that provide functions to deal with DNA, RNA & protein sequence operations;
 * It has sibling projects like BioPerl, BioJava and BioRuby.
 
 .pull-left[
@@ -166,7 +174,7 @@ knitr::include_graphics("img/Biopython_logo.svg")
 ]
 
 .pull-right[
-.midi[Source: [https://biopython.org/](https://biopython.org/)
+.midi[Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 
@@ -175,7 +183,7 @@ knitr::include_graphics("img/Biopython_logo.svg")
 
 #R
 
-* R is a powerful, popular open-source scripting language
+* .purple[R] is a powerful, popular open-source scripting language
 * More than 20 years old - fairly mature - and growing in popularity. 
 
 .pull-left[
@@ -184,7 +192,7 @@ knitr::include_graphics("img/Rlogo.png")
 ```
 ]
 .pull-right[
-.midi[Source: [https://www.r-project.org//](https://biopython.org/)
+.midi[Source: [https://www.r-project.org//](https://biopython.org)
 ]
 ]
 
@@ -201,7 +209,7 @@ knitr::include_graphics("img/rstudio.png")
 ```
 ]
 .pull-right[
-.midi[Source: [https://biopython.org/](https://biopython.org/)
+.midi[Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 

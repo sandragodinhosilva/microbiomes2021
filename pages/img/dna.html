@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://bl.ocks.org/adamhurst/raw/13dd439047b66ee78c45/ -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <script type="text/javascript" src="./dna_files/d3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./dna_files/underscore-min.js"></script>
+    <script type="text/javascript">
+
+        var fills   = ['#00779C', '#00465C', '#54B8B1', '#377874', '#455560', '#7C99AC', '#F5CC49', '#F5CC9C', '#A8353D', '#682126'],
+            h       = 150,
+            w       = 800,
+            numX    = 40,
+            numY    = 30,
+            speed   = 0.02,
+            torsion = 0.2,
+            x = d3.scale.linear().range([10, w - 10]),
+            y = d3.scale.linear().range([h - 10, 10]),
+            z = d3.scale.linear().range([10, 2]);
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+
+        svg.append("rect")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("fill", "white")
+            .on("mousemove", function () { torsion = 0.5 * d3.mouse(this)[0] / w; });
+
+        var container = svg.append("g");
+
+        var counter = 0;
+        function generateData() {
+            counter++;
+            var data = d3.range(numX).map(function (d) {
+                var t = d * torsion - speed * counter;
+                return [
+                    {
+                        x: d,
+                        y: Math.cos(t),
+                        z: Math.sin(t)
+                    },
+                    {
+                        x: d,
+                        y: Math.cos(t - Math.PI),
+                        z: Math.sin(t - Math.PI)
+                    }
+                ]
+            });
+
+            var flat = _.flatten(data);
+            x.domain(d3.extent(flat, function(d){ return d.x }));
+            y.domain(d3.extent(flat, function(d){ return d.y }));
+            z.domain(d3.extent(flat, function(d){ return d.z }));
+
+            return data
+        }
+
+        function draw() {
+            var cont = container.selectAll("g").data(generateData());
+            cont.exit().remove();
+
+            var enter = cont.enter()
+                .append("g")
+                .each(function (d, index) {
+
+                    d3.select(this)
+                        .selectAll("circle")
+                        .data(d)
+                        .enter()
+                        .append("circle")
+                        .attr("fill", "black");
+
+                    d3.select(this).append('line')
+                        .attr("stroke", function (d, i) { return fills[index%7] })
+                        .attr("stroke-width", 2)
+                });
+                
+            cont.each(function (d, index) {
+
+                var inverted = (d[0].y < d[1].y) ? 1 : -1;
+
+                d3.select(this)
+                    .selectAll("circle")
+                    .data(d)
+                    .attr("cx", function (d) { return x(d.x) })
+                    .attr("cy", function (d) { return y(d.y) })
+                    .attr("r",  function (d) { return z(d.z) })
+                    .attr("fill-opacity", function (d) { return z(d.z) / 10 })
+                    .attr("fill", function (d, i) { return fills[index%7]; });
+
+                d3.select(this)
+                    .select('line')
+                    .attr("x2", x(d[0].x))
+                    .attr("x1", x(d[0].x))
+                    .attr("y2", y(d[0].y) - inverted * z(d[0].z))
+                    .attr("y1", y(d[1].y) + inverted * z(d[1].z))
+                    .attr("opacity", 0.3 * inverted * (d[1].y - d[0].y))
+            })
+        }
+
+        setInterval(draw, 25);
+    </script><svg width="800" height="150"><rect width="800" height="150" fill="white"></rect><g><g><circle fill="#00779C" cx="10" cy="22.2141039642806" r="3.6637087985986216" fill-opacity="0.36637087985986216"></circle><circle fill="#00779C" cx="10" cy="127.78589603571939" r="8.33629120140138" fill-opacity="0.833629120140138"></circle><line stroke="#00779C" stroke-width="2" x2="10" x1="10" y2="25.877812762879223" y1="119.44960483431801" opacity="0.4872141332687312"></line></g><g><circle fill="#00465C" cx="30" cy="33.39725908124396" r="2.924104495654235" fill-opacity="0.2924104495654235"></circle><circle fill="#00465C" cx="30" cy="116.602740918756" r="9.075895504345768" fill-opacity="0.9075895504345768"></circle><line stroke="#00465C" stroke-width="2" x2="30" x1="30" y2="36.32136357689819" y1="107.52684541441023" opacity="0.383993545257227"></line></g><g><circle fill="#54B8B1" cx="50" cy="47.23183050255927" r="2.380532456704942" fill-opacity="0.23805324567049418"></circle><circle fill="#54B8B1" cx="50" cy="102.76816949744065" r="9.61946754329506" fill-opacity="0.961946754329506"></circle><line stroke="#54B8B1" stroke-width="2" x2="50" x1="50" y2="49.61236295926421" y1="93.1487019541456" opacity="0.25630036904175874"></line></g><g><circle fill="#377874" cx="70" cy="62.836116508096275" r="2.0676354897684774" fill-opacity="0.20676354897684773"></circle><circle fill="#377874" cx="70" cy="87.1638834919037" r="9.932364510231523" fill-opacity="0.9932364510231523"></circle><line stroke="#377874" stroke-width="2" x2="70" x1="70" y2="64.90375199786476" y1="77.23151898167218" opacity="0.11227271672492548"></line></g><g><circle fill="#455560" cx="90" cy="79.21562833535636" r="2.0053550722907074" fill-opacity="0.20053550722907074"></circle><circle fill="#455560" cx="90" cy="70.78437166464363" r="9.994644927709292" fill-opacity="0.9994644927709292"></circle><line stroke="#455560" stroke-width="2" x2="90" x1="90" y2="77.21027326306564" y1="80.77901659235292" opacity="0.03891027452113149"></line></g><g><circle fill="#7C99AC" cx="109.99999999999999" cy="95.3264707082821" r="2.197660445496986" fill-opacity="0.21976604454969859"></circle><circle fill="#7C99AC" cx="109.99999999999999" cy="54.67352929171791" r="9.802339554503014" fill-opacity="0.9802339554503015"></circle><line stroke="#7C99AC" stroke-width="2" x2="109.99999999999999" x1="109.99999999999999" y2="93.12881026278512" y1="64.47586884622092" opacity="0.18761344511129396"></line></g><g><circle fill="#F5CC49" cx="130" cy="110.14187113061332" r="2.6322956476243746" fill-opacity="0.2632295647624375"></circle><circle fill="#F5CC49" cx="130" cy="39.858128869386675" r="9.367704352375624" fill-opacity="0.9367704352375623"></circle><line stroke="#F5CC49" stroke-width="2" x2="130" x1="130" y2="107.50957548298895" y1="49.2258332217623" opacity="0.32435967881945754"></line></g><g><circle fill="#00779C" cx="150" cy="122.71761791418314" r="3.2815606080545416" fill-opacity="0.3281560608054542"></circle><circle fill="#00779C" cx="150" cy="27.28238208581682" r="8.718439391945457" fill-opacity="0.8718439391945457"></circle><line stroke="#00779C" stroke-width="2" x2="150" x1="150" y2="119.43605730612859" y1="36.00082147776228" opacity="0.44043389616755196"></line></g><g><circle fill="#00465C" cx="170" cy="132.252236460804" r="4.104076521835889" fill-opacity="0.41040765218358893"></circle><circle fill="#00465C" cx="170" cy="17.747763539195983" r="7.895923478164111" fill-opacity="0.7895923478164111"></circle><line stroke="#00465C" stroke-width="2" x2="170" x1="170" y2="128.14815993896812" y1="25.643687017360094" opacity="0.5284384818640111"></line></g><g><circle fill="#54B8B1" cx="190" cy="138.13806865680368" r="5.047422994152423" fill-opacity="0.5047422994152423"></circle><circle fill="#54B8B1" cx="190" cy="11.86193134319631" r="6.952577005847578" fill-opacity="0.6952577005847578"></circle><line stroke="#54B8B1" stroke-width="2" x2="190" x1="190" y2="133.09064566265127" y1="18.81450834904389" opacity="0.582764747918085"></line></g><g><circle fill="#377874" cx="209.99999999999997" cy="140" r="6.05147888485529" fill-opacity="0.605147888485529"></circle><circle fill="#377874" cx="209.99999999999997" cy="10" r="5.94852111514471" fill-opacity="0.594852111514471"></circle><line stroke="#377874" stroke-width="2" x2="209.99999999999997" x1="209.99999999999997" y2="133.9485211151447" y1="15.948521115144711" opacity="0.5999503852513495"></line></g><g><circle fill="#455560" cx="230" cy="137.71936631077614" r="7.052253935122624" fill-opacity="0.7052253935122624"></circle><circle fill="#455560" cx="230" cy="12.280633689223867" r="4.947746064877375" fill-opacity="0.4947746064877375"></circle><line stroke="#455560" stroke-width="2" x2="230" x1="230" y2="130.66711237565352" y1="17.22837975410124" opacity="0.5789001227826255"></line></g><g><circle fill="#7C99AC" cx="250.00000000000003" cy="131.44151641025118" r="7.985966979899722" fill-opacity="0.7985966979899721"></circle><circle fill="#7C99AC" cx="250.00000000000003" cy="18.558483589748825" r="4.014033020100279" fill-opacity="0.40140330201002794"></circle><line stroke="#7C99AC" stroke-width="2" x2="250.00000000000003" x1="250.00000000000003" y2="123.45554943035145" y1="22.572516609849103" opacity="0.5209555309923163"></line></g><g><circle fill="#F5CC49" cx="270" cy="121.56654878268195" r="8.793110834423379" fill-opacity="0.8793110834423379"></circle><circle fill="#F5CC49" cx="270" cy="28.433451217318066" r="3.206889165576621" fill-opacity="0.32068891655766213"></circle><line stroke="#F5CC49" stroke-width="2" x2="270" x1="270" y2="112.77343794825858" y1="31.640340382894685" opacity="0.4298095212614737"></line></g><g><circle fill="#00779C" cx="290" cy="108.72381259099544" r="9.422244792418477" fill-opacity="0.9422244792418477"></circle><circle fill="#00779C" cx="290" cy="41.276187409004585" r="2.5777552075815233" fill-opacity="0.25777552075815235"></circle><line stroke="#00779C" stroke-width="2" x2="290" x1="290" y2="99.30156779857695" y1="43.85394261658611" opacity="0.31127099009403103"></line></g><g><circle fill="#00465C" cx="310" cy="93.73179814085738" r="9.833273033345039" fill-opacity="0.9833273033345039"></circle><circle fill="#00465C" cx="310" cy="56.26820185914261" r="2.1667269666549593" fill-opacity="0.21667269666549593"></circle><line stroke="#00465C" stroke-width="2" x2="310" x1="310" y2="83.89852510751234" y1="58.43492882579757" opacity="0.17289460786242924"></line></g><g><circle fill="#54B8B1" cx="330" cy="77.54597304498593" r="10" fill-opacity="1"></circle><circle fill="#54B8B1" cx="330" cy="72.45402695501404" r="2" fill-opacity="0.2"></circle><line stroke="#54B8B1" stroke-width="2" x2="330" x1="330" y2="67.54597304498593" y1="74.45402695501404" opacity="0.02349934629505956"></line></g><g><circle fill="#377874" cx="350" cy="61.1978885812739" r="9.911799887736793" fill-opacity="0.9911799887736793"></circle><circle fill="#377874" cx="350" cy="88.80211141872611" r="2.0882001122632046" fill-opacity="0.20882001122632046"></circle><line stroke="#377874" stroke-width="2" x2="350" x1="350" y2="71.10968846901069" y1="86.7139113064629" opacity="0.12739357019918124"></line></g><g><circle fill="#455560" cx="370" cy="45.72943710428151" r="9.574293845800302" fill-opacity="0.9574293845800301"></circle><circle fill="#455560" cx="370" cy="104.27056289571851" r="2.4257061541996974" fill-opacity="0.24257061541996974"></circle><line stroke="#455560" stroke-width="2" x2="370" x1="370" y2="55.303730950081814" y1="101.84485674151881" opacity="0.2701674690124642"></line></g><g><circle fill="#7C99AC" cx="390" cy="32.126450401613155" r="9.008991731537552" fill-opacity="0.9008991731537552"></circle><circle fill="#7C99AC" cx="390" cy="117.87354959838687" r="2.9910082684624486" fill-opacity="0.29910082684624484"></circle><line stroke="#7C99AC" stroke-width="2" x2="390" x1="390" y2="41.135442133150704" y1="114.88254132992442" opacity="0.39572311690223133"></line></g><g><circle fill="#F5CC49" cx="409.99999999999994" cy="21.255870889437187" r="8.251921249122354" fill-opacity="0.8251921249122354"></circle><circle fill="#F5CC49" cx="409.99999999999994" cy="128.74412911056282" r="3.748078750877646" fill-opacity="0.3748078750877646"></circle><line stroke="#F5CC49" stroke-width="2" x2="409.99999999999994" x1="409.99999999999994" y2="29.50779213855954" y1="124.99605035968517" opacity="0.49605863022892965"></line></g><g><circle fill="#00779C" cx="430" cy="13.810499838050369" r="7.351331840209033" fill-opacity="0.7351331840209033"></circle><circle fill="#00779C" cx="430" cy="136.18950016194964" r="4.648668159790968" fill-opacity="0.4648668159790968"></circle><line stroke="#00779C" stroke-width="2" x2="430" x1="430" y2="21.161831678259404" y1="131.54083200215868" opacity="0.564779449161526"></line></g><g><circle fill="#00465C" cx="450" cy="10.264843920850641" r="6.364619661627313" fill-opacity="0.6364619661627313"></circle><circle fill="#00465C" cx="450" cy="139.73515607914936" r="5.635380338372687" fill-opacity="0.5635380338372686"></circle><line stroke="#00465C" stroke-width="2" x2="450" x1="450" y2="16.629463582477953" y1="134.09977574077666" opacity="0.597505874292183"></line></g><g><circle fill="#54B8B1" cx="470" cy="10.844874064293137" r="5.354669626731894" fill-opacity="0.5354669626731894"></circle><circle fill="#54B8B1" cx="470" cy="139.15512593570685" r="6.645330373268106" fill-opacity="0.6645330373268106"></circle><line stroke="#54B8B1" stroke-width="2" x2="470" x1="470" y2="16.19954369102503" y1="132.50979556243874" opacity="0.5921521926304025"></line></g><g><circle fill="#377874" cx="490.00000000000006" cy="15.51362392083983" r="4.385847638585082" fill-opacity="0.4385847638585082"></circle><circle fill="#377874" cx="490.00000000000006" cy="134.48637607916015" r="7.614152361414917" fill-opacity="0.7614152361414918"></circle><line stroke="#377874" stroke-width="2" x2="490.00000000000006" x1="490.00000000000006" y2="19.89947155942491" y1="126.87222371774523" opacity="0.5490596037830585"></line></g><g><circle fill="#455560" cx="510.00000000000006" cy="23.97354579970841" r="3.5198984370443576" fill-opacity="0.35198984370443576"></circle><circle fill="#455560" cx="510.00000000000006" cy="126.02645420029158" r="8.480101562955642" fill-opacity="0.8480101562955642"></circle><line stroke="#455560" stroke-width="2" x2="510.00000000000006" x1="510.00000000000006" y2="27.49344423675277" y1="117.54635263733594" opacity="0.4709744746996196"></line></g><g><circle fill="#7C99AC" cx="530" cy="35.68547390778498" r="2.812010497219796" fill-opacity="0.28120104972197957"></circle><circle fill="#7C99AC" cx="530" cy="114.31452609221502" r="9.187989502780203" fill-opacity="0.9187989502780203"></circle><line stroke="#7C99AC" stroke-width="2" x2="530" x1="530" y2="38.497484405004776" y1="105.12653658943482" opacity="0.3628733088461327"></line></g><g><circle fill="#F5CC49" cx="550" cy="49.902986339796584" r="2.307298770286619" fill-opacity="0.23072987702866188"></circle><circle fill="#F5CC49" cx="550" cy="100.0970136602034" r="9.692701229713382" fill-opacity="0.9692701229713382"></circle><line stroke="#F5CC49" stroke-width="2" x2="550" x1="550" y2="52.210285110083205" y1="90.40431243049002" opacity="0.2316455848322679"></line></g><g><circle fill="#00779C" cx="570" cy="65.71997586729941" r="2.037929427805526" fill-opacity="0.20379294278055263"></circle><circle fill="#00779C" cx="570" cy="84.28002413270056" r="9.962070572194474" fill-opacity="0.9962070572194474"></circle><line stroke="#00779C" stroke-width="2" x2="570" x1="570" y2="67.75790529510493" y1="74.31795356050608" opacity="0.08565467774700813"></line></g><g><circle fill="#00465C" cx="590" cy="82.12839775591218" r="2.0210698546837227" fill-opacity="0.20210698546837227"></circle><circle fill="#00465C" cx="590" cy="67.87160224408782" r="9.978930145316278" fill-opacity="0.9978930145316278"></circle><line stroke="#00465C" stroke-width="2" x2="590" x1="590" y2="80.10732790122846" y1="77.85053238940411" opacity="0.06579515353668254"></line></g><g><circle fill="#54B8B1" cx="610" cy="98.0825142402045" r="2.257794541353144" fill-opacity="0.22577945413531442"></circle><circle fill="#54B8B1" cx="610" cy="51.9174857597955" r="9.742205458646854" fill-opacity="0.9742205458646854"></circle><line stroke="#54B8B1" stroke-width="2" x2="610" x1="610" y2="95.82471969885135" y1="61.65969121844235" opacity="0.21305174324585305"></line></g><g><circle fill="#377874" cx="630" cy="112.5655412421613" r="2.733016604593682" fill-opacity="0.2733016604593682"></circle><circle fill="#377874" cx="630" cy="37.434458757838684" r="9.266983395406317" fill-opacity="0.9266983395406317"></circle><line stroke="#377874" stroke-width="2" x2="630" x1="630" y2="109.83252463756762" y1="46.701442153245" opacity="0.34673016831400205"></line></g><g><circle fill="#455560" cx="650" cy="124.65444981990707" r="3.416449301300486" fill-opacity="0.3416449301300486"></circle><circle fill="#455560" cx="650" cy="25.345550180092935" r="8.583550698699513" fill-opacity="0.8583550698699514"></circle><line stroke="#455560" stroke-width="2" x2="650" x1="650" y2="121.23800051860658" y1="33.92910087879245" opacity="0.4583108661368776"></line></g><g><circle fill="#7C99AC" cx="670" cy="133.57879243568348" r="4.264536256221405" fill-opacity="0.42645362562214045"></circle><circle fill="#7C99AC" cx="670" cy="16.421207564316504" r="7.7354637437785945" fill-opacity="0.7735463743778594"></circle><line stroke="#7C99AC" stroke-width="2" x2="670" x1="670" y2="129.31425617946206" y1="24.1566713080951" opacity="0.5406826013745715"></line></g><g><circle fill="#F5CC49" cx="690" cy="138.76980494091433" r="5.223227386834783" fill-opacity="0.5223227386834783"></circle><circle fill="#F5CC49" cx="690" cy="11.230195059085698" r="6.776772613165217" fill-opacity="0.6776772613165216"></circle><line stroke="#F5CC49" stroke-width="2" x2="690" x1="690" y2="133.54657755407953" y1="18.006967672250916" opacity="0.5885956775646916"></line></g><g><circle fill="#00779C" cx="710" cy="139.8966549219531" r="6.231423610762626" fill-opacity="0.6231423610762625"></circle><circle fill="#00779C" cx="710" cy="10.103345078046921" r="5.768576389237373" fill-opacity="0.5768576389237373"></circle><line stroke="#00779C" stroke-width="2" x2="710" x1="710" y2="133.66523131119047" y1="15.871921467284295" opacity="0.5989965095684558"></line></g><g><circle fill="#00465C" cx="730" cy="136.88752623528842" r="7.224870798419367" fill-opacity="0.7224870798419367"></circle><circle fill="#00465C" cx="730" cy="13.112473764711577" r="4.775129201580633" fill-opacity="0.4775129201580633"></circle><line stroke="#00465C" stroke-width="2" x2="730" x1="730" y2="129.66265543686904" y1="17.88760296629221" opacity="0.5712222339556045"></line></g><g><circle fill="#54B8B1" cx="750" cy="129.9341959774655" r="8.140254802402799" fill-opacity="0.8140254802402799"></circle><circle fill="#54B8B1" cx="750" cy="20.06580402253452" r="3.8597451975972" fill-opacity="0.38597451975972"></circle><line stroke="#54B8B1" stroke-width="2" x2="750" x1="750" y2="121.7939411750627" y1="23.925549220131717" opacity="0.5070429544639008"></line></g><g><circle fill="#377874" cx="770" cy="119.47981219132917" r="8.919236580156959" fill-opacity="0.8919236580156958"></circle><circle fill="#377874" cx="770" cy="30.520187808670816" r="3.0807634198430414" fill-opacity="0.3080763419843041"></circle><line stroke="#377874" stroke-width="2" x2="770" x1="770" y2="110.56057561117221" y1="33.60095122851386" opacity="0.4105489301553172"></line></g><g><circle fill="#455560" cx="790" cy="106.19065125700185" r="9.512170244398503" fill-opacity="0.9512170244398502"></circle><circle fill="#455560" cx="790" cy="43.809348742998154" r="2.487829755601499" fill-opacity="0.24878297556014992"></circle><line stroke="#455560" stroke-width="2" x2="790" x1="790" y2="96.67848101260334" y1="46.29717849859965" opacity="0.28788989596736536"></line></g></g></svg>
+
+</body></html>
