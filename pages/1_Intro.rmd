@@ -1,0 +1,155 @@
+---
+title: "Genome annotation"
+subtitle: "Microbiomes2021"
+author: "Sandra Godinho Silva"
+institute: "Instituto Superior Técnico"
+date: "(updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+```{r child = "setup.Rmd"}
+```
+
+```{r set-theme, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#0F4C81", # pantone classic blue
+  secondary_color    = "#B6CADA", # pantone baby blue
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  text_font_size     = "30px"
+)
+```
+
+```{r load-packages, message=FALSE, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(broom)
+library(scales)
+library(openintro)
+library(jsonlite)
+```
+
+class: inverse, center, middle
+
+# Get Started: Bioinformatics
+
+
+
+---
+
+class: center, middle
+
+# Bash
+
+---
+
+# Python
+
+* Python is a clear and powerful object-oriented programming language.
+* Portable – runs just about anywhere
+* Clear syntax – relatively easy to learn
+
+.pull-left[
+```{r python, echo=FALSE, out.width="60%"}
+knitr::include_graphics("img/python.png")
+```
+]
+
+.pull-right[
+.midi[Source: [https://www.python.org/](https://www.python.org/)]
+]
+
+
+---
+
+# Biopython
+
+* Collection of python modules that provide functions to deal with DNA, RNA & protein sequence operations.
+* It has sibling projects like BioPerl, BioJava and BioRuby.
+
+.pull-left[
+```{r biopython, echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/Biopython_logo.svg")
+```
+]
+
+.pull-right[
+.midi[Source: [https://biopython.org/](https://biopython.org/)
+]
+]
+
+
+---
+
+#R
+
+* R is a powerful, popular open-source scripting language
+* More than 20 years old - fairly mature - and growing in popularity. 
+
+.pull-left[
+```{r rlogo, echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/Rlogo.png")
+```
+]
+
+.pull-right[
+.midi[Source: [https://www.r-project.org//](https://biopython.org/)
+]
+]
+
+---
+
+# R Studio
+
+* Integrated Development Environment (IDE). 
+* Provides a graphical interface to R, making it more user-friendly, and providing dozens of useful features.
+
+.pull-left[
+```{r rstudio, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/rstudio.png")
+```
+]
+
+.pull-right[
+.midi[Source: [https://biopython.org/](https://biopython.org/)
+]
+]
+
+
+---
+
+# Why is R so popular?
+
+
+---
+
+# A note on Reproducible research
+
+---
+
+# Genome Annotation
+
+---
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).

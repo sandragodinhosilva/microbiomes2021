@@ -13,7 +13,7 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 
 # Outline:
-### <a href='pages/Bioinformatics_intro.html'> 1 - Introduction to Bioinformatics
+### <a href='pages/1_Intro.html'> 1 - Introduction to Bioinformatics
 Topics included: \
 Most used programming languages (examples: Python, R, bash) \
 An introduction to R \
@@ -33,7 +33,7 @@ Topics included: \
 Natural products \
 Study case: the marine bacterial *Aquimarina* genus 
 
-### <a href='pages/SM-BGCs_pratical.html'> Tutorial 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
+### <a href='pages/2021_Microbiomes.pdf'> Tutorial 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
 
 
 ## Sources
