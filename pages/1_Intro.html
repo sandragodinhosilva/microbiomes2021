@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Genome annotation</title>
+    <title>Bioinformatic tools for Genome annotation</title>
     <meta charset="utf-8" />
     <meta name="author" content="Sandra Godinho Silva" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -50,11 +50,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Genome annotation
-## Microbiomes2021
+# Bioinformatic tools for Genome annotation
+## Course: Microbiomes (2021)
 ### Sandra Godinho Silva
 ### Instituto Superior Técnico
-### (updated: 2021-03-30)
+### -04-2021
 
 ---
 
@@ -103,7 +103,7 @@ are creating a significant bottleneck:
 ---
 **How to thoroughly analyze this massive amount of data?**
 
-&lt;img src="img/bigdata_lifesciences.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/bigdata_lifesciences.png" width="70%" style="display: block; margin: auto;" /&gt;
 .center[
 [Stephens et a. PLoS Biology, 2015.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
 ]
@@ -132,14 +132,21 @@ Allow **accessible**, **reproducible**, and **transparent computational research
 .panelset[
 
 .panel[.panel-name[KBase]
-The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale)
+
+.pull-left[
+&lt;img src="img/KBase-logo.png" width="60%" /&gt;
 ]
+.pull-right[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale)
+]]
 
 
 .panel[.panel-name[Galaxy]
-Main goal: to develop and maintain a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
-(https://galaxyproject.org/)
+.pull-left[
+&lt;img src="img/galaxy.png" width="60%" /&gt;
 ]
+.pull-left[Main goal: to develop and maintain a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
+(https://galaxyproject.org/)
+]]
 ]
 
 
@@ -149,55 +156,59 @@ Main goal: to develop and maintain a system that enables researchers without inf
 .panelset[
 
 .panel[.panel-name[Bash]
-* Default login shell for most Linux distributions;
-* Simple bash scripts are really useful for data manipulation.
 .pull-left[
 &lt;img src="img/bash.png" width="60%" /&gt;
 ]
+.pull-right[
+* Default login shell for most Linux distributions;
+* Simple bash scripts are really useful for data manipulation.
 ]
+]
+
 .panel[.panel-name[Python]
-* Clear and powerful object-oriented programming language;
-* Portable – runs just about anywhere;
-* Clear syntax – relatively easy to learn.
 .pull-left[
 &lt;img src="img/python.png" width="50%" /&gt;
 ]
 .pull-right[
-.midi[Source: [https://www.python.org/](https://www.python.org)]
+* Clear and powerful object-oriented programming language;
+* Portable – runs just about anywhere;
+* Clear syntax – relatively easy to learn.
+Source: [https://www.python.org/](https://www.python.org)]
 ]
-]
+
 .panel[.panel-name[Biopython]
-* Collection of .blue[Python] modules that provide functions to deal with DNA, RNA &amp; protein sequence operations;
-* It has sibling projects like BioPerl, BioJava and BioRuby.
+
 .pull-left[
 &lt;img src="img/Biopython_logo.svg" width="70%" /&gt;
 ]
 .pull-right[
-.midi[Source: [https://biopython.org/](https://biopython.org)
+* Collection of .blue[Python] modules that provide functions to deal with DNA, RNA &amp; protein sequence operations;
+* It has sibling projects like BioPerl, BioJava and BioRuby.
+Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 
 .panel[.panel-name[R]
-* .purple[R] is a powerful, popular open-source scripting language
-* More than 20 years old - fairly mature - and growing in popularity. 
-
 .pull-left[
 &lt;img src="img/Rlogo.png" width="70%" /&gt;
 ]
 .pull-right[
-.midi[Source: [https://www.r-project.org//](https://biopython.org)
+* .purple[R] is a powerful, popular open-source scripting language
+* More than 20 years old - fairly mature - and growing in popularity. 
 ]
 ]
 
 ]
-]
+
+---
+
+# And much more!
+
+&lt;img src="img/programming_languages.jpeg" width="70%" style="display: block; margin: auto;" /&gt;
 
 
-]
-
-
-
-
+---
+# Why is R so popular?
 
 
 
@@ -218,39 +229,19 @@ Main goal: to develop and maintain a system that enables researchers without inf
 
 
 ---
-
-# Why is R so popular?
-
-
----
-
-# And much more!
-
-&lt;img src="img/programming_languages.jpeg" width="70%" style="display: block; margin: auto;" /&gt;
-
-
-
----
-
-# A note on Reproducible research
-
-
-How to ensure reproducibility:
-* Automation (write scripts to do the tasks, avoid manual editing)
-
-* Git version control code and data.
-
-* Jupyter/R Notebook, documentation
-
-* Containers (docker, singularity, biocontainers)
----
-
 # Genome Annotation
 
-the process of decorating the genome with information about the localization and function of genes
+The process of decorating the genome with information about the localization and function of genes  
 The genome annotation procedure will also embrace other functional elements such as promoter sequences,
 non-coding RNAs, among others.
 
+---
+
+&lt;img src="img/genome-annotation.jpg" width="70%" style="display: block; margin: auto;" /&gt;
+.midi[Source: https://www.ssbs.edu.in/genome-annotation.html]
+
+???
+Genome Annotation is the process to identify, analyze and interpret the relevant information related to the raw DNA sequences. Genome Annotation helps to extract structural location and biological functions of genes. Haemophilus influenza was the first free-living bacterium to be decoded in 1995 by Dr. Owen White. The assembling of the quality reads with a reference genome or de novo assembly in order to obtain the complete genome is a primary requirement for Genome Annotation.
 
 ---
 ## Introduction into File Formats
@@ -368,11 +359,38 @@ Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide
 ]
 
 ---
+# Tools for genome annotation
+
+
+Prokka
+
+[Tutorial](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
+---
 
 &lt;img src="img/melange.jpeg" width="100%" /&gt;
 
 
 Documentation: https://sandragodinhosilva.github.io/MeLanGE/
+---
+# Your turn!
+
+Genome annotation with Protein Families Database (PFAM)
+
+Tools: WebMGA + R 
+
+http://weizhong-lab.ucsd.edu/webMGA/server/pfam/
+
+---
+# WebMGA
+&lt;img src="img/webmga_pfam.png" width="55%" style="display: block; margin: auto;" /&gt;
+[Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
+
+---
+
+## R script to join annotations from different MAGs
+
+
+
 ---
 
 class: center, middle
