@@ -10,16 +10,12 @@ output:
     toc: true
     toc_float: true
     toc_depth: 4
-  
 ---
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-# R and RStudio
+# Introducing R and RStudio IDE
 
 The term "`R`" is used to refer to both the programming language and the
 software that interprets the scripts written using it.
@@ -28,18 +24,502 @@ software that interprets the scripts written using it.
 your R scripts but also to interact with the R software. To function correctly,
 RStudio needs R and therefore both need to be installed on your computer.
 
-
 Please ensure you have completed the installation and setup of RStudio and R.
 
 
 ## Verify correct installation
-
-
 ```{r}
 version
 ```
 
-# The R basics
+## Create an RStudio project
+One of the benefits of RStudio is the **RStudio Project**. 
+
+An RStudio project allows you to more easily:
+
+* Save data, files, variables, packages, etc. related to a specific analysis project
+* Restart work where you left off
+* Collaborate, especially if you are using version control such as git.
+
+
+1. To create a project, go to the <kbd>File</kbd> menu, and click <kbd>New Project...</kbd>.
+
+<img src="img/new_project_window.png" alt="rstudio default session" style="width: 600px;"/>
+
+2. In the window that opens select **New Directory**, then **New Project**. For
+"Directory name:" enter **R_tutorial**. For "Create project as subdirectory of",
+you may leave the default, which is your home directory "~".
+
+3. Finally click <kbd>Create Project</kbd>. In the "Files" tab of your output
+pane (more about the RStudio layout in a moment), you should see an RStudio
+ project file, **Tutorial_r.Rproj**. All RStudio projects end with the
+ "**.Rproj**" file extension.
+ 
+ 
+## Creating your first R script
+
+To keep a record of the commands being used, we can create an R script:
+
+Click the <kbd>File</kbd> menu and select <kbd>New File</kbd> and then
+<kbd>R Script</kbd>. Before we go any further, save your script by clicking the
+save/disk icon that is in the bar above the first line in the script editor, or
+click the <kbd>File</kbd> menu and select <kbd>save</kbd>. In the "Save File"
+window that opens, name your file **"Tutorial_r_basics"**. The new script
+**Tutorial_r_basics.R** should appear under "files" in the output pane. By
+convention, R scripts end with the file extension **.R**.
+
+## Overview and customization of the RStudio layout
+
+There are the major windows (or panes) of the RStudio
+environment:
+
+<img src="img/rstudio_session_4pane_layout.png" alt="rstudio default session" style="width: 1000px;"/>
+
+- **Source**: Where you will write/view R scripts. Some outputs
+  (such as if you view a dataset using `View()`) will appear as a tab here.
+- **Console/Terminal**: Where you see the execution of
+  commands. This is the same display you would see if you were using R at the
+  command line without RStudio. You can work interactively (i.e. enter R
+  commands here), but for the most part we will run a script (or lines in a
+  script) in the source pane and watch their execution and output here. 
+- **Environment/History**: Here, RStudio will show you what datasets and
+  objects (variables) you have created and which are defined in memory.
+  The "History" tab contains a history of the R commands you've executed R.
+- **Files/Plots/Packages/Help**: This multipurpose pane will show you the
+  contents of directories on your computer. You can also use the "Files" tab to
+  navigate and set the working directory. The "Plots" tab will show the output
+  of any plots generated. In "Packages" you will see what packages are actively
+  loaded, or you can attach installed packages. "Help" will display help files
+  for R functions and packages.
+
+
+## Getting to work with R: navigating directories
+Now we can get to work using some commands. We will write, execute, and save the commands we
+learn in our **Tutorial_r_basics.R** script that is loaded in the Source pane.
+First, lets see what directory we are in. To do so, type the following command
+into the script:
+
+```{r, eval = FALSE, purl = FALSE}
+getwd()
+```
+
+To execute this command, make sure your cursor is on the same line the command
+is written. Then click the <KBD>Run</KBD> button that is just above the first
+line of your script in the header of the Source pane.
+
+In the console, you can expect to see the output with the current directory you are in
+
+**Note**:
+Since we will be learning several commands, we may already want to keep some
+short notes in our script to explain the purpose of the command. Entering a `#`
+before any line in an R script turns that line into a comment, which R will
+not try to interpret as code. Edit your script to include a comment on the
+purpose of commands you are learning, e.g.:
+
+```{r, eval = FALSE, purl = FALSE}
+# this command shows the current working directory
+getwd()
+```
+
+## Using functions in R
+
+A function in R (or any computing language) is a short program that takes some input and returns some output.  `getwd()` is a function! 
+
+**an R function has three key properties**:
+- Functions have a name (e.g. `dir`, `getwd`); note that functions are case
+  sensitive!
+- Following the name, functions have a pair of `()`
+- Inside the parentheses, a function may take 0 or more arguments
+
+An argument may be a specific input for your function and/or may modify the
+function's behavior. For example the function `round()` will round a number
+with a decimal:
+
+```{r}
+# This will round a number to the nearest integer
+round(3.14)
+```
+
+## Getting help with function arguments
+
+What if you wanted to round to one significant digit? `round()` can
+do this, but you may first need to read the help to find out how. To see the help
+(In R sometimes also called a "vignette") enter a `?` in front of the function
+name:
+
+```{r, eval=FALSE}
+?round()
+```
+
+The "Help" tab will show you information. You
+will slowly learn how to read and make sense of help files. Checking the "Usage" or "Examples"
+headings is often a good place to look first. If you look under "Arguments," we
+also see what arguments we can pass to this function to modify its behavior.
+You can also see a function's argument using the `args()` function:
+
+```{r}
+args(round)
+```
+
+`round()` takes two arguments, `x`, which is the number to be 
+rounded, and a
+`digits` argument. The `=` sign indicates that a default (in this case 0) is
+already set. Since `x` is not set, `round()` requires we provide it, in contrast
+to `digits` where R will use the default value 0 unless you explicitly provide
+a different value. We can explicitly set the digits parameter when we call the
+function:
+
+```{r}
+round(3.14159, digits = 2)
+```
+
+Or, R accepts what we call "positional arguments", if you pass a function
+arguments separated by commas, R assumes that they are in the order you saw
+when we used `args()`. In the case below that means that `x` is 3.14159 and
+digits is 2.
+
+```{r}
+round(3.14159, 2)
+```
+
+
+# R basics
+## Creating objects in R
+
+What might be called a variable in many languages is called an **object**
+in R.
+
+**To create an object you need:**
+
+- a name (e.g. 'a')
+- a value (e.g. '1')
+- the assignment operator ('<-')
+
+In your script, "**Tutorial_r_basics.R**", using the R assignment operator '<-',
+assign '1' to the object 'a' as shown. Remember to leave a comment in the line
+above (using the '#') to explain what you are doing:
+
+```{r, purl = FALSE}
+# this line creates the object 'a' and assigns it the value '1'
+a <- 1
+```
+
+Next, run this line of code in your script. You can run a line of code
+by hitting the <KBD>Run</KBD> button that is just above the first line of your
+script in the header of the Source pane or you can use the appropriate shortcut:
+
+- Windows execution shortcut: <KBD>Ctrl</KBD>+<KBD>Enter</KBD>
+- Mac execution shortcut: <KBD>Cmd(⌘)</KBD>+<KBD>Enter</KBD>
+
+To run multiple lines of code, you can highlight all the line you wish to run
+and then hit <KBD>Run</KBD> or use the shortcut key combo listed above.
+
+In the RStudio 'Console' you should see:
+
+~~~
+a <- 1
+>
+~~~
+
+
+The 'Console' will display lines of code run from a script and any outputs or
+status/warning/error messages (usually in red).
+
+In the 'Environment' window you will also get a table:
+
+|Values||
+|------|-|
+|a|1|
+
+The 'Environment' window allows you to keep track of the objects you have
+created in R.
+
+
+## Naming objects in R
+
+Here are some important details about naming objects in R.
+
+- **Avoid spaces and special characters**: Object names cannot contain spaces or the minus sign (`-`). You can use '_' to make names more readable. You should avoid
+  using special characters in your object name (e.g. ! @ # . , etc.). Also,
+  object names cannot begin with a number.
+- **Use short, easy-to-understand names**: You should avoid naming your objects
+  using single letters (e.g. 'n', 'p', etc.). Also, avoiding excessively long names.
+- **Avoid commonly used names**: There are several names that may already have a
+  definition in the R language (e.g. 'mean', 'min', 'max'). One clue that a name
+  already has meaning is that if you start typing a name in RStudio and it gets
+  a colored highlight or RStudio gives you a suggested autocompletion you have
+  chosen a name that has a reserved meaning.
+- **Use the recommended assignment operator**: In R, we use '<- ' as the
+  preferred assignment operator. '=' works too, but is most commonly used in
+  passing arguments to functions. 
+
+## Reassigning object names or deleting objects
+
+Once an object has a value, you can change that value by overwriting it. R will
+not give you a warning or error if you overwriting an object.
+
+```{r, purl = FALSE}
+# gene_name has the value 'pten' or whatever value you used in the challenge.
+# We will now assign the new value 'tp53'
+gene_name <- 'tp53'
+```
+
+## Understanding object data types (modes)
+
+In R, **every object has two properties**:
+
+- **Length**: How many distinct values are held in that object
+- **Mode**: What is the classification (type) of that object.
+
+The **"mode" property** **corresponds to the type of data an object represents**. The most common modes
+you will encounter in R are:
+
+|Mode (abbreviation)|Type of data|
+|----|------------|
+|Numeric (num)| Numbers such floating point/decimals (1.0, 0.5, 3.14), there are also more specific numeric types (dbl - Double, int - Integer). These differences are not relevant for most beginners and pertain to how these values are stored in memory |
+|Character (chr)|A sequence of letters/numbers in single '' or double " " quotes|
+|Logical| Boolean values - TRUE or FALSE|
+
+
+## Mathematical and functional operations on objects
+
+Once an object exists, R can
+appropriately manipulate that object. For example, objects of the numeric modes
+can be added, multiplied, divided, etc. R provides several mathematical
+(arithmetic) operators including:
+
+|Operator|Description|
+|--------|-----------|
+|+|addition|
+|-|subtraction|
+|*|multiplication|
+|/|division|
+|^ or **|exponentiation|
+|a%/%b| integer division (division where the remainder is discarded)|
+|a%%b|modulus (returns the remainder after division)|
+
+These can be used with literal numbers:
+
+```{r, purl = FALSE}
+(1 + (5 ** 0.5))/2
+```
+
+and importantly, can be used on any object that evaluates to (i.e. interpreted
+by R) a numeric object:
+
+```{r, echo = FALSE, purl = FALSE}
+human_chr_number <- 23
+```
+
+```{r, purl = FALSE}
+# multiply the object 'human_chr_number' by 2
+
+human_chr_number * 2
+```
+
+
+## Vectors
+
+Vectors are probably the most used commonly used object type in R. 
+**A vector is a collection of values that are all of the same type (numbers, characters, etc.)**. 
+One of the most common
+ways to create a vector is to use the `c()` function - the "concatenate" or
+"combine" function. Inside the function you may enter one or more values; for
+multiple values, separate each value with a comma:
+
+```{r, purl = FALSE}
+# Create the SNP gene name vector
+
+snp_genes <- c("OXTR", "ACTN3", "AR", "OPRM1")
+```
+
+Vectors always have a **mode** and a **length**.
+You can check these with the `mode()` and `length()` functions respectively.
+Another useful function that gives both of these pieces of information is the
+`str()` (structure) function.
+
+```{r, purl = FALSE}
+# Check the mode, length, and structure of 'snp_genes'
+mode(snp_genes)
+length(snp_genes)
+str(snp_genes)
+```
+
+Vectors are quite important in R. Another data type that we will
+work with later in this lesson, data frames, are collections of
+vectors. What we learn here about vectors will pay off even more
+when we start working with data frames. 
+
+## Creating and subsetting vectors
+
+Let's create a few more vectors to play around with:
+
+```{r, purl = FALSE}
+# Some interesting human SNPs
+# while accuracy is important, typos in the data won't hurt you here
+
+snps <- c('rs53576', 'rs1815739', 'rs6152', 'rs1799971')
+snp_chromosomes <- c('3', '11', 'X', '6')
+snp_positions <- c(8762685, 66560624, 67545785, 154039662)
+```
+
+Once we have vectors, one thing we may want to do is specifically retrieve one
+or more values from our vector. To do so, we use **bracket notation**. We type
+the name of the vector followed by square brackets. In those square brackets
+we place the index (e.g. a number) in that bracket as follows:
+
+```{r, purl = FALSE}
+# get the 3rd value in the snp_genes vector
+snp_genes[3]
+```
+
+In R, every item your vector is indexed, starting from the first item (1)
+through to the final number of items in your vector. You can also retrieve a
+range of numbers:
+
+```{r, purl = FALSE}
+# get the 1st through 3rd value in the snp_genes vector
+
+snp_genes[1:3]
+```
+
+If you want to retrieve several (but not necessarily sequential) items from
+a vector, you pass a **vector of indices**; a vector that has the numbered
+positions you wish to retrieve.
+
+```{r, purl = FALSE}
+# get the 1st, 3rd, and 4th value in the snp_genes vector
+
+snp_genes[c(1, 3, 4)]
+```
+
+There are additional (and perhaps less commonly used) ways of subsetting a
+vector (see [these
+examples](https://thomasleeper.com/Rcourse/Tutorials/vectorindexing.html)).
+Also, several of these subsetting expressions can be combined:
+
+```{r, purl = FALSE}
+# get the 1st through the 3rd value, and 4th value in the snp_genes vector
+# yes, this is a little silly in a vector of only 4 values.
+snp_genes[c(1:3,4)]
+```
+
+## Adding to, removing, or replacing values in existing vectors
+
+Once you have an existing vector, you may want to add a new item to it. To do
+so, you can use the `c()` function again to add your new value:
+
+```{r, purl = FALSE}
+# add the gene 'CYP1A1' and 'APOA5' to our list of snp genes
+# this overwrites our existing vector
+snp_genes <- c(snp_genes, "CYP1A1", "APOA5")
+```
+
+We can verify that "snp_genes" contains the new gene entry
+
+```{r, purl = FALSE}
+snp_genes
+```
+
+Using a negative index will return a version of a vector with that index's
+value removed:
+
+```{r, purl = FALSE}
+snp_genes[-6]
+```
+
+We can remove that value from our vector by overwriting it with this expression:
+
+```{r, purl = FALSE}
+snp_genes <- snp_genes[-6]
+snp_genes
+```
+
+We can also explicitly rename or add a value to our index using double bracket notation:
+
+```{r, purl = FALSE}
+snp_genes[7]<- "APOA5"
+snp_genes
+```
+
+Notice in the operation above that R inserts an `NA` value to extend our vector so that the gene "APOA5" is an index 7. This may be a good or not-so-good thing depending on how you use this.
+
+
+## Logical Subsetting
+
+There is one last set of cool subsetting capabilities we want to introduce. It is possible within R to retrieve items in a vector based on a logical evaluation or numerical comparison. For example, let's say we wanted get all of the SNPs in our vector of SNP positions that were greater than 100,000,000. We could index using the '>' (greater than) logical operator:
+
+```{r, purl = FALSE}
+snp_positions[snp_positions > 100000000]
+```
+
+In the square brackets you place the name of the vector followed by the comparison operator and (in this case) a numeric value. Some of the most common logical operators you will use in R are:
+
+  | Operator | Description              |
+  |----------|--------------------------|
+  | <        | less than                |
+  | <=       | less than or equal to    |
+  | >        | greater than             |
+  | >=       | greater than or equal to |
+  | ==       | exactly equal to         |
+  | !=       | not equal to             |
+  | !x       | not x                    |
+  | a \| b   | a or b                   |
+  | a & b    | a and b                  |
+
+
+
+## Lists
+
+Lists are quite useful in R, but we won't be using them in the genomics lessons.
+That said, you may come across lists in the way that some bioinformatics
+programs may store and/or return data to you. One of the key attributes of a
+list is that, unlike a vector, a list may contain data of more than one mode.
+Learn more about creating and using lists using this [nice
+tutorial](https://r4ds.had.co.nz/vectors.html#lists). In this one example, we will create
+a named list and show you how to retrieve items from the list.
+
+```{r, purl = FALSE}
+# Create a named list using the 'list' function and our SNP examples
+# Note, for easy reading we have placed each item in the list on a separate line
+# Nothing special about this, you can do this for any multiline commands
+# To run this command, make sure the entire command (all 4 lines) are highlighted
+# before running
+# Note also, as we are doing all this inside the list() function use of the
+# '=' sign is good style
+snp_data <- list(genes = snp_genes,
+                 refference_snp = snps,
+                 chromosome = snp_chromosomes,
+                 position = snp_positions)
+# Examine the structure of the list
+str(snp_data)
+```
+
+
+To get all the values for the `position` object in the list, we use the `$` notation:
+
+```{r, purl = FALSE}
+# return all the values of position object
+
+snp_data$position
+```
+
+To get the first value in the `position` object, use the `[]` notation to index:
+
+```{r, purl = FALSE}
+# return first value of the position object
+
+snp_data$position[1]
+```
+
+
+
+## Working with spreadsheets (tabular data)
+
+A substantial amount of the data we work with in genomics will be tabular data,
+this is data arranged in rows and columns - also known as spreadsheets.
+
+###################
 
 We can now get started with the R command prompt open.
 
