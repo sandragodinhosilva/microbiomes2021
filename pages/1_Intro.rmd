@@ -6,7 +6,7 @@ institute: "Instituto Superior Técnico"
 date: "(updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    seal: false
+    seal: true
     lib_dir: libs
     css: ["xaringan-themer.css", "slides-style.css"]
     nature:
@@ -81,22 +81,9 @@ xaringanExtra::style_share_again(
 )
 
 ```
-class: title-slide, right, top
-background-image: url(img/dna.html)
 
-
-.right-column[
-# `r rmarkdown::metadata$title`
-### `r rmarkdown::metadata$subtitle`
-
-**`r rmarkdown::metadata$author`**<br>
-`r rmarkdown::metadata$date`
-]
-
----
 name: about-me
 class: center, middle
-
 
 ## About me: Sandra Godinho Silva
 
@@ -109,80 +96,117 @@ class: center, middle
 .fade[Instituto Superior Técnico<br>Lisbon, Portugal]
 
 ---
+class:  center, middle
 
+# Bioinformatics
 
-
-class: inverse, center, middle
-
-# Get Started: Bioinformatics
-
-
+Bioinformatics is the science that conjugates  
+**biology** + **statistics** + **computer sciences**  
+to study biological issues through the analysis of data.
 
 ---
+class: middle
 
-# Data Science
-```{r datascience, echo=FALSE, out.width="75%", fig.align="center"}
-knitr::include_graphics("img/data-analysis.jpg")
+**Bioinformatics is a constantly changing and updating field.**
+
+Fast developments in:
+- software
+- computing hardware 
+- high throughput technologies 
+
+--
+
+are creating a significant bottleneck:  
+**How to thoroughly analyze this massive amount of data?**
+
+---
+**How to thoroughly analyze this massive amount of data?**
+
+```{r bigdata, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("img/bigdata_lifesciences.png")
 ```
-
-.footnote[Caption: Allison Horst [@allison_horst](https://twitter.com/allison_horst)
-Adapted from Wickham & Grolemund 2017
+.center[
+[Stephens et a. PLoS Biology, 2015.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
 ]
+
 ---
+## Integrative OMICS
+```{r integrative, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("img/integrative_omics.png")
+```
+.center[
+[ Yugi et al., Trends Biotechnol. 2016 Apr; 34(4):276–290](https://doi.org/10.1016/j.tibtech.2015.12.013)
+]
+
+---
+## Choose the most appropriate route for you
+
+Nowadays, bioinformaticians and researchers working in life scientists can choose from an overwhelming collection of exciting technologies and programming languages
+
+Several options:
+- Web-based platforms
+- Scripting/programming
+
+---
+# Web-based platforms
+
+Allow **accessible**, **reproducible**, and **transparent computational research.**
+
+.panelset[
+
+.panel[.panel-name[KBase]
+The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale)
+]
 
 
-# Bash
+.panel[.panel-name[Galaxy]
+Main goal: to develop and maintain a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
+(https://galaxyproject.org/)
+]
+]
+
+
+---
+# Scripting & programming
+
+.panelset[
+
+.panel[.panel-name[Bash]
 * Default login shell for most Linux distributions;
 * Simple bash scripts are really useful for data manipulation.
-
-
 .pull-left[
 ```{r bash, echo=FALSE, out.width="60%"}
 knitr::include_graphics("img/bash.png")
 ```
 ]
-
----
-
-# Python
+]
+.panel[.panel-name[Python]
 * Clear and powerful object-oriented programming language;
 * Portable – runs just about anywhere;
 * Clear syntax – relatively easy to learn.
-
 .pull-left[
-```{r python, echo=FALSE, out.width="60%"}
+```{r python, echo=FALSE, out.width="50%"}
 knitr::include_graphics("img/python.png")
 ```
 ]
-
 .pull-right[
 .midi[Source: [https://www.python.org/](https://www.python.org)]
 ]
-
-
----
-
-# Biopython
-
+]
+.panel[.panel-name[Biopython]
 * Collection of .blue[Python] modules that provide functions to deal with DNA, RNA & protein sequence operations;
 * It has sibling projects like BioPerl, BioJava and BioRuby.
-
 .pull-left[
 ```{r biopython, echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/Biopython_logo.svg")
 ```
 ]
-
 .pull-right[
 .midi[Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 
-
----
-
-#R
-
+.panel[.panel-name[R]
 * .purple[R] is a powerful, popular open-source scripting language
 * More than 20 years old - fairly mature - and growing in popularity. 
 
@@ -195,6 +219,18 @@ knitr::include_graphics("img/Rlogo.png")
 .midi[Source: [https://www.r-project.org//](https://biopython.org)
 ]
 ]
+
+]
+]
+
+
+]
+
+
+
+
+
+
 
 ---
 
@@ -235,7 +271,7 @@ knitr::include_graphics("img/programming_languages.jpeg")
 
 
 How to ensure reproducibility:
-* Automation (write script to do the tasks, avoid manual editing)
+* Automation (write scripts to do the tasks, avoid manual editing)
 
 * Git version control code and data.
 
@@ -246,6 +282,9 @@ How to ensure reproducibility:
 
 # Genome Annotation
 
+the process of decorating the genome with information about the localization and function of genes
+The genome annotation procedure will also embrace other functional elements such as promoter sequences,
+non-coding RNAs, among others.
 
 
 ---
@@ -254,7 +293,9 @@ How to ensure reproducibility:
 
 .panel[.panel-name[FASTA]
 
-DNA and protein sequences are written in FASTA format where you have in the first line a ">" followed by the description. In the second line the sequence starts.
+DNA and protein sequences can be written in FASTA format.
+First line:">" followed by the description. 
+In the second line the sequence starts.
 
 ```{r fasta, echo=FALSE, out.width="50%",fig.align = "center"}
 knitr::include_graphics("img/fasta.png")
@@ -264,7 +305,7 @@ knitr::include_graphics("img/fasta.png")
 
 .panel[.panel-name[GFF3]
 
-The general feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
+General feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
 
 ```{r gff3, echo=FALSE, out.width="70%",fig.align = "center"}
 knitr::include_graphics("img/gff3_format.png")
@@ -308,8 +349,86 @@ E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins
 
 ---
 
+# Databases
+
+.panelset[
+
+.panel[.panel-name[PFAM]
+.left-column[
+
+.center[
+```{r pfam, echo=FALSE, out.width="100%", fig.align="center"}
+knitr::include_graphics("img/pfam.gif")
+```
+]
+]
+
+.right-column[
+Pfam is a large collection of protein families, represented by multiple sequence alignments and hidden Markov models (HMMs).
+]
+]
+
+.panel[.panel-name[COG]
+
+.left-column[
+# COG
+]
+.right-column[
+**Clusters of Orthologous Groups (COGs)**
+
+Database of proteins generated by comparing the protein sequences of complete genomes. Each cluster contains groups of paralogs from at least three lineages.
+
+]
+]
+
+.panel[.panel-name[Kegg]
+.left-column[
+```{r kegg, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/KEGG_database_logo.gif")
+```
+]
+.right-column[
+**Kyoto Encyclopedia of Genes and Genomes**
+
+Database resource for understanding high-level functions and utilities of biological systems, such as the cell, the organism and the ecosystem, from molecular-level information.
+]
+]
+
+.panel[.panel-name[CAZymes]
+.left-column[
+```{r cazymes, echo=FALSE, out.width="150%"}
+knitr::include_graphics("img/cazymes.png")
+```
+]
+.right-column[
+**Carbohydrate-Active enZymes**
+
+Enzymes involved in the synthesis, metabolism, and transport of carbohydrates. 
+
+CAZymes are organized in families in the continuously updated database [CAZy](www.cazy.org).
+
+Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide lyases (PLs), carbohydrate esterases (CEs) and carbohydrate binding modules (CBMs). 
+
+]
+]
+
+]
+
+---
+
+```{r melange, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/melange.jpeg")
+```
+
+
+Documentation: https://sandragodinhosilva.github.io/MeLanGE/
+---
+
 class: center, middle
 
 # Thanks!
+
+Here's where you can find me:
+
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
