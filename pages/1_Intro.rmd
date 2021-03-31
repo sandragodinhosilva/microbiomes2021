@@ -156,22 +156,22 @@ Allow **accessible**, **reproducible**, and **transparent computational research
 
 .panel[.panel-name[KBase]
 
-.pull-left[
-```{r kbase, echo=FALSE, out.width="60%"}
+.left-column[
+```{r kbase, echo=FALSE, out.width="100%"}
 knitr::include_graphics("img/KBase-logo.png")
 ```
 ]
-.pull-right[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale)
+.right-column[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale).
 ]]
 
 
 .panel[.panel-name[Galaxy]
-.pull-left[
-```{r galaxy, echo=FALSE, out.width="60%"}
+.left-column[
+```{r galaxy, echo=FALSE, out.width="100%"}
 knitr::include_graphics("img/galaxy.png")
 ```
 ]
-.pull-left[Main goal: to develop and maintain a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
+.right-column[Main goal: to develop and maintain a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
 (https://galaxyproject.org/)
 ]]
 ]
@@ -221,7 +221,7 @@ Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 
-.panel[.panel-name[R]
+.panel[.panel-name[R (1/3)]
 .pull-left[
 ```{r rlogo, echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/Rlogo.png")
@@ -232,6 +232,31 @@ knitr::include_graphics("img/Rlogo.png")
 * More than 20 years old - fairly mature - and growing in popularity. 
 ]
 ]
+
+
+.panel[.panel-name[R (2/3)]
+## Why is R so popular?
+]
+
+.panel[.panel-name[R (3/3)]
+## R Studio
+
+* Integrated Development Environment (IDE). 
+* Provides a graphical interface to R, making it more user-friendly, and providing dozens of useful features.
+
+.pull-left[
+```{r rstudio, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/rstudio.png")
+```
+]
+.pull-right[
+.midi[Source: [https://www.rstudio.com/](https://www.rstudio.com/)
+]
+]
+
+
+]
+
 
 ]
 
@@ -245,47 +270,183 @@ knitr::include_graphics("img/programming_languages.jpeg")
 
 
 ---
-# Why is R so popular?
+class: inverse, center, middle
 
-
-
----
-
-# R Studio
-
-* Integrated Development Environment (IDE). 
-* Provides a graphical interface to R, making it more user-friendly, and providing dozens of useful features.
-
-.pull-left[
-```{r rstudio, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/rstudio.png")
-```
-]
-.pull-right[
-.midi[Source: [https://biopython.org/](https://biopython.org)
-]
-]
-
-
+## Break
+### **Any questions?**
 ---
 # Genome Annotation
 
-The process of decorating the genome with information about the localization and function of genes  
-The genome annotation procedure will also embrace other functional elements such as promoter sequences,
-non-coding RNAs, among others.
+Genome annotation is the process of attaching biological information to sequences.  
 
+Consists of two main steps: 
+- gene prediction - identifying elements on the genome;
+- attaching biological information to these elements. 
+
+???
+Gene annotation is the plotting of genes onto genome assemblies, and indexing their genomic coordinates.
+DNA annotation or genome annotation is the process of identifying the locations of genes and all of the coding regions in a genome and determining what those genes do.
 ---
+## Key points:
+* Once a genome is sequenced, all of the sequencings must be analyzed to understand what their meaning.
+* Critical to annotation is the identification of the genes in a genome, the structure of the genes, and the proteins they encode.
+* Once a genome is annotated, further work is done to understand how all the annotated regions interact with each other.
 
+???
+
+
+ 
+---
 ```{r genome_annot, echo=FALSE, out.width="70%", fig.align="center"}
 knitr::include_graphics("img/genome-annotation.jpg")
 ```
-.midi[Source: https://www.ssbs.edu.in/genome-annotation.html]
+.center[Source: https://www.ssbs.edu.in/genome-annotation.html]
 
 ???
 Genome Annotation is the process to identify, analyze and interpret the relevant information related to the raw DNA sequences. Genome Annotation helps to extract structural location and biological functions of genes. Haemophilus influenza was the first free-living bacterium to be decoded in 1995 by Dr. Owen White. The assembling of the quality reads with a reference genome or de novo assembly in order to obtain the complete genome is a primary requirement for Genome Annotation.
 
 ---
-## Introduction into File Formats
+# Structural Annotation
+The process of identifying genomic elements such as: 
+* open reading frames (ORFs) and their localization;
+* gene structure;
+* coding regions;
+* regulatory motifs.
+
+???
+Genome annotation is thus the process of attaching
+biological information to the genome sequences and starts by identifying the positions of structural
+genomic elements, like genes, exons, introns, repeated regions, promoters, etc
+---
+
+# Functional Annotation
+
+The process of attaching biological information to genomic elements by describing the the biochemical and biological function of proteins. 
+
+Possible analysis:
+
+* similarity searches
+* gene cluster prediction for secondary metabolites
+* identification of transmembrane domains in protein sequences
+* finding gene ontology terms
+* pathway information
+
+
+E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins in a protein database.
+
+---
+# Process Annotation
+
+
+---
+# Homologs, Orthologs, and Paralogs
+
+* **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
+
+
+
+```{r homologs, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("img/zinc-finger-seq-alignment2.png")
+```
+Homologous DNA: sequence alignment of a homologous protein from two different species The “*” represent a conserved amino acid in the two proteins. [Source](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
+
+---
+While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
+* Orthologous are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
+* If a gene is duplicated in a species, the resulting duplicated genes are paralogs of each other, even though over time they might become different in sequence composition and function.
+
+
+???
+Homology forms the basis of organization for comparative biology.
+A homologous trait is often called a homolog (also spelled homologue). In genetics, the term “homolog” is used both to refer to a homologous protein and to the gene ( DNA sequence) encoding it. 
+
+As with anatomical structures, homology between protein or DNA sequences is defined in terms of shared ancestry. 
+
+Two segments of DNA can have shared ancestry because of either a speciation event (orthologs) or a duplication event (paralogs). 
+
+Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
+---
+
+---
+
+# Tools for genome annotation
+
+
+
+
+???
+Automatic annotation tools try to perform all of this by computer analysis, as opposed to manual annotation (a.k.a. curation) which involves human expertise. Ideally, these approaches co-exist and complement each other in the same annotation pipeline (process). 
+The basic level of annotation is using BLAST for finding similarities, and then annotating genomes based on that. However, nowadays more and more additional information is added to the annotation platform. The additional information allows manual annotators to deconvolute discrepancies between genes that are given the same annotation. 
+
+Some databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
+
+https://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_Microbiology_(Boundless)/7%3A_Microbial_Genetics/7.13%3A_Bioinformatics/7.13B%3A_Annotating_Genomes
+---
+Prokka
+
+[Tutorial](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
+---
+# Databases
+
+.panelset[
+
+.panel[.panel-name[PFAM]
+.left-column[
+.center[
+```{r pfam, echo=FALSE, out.width="100%", fig.align="center"}
+knitr::include_graphics("img/pfam.gif")
+```
+]
+]
+.right-column[
+Pfam is a large collection of protein families, represented by multiple sequence alignments and hidden Markov models (HMMs).  
+Source: [http://pfam.xfam.org/](http://pfam.xfam.org/)
+]
+]
+
+.panel[.panel-name[COG]
+.left-column[
+# COG
+]
+.right-column[
+**Clusters of Orthologous Groups (COGs)**
+Database of proteins generated by comparing the protein sequences of complete genomes. Each cluster contains groups of paralogs from at least three lineages.  
+Source: [https://www.ncbi.nlm.nih.gov/research/cog-project/](https://www.ncbi.nlm.nih.gov/research/cog-project/)
+]
+]
+
+.panel[.panel-name[Kegg]
+.left-column[
+```{r kegg, echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/KEGG_database_logo.gif")
+```
+]
+.right-column[
+**Kyoto Encyclopedia of Genes and Genomes**
+Database resource for understanding high-level functions and utilities of biological systems, such as the cell, the organism and the ecosystem, from molecular-level information.  
+Source: [https://www.genome.jp/kegg/](https://www.genome.jp/kegg/)
+]
+]
+
+.panel[.panel-name[CAZymes]
+.left-column[
+```{r cazymes, echo=FALSE, out.width="150%"}
+knitr::include_graphics("img/cazymes.png")
+```
+]
+.right-column[
+**Carbohydrate-Active enZymes**
+Enzymes involved in the synthesis, metabolism, and transport of carbohydrates. 
+CAZymes are organized in families in the continuously updated database [CAZy](www.cazy.org).
+Source: [http://www.cazy.org/](http://www.cazy.org/)
+???
+Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide lyases (PLs), carbohydrate esterases (CEs) and carbohydrate binding modules (CBMs). 
+]
+]
+
+]
+---
+## Introduction to File Formats
 .panelset[
 
 .panel[.panel-name[FASTA]
@@ -325,99 +486,7 @@ knitr::include_graphics("img/gb_full.png")
 ???
 Source: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html
 
---
----
 
-
-# Functional Annotation
-
-Functional gene annotation means the description of the biochemical and biological function of proteins. 
-
-Possible analyses to annotate genes can be:
-
-* similarity searches
-* gene cluster prediction for secondary metabolites
-* identification of transmembrane domains in protein sequences
-* finding gene ontology terms
-* pathway information
-
-
-E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins in a protein database.
-
----
-
-# Databases
-
-.panelset[
-
-.panel[.panel-name[PFAM]
-.left-column[
-
-.center[
-```{r pfam, echo=FALSE, out.width="100%", fig.align="center"}
-knitr::include_graphics("img/pfam.gif")
-```
-]
-]
-
-.right-column[
-Pfam is a large collection of protein families, represented by multiple sequence alignments and hidden Markov models (HMMs).
-]
-]
-
-.panel[.panel-name[COG]
-
-.left-column[
-# COG
-]
-.right-column[
-**Clusters of Orthologous Groups (COGs)**
-
-Database of proteins generated by comparing the protein sequences of complete genomes. Each cluster contains groups of paralogs from at least three lineages.
-
-]
-]
-
-.panel[.panel-name[Kegg]
-.left-column[
-```{r kegg, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/KEGG_database_logo.gif")
-```
-]
-.right-column[
-**Kyoto Encyclopedia of Genes and Genomes**
-
-Database resource for understanding high-level functions and utilities of biological systems, such as the cell, the organism and the ecosystem, from molecular-level information.
-]
-]
-
-.panel[.panel-name[CAZymes]
-.left-column[
-```{r cazymes, echo=FALSE, out.width="150%"}
-knitr::include_graphics("img/cazymes.png")
-```
-]
-.right-column[
-**Carbohydrate-Active enZymes**
-
-Enzymes involved in the synthesis, metabolism, and transport of carbohydrates. 
-
-CAZymes are organized in families in the continuously updated database [CAZy](www.cazy.org).
-
-Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide lyases (PLs), carbohydrate esterases (CEs) and carbohydrate binding modules (CBMs). 
-
-]
-]
-
-]
-
----
-# Tools for genome annotation
-
-
-Prokka
-
-[Tutorial](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
 ---
 
 ```{r melange, echo=FALSE, out.width="100%"}
