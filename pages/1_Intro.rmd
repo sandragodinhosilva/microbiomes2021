@@ -86,24 +86,29 @@ xaringanExtra::style_share_again(
 
 ```
 
-
-
-class: title-slide, right, top
+class: title-slide,center,middle, top
 background-image: url(img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg)
 background-position:  75% 75%
 background-size: cover
 
-.right-column[
+
 # `r rmarkdown::metadata$title`
+<br>
+
 #### `r rmarkdown::metadata$subtitle`
+<br>
+**`r rmarkdown::metadata$author`**  
+`r rmarkdown::metadata$institute`  
+`r rmarkdown::metadata$date`  
 
-**`r rmarkdown::metadata$author`**<br>
-`r rmarkdown::metadata$date`
+.center[
+.small[
+.footnote[
+<br><br>
+Graphic by Jeremy Bishop [Unsplash](https://unsplash.com/photos/G9i_plbfDgk)
 ]
-
-???
-.small[.left[.footnote[Graphic by [Vernon Adams](https://unsplash.com/photos/jlrnBE3Jn3o)]]]
-
+]
+]
 ---
 name: about-me
 class: center, middle

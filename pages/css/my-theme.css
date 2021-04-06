@@ -91,6 +91,12 @@ hr {
 .small {
   font-size: 70%;
 }
+
+.extra-small {
+  font-size: 50%;
+}
+
+
 /*-- Horizontal bars (inverse) --*/
 .inverse hr { background-color: var(--PaleGrey); }
 
@@ -99,8 +105,9 @@ hr {
 /*-- Footnote --*/
 .footnote {
   position:           absolute;
-  bottom:             2em;
-  padding-right:      4em;
+  text-align:         center;
+  bottom:             0;
+  padding-right:      0;
   font-size:          70%;
   line-height:        1em;
 }
@@ -114,7 +121,7 @@ a.footer-link {
     right:          0px;
     height:         30px;
     width:          300px;
-    color:          var(--my-gold);
+    color:          var(--my-blue);
     border-bottom:  none;
     font-size:      0.7em;
     opacity:        0.6;
@@ -183,11 +190,11 @@ pre code {
 /*  color:              var(--my-blue);*/
 /*}*/
 
-.title-slide h3 {
-  color:              var(--my-yellow);
-  font-size:          1.1em;
-  text-transform:     uppercase;
-}
+/*.title-slide h3 {*/
+/*  color:              var(--my-yellow);*/
+/*  font-size:          1.1em;*/
+/*  text-transform:     uppercase;*/
+/*}*/
 
 /*-- Custom class for the about-me slide --*/
 .about-me-slide h1 {
