@@ -3,72 +3,32 @@ title: "Bioinformatic tools for Genome annotation"
 subtitle: "Course: Microbiomes (2021)"
 author: "Sandra Godinho Silva"
 institute: "Instituto Superior Técnico"
-date: "-04-2021"
+
+date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
-    seal: false
-    lib_dir: libs
-    css: ["xaringan-themer.css"]
+    css: xaringan-themer.css
     nature:
       slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
-      
 ---
-```{r meta, echo=FALSE}
-library(metathis)
-meta() %>%
-  meta_general(
-    description = "Intro",
-    generator = "xaringan and remark.js"
-  ) %>% 
-  meta_name("github-repo" = "sandragodinhosilva/microbiomes2021") %>% 
-  meta_social(
-    title = "Intro",
-    url = "https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1",
-    image = "https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png",
-    image_alt = "Title slide",
-    og_type = "website",
-    og_author = "Sandra Godinho Silva",
-    twitter_card_type = "summary_large_image",
-    twitter_creator = "@SandraGodSilva"
-  )
-```
 
-```{r set-theme, include=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color      = "#0F4C81", # pantone classic blue
-  secondary_color    = "#B6CADA", # pantone baby blue
-  header_font_google = google_font("Raleway"),
-  text_font_google   = google_font("Raleway", "300", "300i"),
-  code_font_google   = google_font("Source Code Pro"),
-  text_font_size     = "25px"
-)
-```
-
-```{r setup, include = FALSE}
+```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-library(knitr)
-library(broom)
-library(icons)
-library(scales)
-library(openintro)
-library(jsonlite)
-library(tidyverse)
-library(xaringanExtra)
-library(nhsrtheme)
-library(NHSRdatasets)
-# set default options
-opts_chunk$set(echo=FALSE,
-               collapse = TRUE,
-               fig.width = 7.252,
-               fig.height = 4,
-               dpi = 300)
-# set engines
-knitr::knit_engines$set("markdown")
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+
 xaringanExtra::use_tile_view()
 xaringanExtra::use_panelset()
 xaringanExtra::use_clipboard()
@@ -76,28 +36,18 @@ xaringanExtra::use_webcam()
 xaringanExtra::use_broadcast()
 xaringanExtra::use_share_again()
 xaringanExtra::style_share_again(
-  share_buttons = c("twitter", "linkedin", "pocket")
-)
-
+  share_buttons = c("twitter", "linkedin", "pocket"))
 ```
 
-class: title-slide, right, top
-background-image: url(img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg)
-background-position:  75% 75%
-background-size: cover
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1381B0",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF"
+)
+```
 
-.right-column[
-# `r rmarkdown::metadata$title`
-#### `r rmarkdown::metadata$subtitle`
-
-**`r rmarkdown::metadata$author`**<br>
-`r rmarkdown::metadata$date`
-]
-
-???
-.small[.left[.footnote[Graphic by [Vernon Adams](https://unsplash.com/photos/jlrnBE3Jn3o)]]]
-
----
 name: about-me
 class: center, middle
 
@@ -105,16 +55,12 @@ class: center, middle
 
 <img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/>
 
+## 
+
 ### PhD Student @ Institute for Bioengineering and Biosciences
 
 .fade[Instituto Superior Técnico<br>Lisbon, Portugal]
 
-[`r icons::fontawesome("orcid")` Orcid](https://orcid.org/0000-0002-4763-0662)
-[`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @sandragodinhosilva](https://github.com/sandragodinhosilva)
-
-???
-[`r icons::fontawesome("link")` sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
-[`r icons::fontawesome("twitter")` @SandraGodSilva](https://twitter.com/SandraGodSilva)
 ---
 class:  center, middle
 
@@ -283,7 +229,7 @@ knitr::include_graphics("img/rstudio.png")
 
 # And much more!
 
-```{r programming, echo=FALSE, out.width="55%",fig.align = "center"}
+```{r programming, echo=FALSE, out.width="70%",fig.align = "center"}
 knitr::include_graphics("img/programming_languages.jpeg")
 ```
 
@@ -546,3 +492,14 @@ Here's where you can find me:
 
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
