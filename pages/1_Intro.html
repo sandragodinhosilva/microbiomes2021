@@ -43,10 +43,13 @@
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link rel="stylesheet" href="css/my-theme.css" type="text/css" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
+
+
 
 
 
@@ -64,7 +67,7 @@ background-size: cover
 #### Course: Microbiomes (2021)
 
 **Sandra Godinho Silva**&lt;br&gt;
--04-2021
+14/04/2021
 ]
 
 ???
@@ -103,7 +106,7 @@ class: middle
 **Bioinformatics is a constantly changing and updating field.**
 
 Fast developments in:
-- software
+&gt; - .my-coral[software]
 - computing hardware 
 - high throughput technologies 
 
@@ -124,19 +127,25 @@ are creating a significant bottleneck:
 ## Integrative OMICS
 &lt;img src="img/integrative_omics.png" width="80%" style="display: block; margin: auto;" /&gt;
 .center[
-[ Yugi et al., Trends Biotechnol. 2016 Apr; 34(4):276–290](https://doi.org/10.1016/j.tibtech.2015.12.013)
+.small[[Yugi et al., Trends Biotechnol. 2016 Apr; 34(4):276–290](https://doi.org/10.1016/j.tibtech.2015.12.013)]
 ]
 
 ---
 ## Choose the most appropriate route for you
 
-Nowadays, bioinformaticians and researchers working in life scientists can choose from an overwhelming collection of exciting technologies and programming languages.
+Nowadays, bioinformaticians and researchers working in life scientists can choose from an overwhelming collection of exciting technologies and programming languages.  
+
+--
 
 Several options:
-- Web-based platforms
-- Scripting/programming
+- [Web-based platforms](#Web-based)
+
+--
+
+- [Scripting/programming](#scripting)
 
 ---
+name: Web-based
 # Web-based platforms
 
 Allow **accessible**, **reproducible**, and **transparent computational research.**
@@ -163,6 +172,7 @@ Allow **accessible**, **reproducible**, and **transparent computational research
 
 
 ---
+name: scripting
 # Scripting &amp; programming
 
 .panelset[
@@ -228,9 +238,7 @@ Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
 
-
 ]
-
 
 ]
 
@@ -251,17 +259,27 @@ class: inverse, center, middle
 
 Genome annotation is the process of attaching biological information to sequences.  
 
-Consists of two main steps: 
-- gene prediction - identifying elements on the genome;
-- attaching biological information to these elements. 
+&lt;br&gt;
 
+**Consists of two main steps:** 
+- structural annotation: identifying genomic elements;
+
+- functional annotation: attaching biological information to these elements. 
+
+&lt;br&gt;
+&lt;img src="img/bioinformatics_03_annotation_yourgenome.png" width="70%" style="display: block; margin: auto;" /&gt;
+.center[.small[
+Source: [link](https://zhiganglu.com/post/annotation-pipeline-tools/)]
+]
 ???
 Gene annotation is the plotting of genes onto genome assemblies, and indexing their genomic coordinates.
 DNA annotation or genome annotation is the process of identifying the locations of genes and all of the coding regions in a genome and determining what those genes do.
 ---
 ## Key points:
-* Once a genome is sequenced, all of the sequencings must be analyzed to understand what their meaning.
+* Once a genome is sequenced, all of the sequences must be analyzed to understand what their meaning.
+
 * Critical to annotation is the identification of the genes in a genome, the structure of the genes, and the proteins they encode.
+
 * Once a genome is annotated, further work is done to understand how all the annotated regions interact with each other.
 
 ???
@@ -269,8 +287,10 @@ DNA annotation or genome annotation is the process of identifying the locations 
 
  
 ---
-&lt;img src="img/genome-annotation.jpg" width="70%" style="display: block; margin: auto;" /&gt;
-.center[Source: https://www.ssbs.edu.in/genome-annotation.html]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/genome-annotation.jpg" alt="Source: https://www.ssbs.edu.in/genome-annotation.htm" width="70%" /&gt;
+&lt;p class="caption"&gt;Source: https://www.ssbs.edu.in/genome-annotation.htm&lt;/p&gt;
+&lt;/div&gt;
 
 ???
 Genome Annotation is the process to identify, analyze and interpret the relevant information related to the raw DNA sequences. Genome Annotation helps to extract structural location and biological functions of genes. Haemophilus influenza was the first free-living bacterium to be decoded in 1995 by Dr. Owen White. The assembling of the quality reads with a reference genome or de novo assembly in order to obtain the complete genome is a primary requirement for Genome Annotation.
@@ -279,8 +299,11 @@ Genome Annotation is the process to identify, analyze and interpret the relevant
 # Structural Annotation
 The process of identifying genomic elements such as: 
 * open reading frames (ORFs) and their localization;
+
 * gene structure;
+
 * coding regions;
+
 * regulatory motifs.
 
 ???
@@ -288,21 +311,111 @@ Genome annotation is thus the process of attaching
 biological information to the genome sequences and starts by identifying the positions of structural
 genomic elements, like genes, exons, introns, repeated regions, promoters, etc
 ---
+# Structural Annotation: Methods
+.pull-left[
+* **Similarity**  
+Similarity between sequences 
 
+&lt;br&gt;&lt;br&gt;
+&lt;img src="img/scorelink.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[* ***ab-initio* prediction**  
+Genes are predicted based on gene content and signal detection (e.g. start/stop codon; Ribosome Biding Site (RBS), etc.).
+
+
+&lt;img src="img/abinitio.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+???
+
+
+In another words, they predict genes by analyzing statistical features of genes first, then separate the coding sequences and non-coding sequences apart.
+
+---
+Examples of tools available: 
+* Glimmer
+* GenemarkHMM 
+---
+.huge[**PRODIGAL**]  
+**PROkaryotic DYnamic programming Gene-finding ALgorithm**
+
+- Predicts protein-coding genes 
+- Handles gaps and partial genes
+- Identifies translation initiation sites
+- Handles finished genomes, draft genomes and metagenomes.
+- Runs quickly
+- Runs unsupervised:  
+Prodigal is an **unsupervised machine learning algorithm**.  
+Automatically learns the properties of the genome from the sequence itself, including RBS motif usage, start codon usage, and coding statistics.
+
+Source: [https://github.com/hyattpd/Prodigal](https://github.com/hyattpd/Prodigal)
+
+---
+
+&lt;img src="img/prokaryote_gene.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+https://www.researchgate.net/publication/266155655_Accurate_RNA-seq_based_de_novo_annotation_using_mGenengs
+---
 # Functional Annotation
 
-The process of attaching biological information to genomic elements by describing the the biochemical and biological function of proteins. 
+The process of **attaching biological information to genomic elements** by describing the biochemical and biological function of proteins. 
 
 Possible analysis:
 
-* similarity searches
-* gene cluster prediction for secondary metabolites
-* identification of transmembrane domains in protein sequences
-* finding gene ontology terms
-* pathway information
+* similarity searches;
+* gene cluster prediction for secondary metabolites;
+* identification of transmembrane domains in protein sequences;
+* finding gene ontology terms;
+* pathway information.
+
+Functional roles are assigned to coding sequences (CDSs)
+---
 
 
-E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins in a protein database.
+--- 
+## Functional annotation - Homology based
+
+---
+Orthology search
+
+## Functional annotation- other features: Ontologies
+
+---
+## Take-home messages
+The annotation accuracy is only as good as the available suporting data 
+As new data becomes available, gene predictions and functional assignments will change
+
+Ex: Characterization of hypotetical proteins
+
+.cite[Garbage in, garbage out]
+
+---
+**Practical example:**  
+
+For similarity searches, it is common to use **BLAST (Basic Local Alignment Search Tool)**  
+
+BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.
+
+&lt;img src="img/blast.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+???
+Widely used sequence similarity search tool
+
+Find high scoring local alignments between two sequences
+
+Includes a model of score distributions for random local alignments
+
+Provides statistical significance for alignments
+
+Mostly used for 
+
+I have a Dna or protein sequences
+1. What is it related to? What does it do? (Homology, Conseerved Domains)
+2. Is is already in the database? (Identification)
+3. Where is it located or how is it organized? (Annotation, Assembly)
 
 ---
 # Process Annotation
@@ -313,15 +426,18 @@ E.g.: For similarity searches we use NCBI BLAST+ blastp to find similar proteins
 
 * **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
 
-
+&lt;br&gt;
 
 &lt;img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" /&gt;
-Homologous DNA: sequence alignment of a homologous protein from two different species The “*” represent a conserved amino acid in the two proteins. [Source](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
+
+&lt;br&gt;
+.small[Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)]
 
 ---
 While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
-* Orthologous are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
-* If a gene is duplicated in a species, the resulting duplicated genes are paralogs of each other, even though over time they might become different in sequence composition and function.
+* **Orthologous** are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
+
+* If a gene is duplicated in a species, the resulting duplicated genes are **paralogs** of each other, even though over time they might become different in sequence composition and function.
 
 
 ???
@@ -335,12 +451,14 @@ Two segments of DNA can have shared ancestry because of either a speciation even
 Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
 ---
 
+
 ---
 
 # Tools for genome annotation
 
+BLAST can be considered the basic level of annotation for finding similarities and then annotating genomes based on that. 
 
-
+Other databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
 
 ???
 Automatic annotation tools try to perform all of this by computer analysis, as opposed to manual annotation (a.k.a. curation) which involves human expertise. Ideally, these approaches co-exist and complement each other in the same annotation pipeline (process). 
@@ -349,6 +467,13 @@ The basic level of annotation is using BLAST for finding similarities, and then 
 Some databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
 
 https://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_Microbiology_(Boundless)/7%3A_Microbial_Genetics/7.13%3A_Bioinformatics/7.13B%3A_Annotating_Genomes
+
+
+Many of these features can be automatically predicted by sophisticated software packages based on sequence or structure comparisons.
+
+Beyond this point, it is the goal and the job of a community annotation to generate accurate lists of the most crucial and interesting genes from a new genome, with raw data in the form of gene predictions with numbers attached, gaps in the draft genome sequence, and transcriptome alignments. In short, the goal at this point, is to convert the raw, machine generated data into a useable and useful data resource that will advance research in new, powerful and exciting directions.
+
+
 ---
 Prokka
 
@@ -473,21 +598,36 @@ http://weizhong-lab.ucsd.edu/webMGA/server/pfam/
 
 class: center, middle
 
-# Thanks!
-
-Here's where you can find me:
+# Any questions?
 
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+
+---
+class: goodbye-slide, inverse, middle, left
+
+.pull-left[
+&lt;img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/&gt;
+# Thank you!
+
+### Here's where you can find me...
+
+.right[
+[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) &lt;br&gt;
+[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @SandraGodSilva](https://twitter.com/SandraGodSilva)
+
+.right[Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)]
+]]
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"slideNumberFormat": "%current%",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
 "highlightStyle": "github",
 "highlightLines": true,
 "ratio": "16:9",
-"countIncrementalSlides": true
+"countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
