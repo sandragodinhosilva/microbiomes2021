@@ -6,7 +6,7 @@ layout: home
 ---
 
 # Description
-Teaching materials for the 2021 Microbiomes course at IST 
+Teaching materials for the 2021 Microbiomes course at IST  
 April 2021  
 Author: Sandra Godinho Silva  
 sandragodinhosilva@tecnico.ulisboa.pt 
@@ -27,14 +27,14 @@ sandragodinhosilva@tecnico.ulisboa.pt
 * **Hands-on 2:** Annotate genomes with the Pfam database
 
 
-## <a href='pages/SM-BGCs.html'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
+### <a href='pages/SM-BGCs.html'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
 
-Study case: the marine bacterial *Aquimarina* genus 
+* Study case: the marine bacterial *Aquimarina* genus 
 
-### <a href='pages/2021_Microbiomes.pdf'> Hands-on 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
+* <a href='pages/2021_Microbiomes.pdf'> **Hands-on 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE**
 
 ***
 ### Sources
-The construction of the learning materials for this was inspired in the following sources: \
+The construction of the learning materials for this was inspired in the following sources:
 * [An Introductory Undergraduate course in Bioinformatics](https://rsh249.github.io/bioinformatics/) by [Prof. Rob Harbert](https://github.com/rsh249)  
 * [R Carpentries](https://carpentries.org/)
