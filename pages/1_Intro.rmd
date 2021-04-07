@@ -384,7 +384,7 @@ name: part2
 class:  middle
 .right-column[
 # Part 2
-### .blue[Genome Annotation]
+### .blue[Bioinformatic tools for Genome Annotation]
 ]
 ---
 
@@ -677,10 +677,10 @@ A web server for annotating bacterial and archaeal genomes that provides annotat
 ## PROKKA
 **The approach:**  
 Prokka uses a **variety of databases** to **assign function to predicted CDS features**.  
-It takes a hierarchical approach to make it fast.
-
+It takes a hierarchical approach to make it fast.  
+<br>
 --
-Proteins coding genes are annotated in two stages:  
+**Proteins coding genes are annotated in two stages:**  
 >**1)** **Prodigal** identifies the coordinates of candidate genes, but does not describe the putative gene product.
 
 
@@ -772,6 +772,8 @@ background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
 
+name: handson2
+
 class:  middle
 .right-column[
 # Hands-on 2
@@ -779,7 +781,6 @@ class:  middle
 ### .blue[Genome annotation with the]   
 ### .blue[Protein Families Database (PFAM)]
 ]
-
 
 ---
 # Your turn!
@@ -798,33 +799,35 @@ knitr::include_graphics("img/webmga_pfam.png")
 [Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
 
 ---
-
 ## R script to join annotations from different MAGs
 
 
 
 ---
-
 class: center, middle
 
-# Any questions?
-
-
-
+## That is all for today!
+**Any questions?**
 
 ---
-class: goodbye-slide, inverse, middle, left
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
 
-.pull-left[
+name: part1
+
+class:  middle
+.right-column[
+
 <img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/>
 # Thank you!
 
 ### Here's where you can find me...
 
-.right[
+.left[
 [`r icons::fontawesome("link")` sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) <br>
 [`r icons::fontawesome("twitter")` @SandraGodSilva](https://twitter.com/SandraGodSilva)
 
-.right[Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)]
+.left[Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)]
 ]]
 
