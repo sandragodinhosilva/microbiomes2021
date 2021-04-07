@@ -1,7 +1,7 @@
 ---
 title: "Getting started with R"
 author: "Sandra Godinho Silva"
-date: "2021-04"
+date: "2021-04-14"
 output: 
   html_document:
     theme: cosmo
@@ -580,9 +580,6 @@ write.csv(cars, file='mtcars.csv')
 
 Where are these files now?
 
-
-
-
 # More resources
 
 ### More about R
@@ -593,10 +590,10 @@ Where are these files now?
     to get questions answered and learn about useful R packages and tipps (e.g.,
     [@RLangTips])
 
+***
+**Adapted from: [The Carpentries R lesson](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)**
 
-[Credits](https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html)
-
-
+***
 ### [Home](https://sandragodinhosilva.github.io/microbiomes2021/)
 
 

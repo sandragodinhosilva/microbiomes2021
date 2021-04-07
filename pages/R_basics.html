@@ -11,6 +11,7 @@
 
 <meta name="author" content="Sandra Godinho Silva" />
 
+<meta name="date" content="2021-04-14" />
 
 <title>Getting started with R</title>
 
@@ -326,7 +327,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Getting started with R</h1>
 <h4 class="author">Sandra Godinho Silva</h4>
-<h4 class="date">2021-04</h4>
+<h4 class="date">2021-04-14</h4>
 
 </div>
 
@@ -399,8 +400,8 @@ div.tocify {
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this command shows the current working directory</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 </div>
-<div id="using-functions-in-r-without-needing-to-master-them" class="section level2">
-<h2>Using functions in R, without needing to master them</h2>
+<div id="using-functions-in-r" class="section level2">
+<h2>Using functions in R</h2>
 <p>A function in R (or any computing language) is a short program that takes some input and returns some output. <code>getwd()</code> is a function!</p>
 <p><strong>an R function has three key properties</strong>: - Functions have a name (e.g. <code>dir</code>, <code>getwd</code>); note that functions are case sensitive! - Following the name, functions have a pair of <code>()</code> - Inside the parentheses, a function may take 0 or more arguments</p>
 <p>An argument may be a specific input for your function and/or may modify the function’s behavior. For example the function <code>round()</code> will round a number with a decimal:</p>
@@ -475,13 +476,13 @@ div.tocify {
 <li><strong>Use the recommended assignment operator</strong>: In R, we use ‘&lt;-’ as the preferred assignment operator. ‘=’ works too, but is most commonly used in passing arguments to functions.</li>
 </ul>
 </div>
-</div>
-<div id="reassigning-object-names-or-deleting-objects" class="section level1">
-<h1>Reassigning object names or deleting objects</h1>
+<div id="reassigning-object-names-or-deleting-objects" class="section level2">
+<h2>Reassigning object names or deleting objects</h2>
 <p>Once an object has a value, you can change that value by overwriting it. R will not give you a warning or error if you overwriting an object.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gene_name has the value &#39;pten&#39; or whatever value you used in the challenge.</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We will now assign the new value &#39;tp53&#39;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>gene_name <span class="ot">&lt;-</span> <span class="st">&#39;tp53&#39;</span></span></code></pre></div>
+</div>
 <div id="understanding-object-data-types-modes" class="section level2">
 <h2>Understanding object data types (modes)</h2>
 <p>In R, <strong>every object has two properties</strong>:</p>
@@ -807,7 +808,9 @@ div.tocify {
 <li><a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html">R FAQ</a></li>
 <li>To stay up to date, follow <code>#rstats</code> on twitter. Twitter can also be a way to get questions answered and learn about useful R packages and tipps (e.g., <span class="citation">[@RLangTips]</span>)</li>
 </ul>
-<p><a href="https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html">Credits</a></p>
+<hr />
+<p><strong>Adapted from: <a href="https://datacarpentry.org/R-ecology-lesson/00-before-we-start.html">The Carpentries R lesson</a></strong></p>
+<hr />
 </div>
 <div id="home" class="section level3">
 <h3><a href="https://sandragodinhosilva.github.io/microbiomes2021/">Home</a></h3>

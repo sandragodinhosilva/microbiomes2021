@@ -1,4 +1,3 @@
-
 ---
 title: "R Setup"
 author: "Sandra Godinho Silva"
@@ -11,26 +10,10 @@ output:
     toc: true
     toc_float: true
     toc_depth: 4
-  
 ---
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
-
-Learners must have R and RStudio installed on their computers. They also need 
-to be able to install a number of R packages, create directories, and download 
-files.
-
-To avoid troubleshooting during the lesson, learners should follow the 
-instruction below to download and install everything beforehand.
-If they are using their own computers this should be no problem, 
-but if the computer is managed by their organization's IT department 
-they might need help from an IT administrator. 
-
 ## Install R and RStudio
 
 R and RStudio are two separate pieces of software: 
@@ -104,10 +87,8 @@ up to date:
   `Help" > Check for updates`. If a new version is available, quit RStudio, 
   follow the instruction on screen.
   
+***
+**Adapted from: [The Carpentries](https://datacarpentry.org/R-ecology-lesson/#Install_R_and_RStudio)**
 
-
- 
-[Credits](https://datacarpentry.org/R-ecology-lesson/#Install_R_and_RStudio)
-
-
+***
 ### [Home](https://sandragodinhosilva.github.io/microbiomes2021/)

@@ -17,5 +17,4 @@ library(countdown)
 # set seed
 set.seed(1234)
 ```
-
 ---
