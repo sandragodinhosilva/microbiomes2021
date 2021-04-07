@@ -105,7 +105,7 @@ background-size: cover
 .small[
 .footnote[
 <br><br>
-Graphic by Jeremy Bishop [Unsplash](https://unsplash.com/photos/G9i_plbfDgk)
+.blue[Graphic by Jeremy Bishop] [@ Unsplash](https://unsplash.com/photos/G9i_plbfDgk)
 ]
 ]
 ]
@@ -142,7 +142,7 @@ class: middle
 **Bioinformatics is a constantly changing and updating field.**
 
 Fast developments in:
-> - .my-coral[software]
+> - software
 - computing hardware 
 - high throughput technologies 
 
@@ -158,8 +158,9 @@ are creating a significant bottleneck:
 knitr::include_graphics("img/bigdata_lifesciences.png")
 ```
 .center[
-[Stephens et a. PLoS Biology, 2015.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
-]
+.small[
+[Stephens et a. PLoS Biology, 2015](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
+]]
 
 ---
 ## Integrative OMICS
@@ -178,17 +179,17 @@ Nowadays, bioinformaticians and researchers working in life scientists can choos
 --
 
 Several options:
-- [Web-based platforms](#Web-based)
+> - [Web-based platforms](#Web-based)
 
 --
 
-- [Scripting/programming](#scripting)
+> - [Scripting/programming](#scripting)
 
 ---
 name: Web-based
-# Web-based platforms
+## Web-based platforms
 
-Allow **accessible**, **reproducible**, and **transparent computational research.**
+Allow **accessible**, **reproducible** and **transparent computational research.**
 
 .panelset[
 
@@ -199,7 +200,8 @@ Allow **accessible**, **reproducible**, and **transparent computational research
 knitr::include_graphics("img/KBase-logo.png")
 ```
 ]
-.right-column[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale).
+.right-column[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale).  
+[Kbase: https://www.kbase.us/](https://www.kbase.us/)
 ]]
 
 
@@ -209,8 +211,8 @@ knitr::include_graphics("img/KBase-logo.png")
 knitr::include_graphics("img/galaxy.png")
 ```
 ]
-.right-column[Galaxy provides a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user.
-(https://galaxyproject.org/)
+.right-column[Galaxy provides a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user. 
+[Galaxy project: https://galaxyproject.org/](https://galaxyproject.org/)
 ]]
 ]
 
@@ -240,6 +242,7 @@ knitr::include_graphics("img/python.png")
 ```
 ]
 .right-column[
+## Python
 * Clear and powerful object-oriented programming language;
 * Portable – runs just about anywhere;
 * Clear syntax – relatively easy to learn.
@@ -268,6 +271,7 @@ knitr::include_graphics("img/Rlogo.png")
 ```
 ]
 .right-column[
+## R
 * .purple[R] is a powerful, popular open-source scripting language
 * More than 20 years old - fairly mature - and growing in popularity. 
 ]
@@ -275,16 +279,29 @@ knitr::include_graphics("img/Rlogo.png")
 
 
 .panel[.panel-name[R (2/3)]
-## Why is R so popular?
+### Why is R so popular?
+- **Statistical Language**: R is widely used in biology, genetics as well as in statistics. 
+
+- **Vast array of packages**: With over 10,000 packages in the CRAN repository, the number is constantly growing. These packages appeal to all the areas of industry.
+
+- **Quality Plotting and Graphing**: The popular libraries like ggplot2 and plotly advocate for aesthetic and visually appealing graphs that set R apart from other programming languages.
+]
+.panel[.panel-name[R (3/4)]
+.left-column[
+**Example:**
+]
+.right-column[
+![](gif/gganimate.gif)
+]
 ]
 
-.panel[.panel-name[R (3/3)]
-.left-column[
+.panel[.panel-name[R (4/4)]
+.pull-left[
 ```{r rstudio, echo=FALSE, out.width="100%"}
 knitr::include_graphics("img/rstudio.png")
 ```
 ]
-.right-column[
+.pull-right[
 ## R Studio
 * Integrated Development Environment (IDE). 
 * Provides a graphical interface to R, making it more user-friendly, and providing dozens of useful features.
@@ -293,14 +310,13 @@ knitr::include_graphics("img/rstudio.png")
 ]
 
 ]
-
 ]
 
 ---
 
 # And much more!
 
-```{r programming, echo=FALSE, out.width="55%",fig.align = "center"}
+```{r programming, echo=FALSE, out.width="60%",fig.align = "center"}
 knitr::include_graphics("img/programming_languages.jpeg")
 ```
 
@@ -355,110 +371,139 @@ Genome Annotation is the process to identify, analyze and interpret the relevant
 ---
 # Structural Annotation
 The process of identifying genomic elements such as: 
-* open reading frames (ORFs) and their localization;
-
+> * open reading frames (ORFs) and their localization;
 * gene structure;
-
 * coding regions;
-
 * regulatory motifs.
 
+
+```{r gene_structure, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("img/prokaryote_gene.png")
+```
+.center[
+.small[Prokaryotic and Eukaryotic gene structure. 
+Source: [link](https://www.researchgate.net/publication/266155655_Accurate_RNA-seq_based_de_novo_annotation_using_mGenengs)
+]
+]
+
+
 ???
-Genome annotation is thus the process of attaching
-biological information to the genome sequences and starts by identifying the positions of structural
+identifying the positions of structural
 genomic elements, like genes, exons, introns, repeated regions, promoters, etc
 ---
 # Structural Annotation: Methods
 .pull-left[
 * **Similarity**  
 Similarity between sequences 
-
 <br><br>
 ```{r sim, echo=FALSE, out.width="70%", fig.align="center"}
 knitr::include_graphics("img/scorelink.png")
 ```
-
 ]
-
 .pull-right[* ***ab-initio* prediction**  
 Genes are predicted based on gene content and signal detection (e.g. start/stop codon; Ribosome Biding Site (RBS), etc.).
-
-
-```{r ab, echo=FALSE, out.width="50%", fig.align="center"}
+```{r ab, echo=FALSE, out.width="60%", fig.align="center"}
 knitr::include_graphics("img/abinitio.png")
 ```
-
 ]
-
 ???
-
-
 In another words, they predict genes by analyzing statistical features of genes first, then separate the coding sequences and non-coding sequences apart.
-
 ---
-Examples of tools available: 
+### Examples of *ab-initio* tools: 
 * Glimmer
 * GenemarkHMM 
----
-.huge[**PRODIGAL**]  
+<br>
+--
+<br>
+* .huge[**PRODIGAL**]  
 **PROkaryotic DYnamic programming Gene-finding ALgorithm**
 
-- Predicts protein-coding genes 
+> - Predicts protein-coding genes 
 - Handles gaps and partial genes
 - Identifies translation initiation sites
 - Handles finished genomes, draft genomes and metagenomes.
 - Runs quickly
-- Runs unsupervised:  
-Prodigal is an **unsupervised machine learning algorithm**.  
-Automatically learns the properties of the genome from the sequence itself, including RBS motif usage, start codon usage, and coding statistics.
-
-Source: [https://github.com/hyattpd/Prodigal](https://github.com/hyattpd/Prodigal)
-
----
-
-```{r gene_structure, echo=FALSE, out.width="55%", fig.align="center"}
-knitr::include_graphics("img/prokaryote_gene.png")
-```
-
-https://www.researchgate.net/publication/266155655_Accurate_RNA-seq_based_de_novo_annotation_using_mGenengs
+- Runs unsupervised: is an **unsupervised machine learning algorithm**.  
+Automatically learns the properties of the genome from the sequence itself, including RBS motif usage, start codon usage, and coding statistics.  
+- Source: [https://github.com/hyattpd/Prodigal](https://github.com/hyattpd/Prodigal)
 ---
 # Functional Annotation
 
 The process of **attaching biological information to genomic elements** by describing the biochemical and biological function of proteins. 
 
 Possible analysis:
+> - similarity searches;
+- gene cluster prediction for secondary metabolites;
+- identification of transmembrane domains in protein sequences;
+- finding gene ontology terms;
+- pathway information.
 
-* similarity searches;
-* gene cluster prediction for secondary metabolites;
-* identification of transmembrane domains in protein sequences;
-* finding gene ontology terms;
-* pathway information.
+Functional roles are assigned to coding sequences (CDSs).
 
-Functional roles are assigned to coding sequences (CDSs)
----
-
-
---- 
-## Functional annotation - Homology based
-
----
-Orthology search
-
-## Functional annotation- other features: Ontologies
 
 ---
 ## Take-home messages
-The annotation accuracy is only as good as the available suporting data 
-As new data becomes available, gene predictions and functional assignments will change
-
+The annotation accuracy is only as good as the available supporting data.  
+As new data becomes available, gene predictions and functional assignments will change.  
 Ex: Characterization of hypotetical proteins
 
-.cite[Garbage in, garbage out]
+.cite[Garbage in, garbage out!]
 
 ---
-**Practical example:**  
+### Some considerations about Homologs, Orthologs, and Paralogs
 
-For similarity searches, it is common to use **BLAST (Basic Local Alignment Search Tool)**  
+* **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
+
+<br>
+
+```{r homologs, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("img/zinc-finger-seq-alignment2.png")
+```
+
+<br>
+Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
+
+---
+class: middle
+```{r homology, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("img/Homology.png")
+```
+.small[
+.center[
+Photo courtesy of:  Popo H. Liao, via Wikimedia Commons. Source: [link](https://bitesizebio.com/26762/homology-terminology-never-say-wrong-word/)
+]
+]
+---
+class: middle
+While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
+* **Orthologous** are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
+
+* If a gene is duplicated in a species, the resulting duplicated genes are **paralogs** of each other, even though over time they might become different in sequence composition and function.
+
+
+???
+Homology forms the basis of organization for comparative biology.
+A homologous trait is often called a homolog (also spelled homologue). In genetics, the term “homolog” is used both to refer to a homologous protein and to the gene ( DNA sequence) encoding it. 
+
+As with anatomical structures, homology between protein or DNA sequences is defined in terms of shared ancestry. 
+
+Two segments of DNA can have shared ancestry because of either:
+* a speciation event (orthologs) 
+* duplication event (paralogs). 
+
+Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
+
+---
+## Databases
+**NCBI Nucleotide and Proteins databases**  
+NCBI hosts constantly updated databases of proteins and DNA from several sources that include most of the newly sequenced organisms.
+
+Queries to this database can be performed through the BLAST web server, also hosted by the NCBI.
+
+.citation[BLAST can be considered the basic level of annotation for finding similarities.
+]
+---
+**BLAST (Basic Local Alignment Search Tool)**  
 
 BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.
 
@@ -483,73 +528,17 @@ I have a Dna or protein sequences
 3. Where is it located or how is it organized? (Annotation, Assembly)
 
 ---
-# Process Annotation
-
-
----
-# Homologs, Orthologs, and Paralogs
-
-* **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
-
-<br>
-
-```{r homologs, echo=FALSE, out.width="70%", fig.align="center"}
-knitr::include_graphics("img/zinc-finger-seq-alignment2.png")
-```
-
-<br>
-.small[Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)]
-
----
-While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
-* **Orthologous** are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
-
-* If a gene is duplicated in a species, the resulting duplicated genes are **paralogs** of each other, even though over time they might become different in sequence composition and function.
-
+## Databases
+**Specialists databases**  
+Some databases offer extra information and search criteria for specific fields of study, while usually including the sequences already in public databases such as NCBI, .
 
 ???
-Homology forms the basis of organization for comparative biology.
-A homologous trait is often called a homolog (also spelled homologue). In genetics, the term “homolog” is used both to refer to a homologous protein and to the gene ( DNA sequence) encoding it. 
-
-As with anatomical structures, homology between protein or DNA sequences is defined in terms of shared ancestry. 
-
-Two segments of DNA can have shared ancestry because of either a speciation event (orthologs) or a duplication event (paralogs). 
-
-Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
----
-
-
----
-
-# Tools for genome annotation
-
-BLAST can be considered the basic level of annotation for finding similarities and then annotating genomes based on that. 
-
 Other databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
 
-???
-Automatic annotation tools try to perform all of this by computer analysis, as opposed to manual annotation (a.k.a. curation) which involves human expertise. Ideally, these approaches co-exist and complement each other in the same annotation pipeline (process). 
-The basic level of annotation is using BLAST for finding similarities, and then annotating genomes based on that. However, nowadays more and more additional information is added to the annotation platform. The additional information allows manual annotators to deconvolute discrepancies between genes that are given the same annotation. 
-
-Some databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
-
-https://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_Microbiology_(Boundless)/7%3A_Microbial_Genetics/7.13%3A_Bioinformatics/7.13B%3A_Annotating_Genomes
-
-
-Many of these features can be automatically predicted by sophisticated software packages based on sequence or structure comparisons.
-
-Beyond this point, it is the goal and the job of a community annotation to generate accurate lists of the most crucial and interesting genes from a new genome, with raw data in the form of gene predictions with numbers attached, gaps in the draft genome sequence, and transcriptome alignments. In short, the goal at this point, is to convert the raw, machine generated data into a useable and useful data resource that will advance research in new, powerful and exciting directions.
-
-
 ---
-Prokka
-
-[Tutorial](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
----
-# Databases
-
+## Databases
+**Specialists databases**  
 .panelset[
-
 .panel[.panel-name[PFAM]
 .left-column[
 .center[
@@ -605,6 +594,34 @@ Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide
 ]
 
 ]
+
+---
+
+## Integrated genome annotation tools
+
+
+
+
+
+???
+Automatic annotation tools try to perform all of this by computer analysis, as opposed to manual annotation (a.k.a. curation) which involves human expertise. Ideally, these approaches co-exist and complement each other in the same annotation pipeline (process). 
+The basic level of annotation is using BLAST for finding similarities, and then annotating genomes based on that. However, nowadays more and more additional information is added to the annotation platform. The additional information allows manual annotators to deconvolute discrepancies between genes that are given the same annotation. 
+
+Some databases use genome context information, similarity scores, experimental data, and integrations of other resources to provide genome annotations through their Subsystems approach. Other databases rely on both curated data sources as well as a range of different software tools in their automated genome annotation pipeline.
+
+https://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_Microbiology_(Boundless)/7%3A_Microbial_Genetics/7.13%3A_Bioinformatics/7.13B%3A_Annotating_Genomes
+
+
+Many of these features can be automatically predicted by sophisticated software packages based on sequence or structure comparisons.
+
+Beyond this point, it is the goal and the job of a community annotation to generate accurate lists of the most crucial and interesting genes from a new genome, with raw data in the form of gene predictions with numbers attached, gaps in the draft genome sequence, and transcriptome alignments. In short, the goal at this point, is to convert the raw, machine generated data into a useable and useful data resource that will advance research in new, powerful and exciting directions.
+
+
+---
+Prokka
+
+[Tutorial](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
+
 ---
 ## Introduction to File Formats
 .panelset[
