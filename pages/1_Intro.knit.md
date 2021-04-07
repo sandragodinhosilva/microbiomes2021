@@ -1,54 +1,27 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Bioinformatic tools for Genome annotation</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Sandra Godinho Silva" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <meta name="description" content="Intro"/>
-    <meta name="generator" content="xaringan and remark.js"/>
-    <meta name="github-repo" content="sandragodinhosilva/microbiomes2021"/>
-    <meta name="twitter:title" content="Intro"/>
-    <meta name="twitter:description" content="Intro"/>
-    <meta name="twitter:url" content="https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1"/>
-    <meta name="twitter:image:src" content="https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png"/>
-    <meta name="twitter:image:alt" content="Title slide"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:creator" content="@SandraGodSilva"/>
-    <meta name="twitter:site" content="@SandraGodSilva"/>
-    <meta property="og:title" content="Intro"/>
-    <meta property="og:description" content="Intro"/>
-    <meta property="og:url" content="https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1"/>
-    <meta property="og:image" content="https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png"/>
-    <meta property="og:image:alt" content="Title slide"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="article:author" content="Sandra Godinho Silva"/>
-    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="libs/tile-view/tile-view.js"></script>
-    <link href="libs/panelset/panelset.css" rel="stylesheet" />
-    <script src="libs/panelset/panelset.js"></script>
-    <script src="libs/clipboard/clipboard.min.js"></script>
-    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
-    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
-    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
-    <script src="libs/js-cookie/js.cookie.js"></script>
-    <script src="libs/peerjs/peerjs.min.js"></script>
-    <script src="libs/tiny.toast/toast.min.js"></script>
-    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
-    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <link rel="stylesheet" href="css/my-theme.css" type="text/css" />
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-
+---
+title: "Bioinformatic tools for Genome annotation"
+subtitle: "Course: Microbiomes (2021)"
+author: "Sandra Godinho Silva"
+institute: "Instituto Superior Técnico"
+date: "14/04/2021"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    css: 
+        - css/my-theme.css
+        - xaringan-themer.css
+    nature:
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
 
 
 
@@ -62,10 +35,10 @@ background-size: cover
 
 
 # Bioinformatic tools for Genome annotation
-&lt;br&gt;
+<br>
 
 #### Course: Microbiomes (2021)
-&lt;br&gt;
+<br>
 **Sandra Godinho Silva**  
 Instituto Superior Técnico  
 14/04/2021  
@@ -73,7 +46,7 @@ Instituto Superior Técnico
 .center[
 .small[
 .footnote[
-&lt;br&gt;&lt;br&gt;
+<br><br>
 .blue[Graphic by Jeremy Bishop] [@ Unsplash](https://unsplash.com/photos/G9i_plbfDgk)
 ]
 ]
@@ -84,18 +57,18 @@ class: center, middle
 
 ## About me: Sandra Godinho Silva
 
-&lt;img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/&gt;
+<img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/>
 
 ### PhD Student @ Institute for Bioengineering and Biosciences
 
-.fade[Instituto Superior Técnico&lt;br&gt;Lisbon, Portugal]
+.fade[Instituto Superior Técnico<br>Lisbon, Portugal]
 
-[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M294.75 188.19h-45.92V342h47.47c67.62 0 83.12-51.34 83.12-76.91 0-41.64-26.54-76.9-84.67-76.9zM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-80.79 360.76h-29.84v-207.5h29.84zm-14.92-231.14a19.57 19.57 0 1 1 19.57-19.57 19.64 19.64 0 0 1-19.57 19.57zM300 369h-81V161.26h80.6c76.73 0 110.44 54.83 110.44 103.85C410 318.39 368.38 369 300 369z"&gt;&lt;/path&gt;&lt;/svg&gt; Orcid](https://orcid.org/0000-0002-4763-0662)
-[&lt;svg viewBox="0 0 496 512" style="fill:currentColor;position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @sandragodinhosilva](https://github.com/sandragodinhosilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M294.75 188.19h-45.92V342h47.47c67.62 0 83.12-51.34 83.12-76.91 0-41.64-26.54-76.9-84.67-76.9zM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-80.79 360.76h-29.84v-207.5h29.84zm-14.92-231.14a19.57 19.57 0 1 1 19.57-19.57 19.64 19.64 0 0 1-19.57 19.57zM300 369h-81V161.26h80.6c76.73 0 110.44 54.83 110.44 103.85C410 318.39 368.38 369 300 369z"></path></svg> Orcid](https://orcid.org/0000-0002-4763-0662)
+[<svg viewBox="0 0 496 512" style="fill:currentColor;position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> @sandragodinhosilva](https://github.com/sandragodinhosilva)
 
 ???
-[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
-[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @SandraGodSilva](https://twitter.com/SandraGodSilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg> sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> @SandraGodSilva](https://twitter.com/SandraGodSilva)
 ---
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
@@ -130,7 +103,7 @@ class:  middle
 class:  center, middle
 
 # Bioinformatics
-&lt;br&gt;
+<br>
 Bioinformatics is the science that conjugates  
 **biology** + **statistics** + **computer sciences**  
 to study biological issues through the analysis of data.
@@ -141,7 +114,7 @@ class: middle
 **Bioinformatics is a constantly changing and updating field.**
 
 Fast developments in:
-&gt; - software
+> - software
 - computing hardware 
 - high throughput technologies 
 
@@ -153,7 +126,7 @@ are creating a significant bottleneck:
 ---
 .center[**How to thoroughly analyze this massive amount of data?**]
 
-&lt;img src="img/bigdata_lifesciences.png" width="70%" style="display: block; margin: auto;" /&gt;
+<img src="img/bigdata_lifesciences.png" width="70%" style="display: block; margin: auto;" />
 .center[
 .small[
 [Stephens et a. PLoS Biology, 2015](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
@@ -161,7 +134,7 @@ are creating a significant bottleneck:
 
 ---
 ## Integrative OMICS
-&lt;img src="img/integrative_omics.png" width="80%" style="display: block; margin: auto;" /&gt;
+<img src="img/integrative_omics.png" width="80%" style="display: block; margin: auto;" />
 .center[
 .small[[Yugi et al., Trends Biotechnol. 2016 Apr; 34(4):276–290](https://doi.org/10.1016/j.tibtech.2015.12.013)]
 ]
@@ -174,11 +147,11 @@ Nowadays, bioinformaticians and researchers working in life scientists can choos
 --
 
 Several options:
-&gt; - [Web-based platforms](#Web-based)
+> - [Web-based platforms](#Web-based)
 
 --
 
-&gt; - [Scripting/programming](#scripting)
+> - [Scripting/programming](#scripting)
 
 ---
 name: Web-based
@@ -191,7 +164,7 @@ Allow **accessible**, **reproducible** and **transparent computational research.
 .panel[.panel-name[KBase]
 
 .left-column[
-&lt;img src="img/KBase-logo.png" width="100%" /&gt;
+<img src="img/KBase-logo.png" width="100%" />
 ]
 .right-column[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale).  
 [Kbase: https://www.kbase.us/](https://www.kbase.us/)
@@ -200,7 +173,7 @@ Allow **accessible**, **reproducible** and **transparent computational research.
 
 .panel[.panel-name[Galaxy]
 .left-column[
-&lt;img src="img/galaxy.png" width="100%" /&gt;
+<img src="img/galaxy.png" width="100%" />
 ]
 .right-column[Galaxy provides a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user. 
 [Galaxy project: https://galaxyproject.org/](https://galaxyproject.org/)
@@ -210,26 +183,26 @@ Allow **accessible**, **reproducible** and **transparent computational research.
 
 ---
 name: scripting
-# Scripting &amp; programming
+# Scripting & programming
 
 .panelset[
 
 .panel[.panel-name[Bash]
 .left-column[
-&lt;img src="img/bash.png" width="100%" /&gt;
+<img src="img/bash.png" width="100%" />
 ]
 .right-column[
 * Default login shell for most Linux distributions;
 * Simple bash scripts are really useful for data manipulation.
 
-&lt;br&gt;&lt;br&gt;
-&lt;img src="img/bash_ex.png" width="80%" /&gt;
+<br><br>
+<img src="img/bash_ex.png" width="80%" />
 ]
 ]
 
 .panel[.panel-name[Python (1/2)]
 .left-column[
-&lt;img src="img/python.png" width="80%" /&gt;
+<img src="img/python.png" width="80%" />
 ]
 .right-column[
 ## Python
@@ -242,11 +215,11 @@ Source: [https://www.python.org/](https://www.python.org)]
 .panel[.panel-name[Python (2/2)]
 
 .left-column[
-&lt;img src="img/Biopython_logo.svg" width="100%" /&gt;
+<img src="img/Biopython_logo.svg" width="100%" />
 ]
 .right-column[
 ## Biopython
-* Collection of .blue[Python] modules that provide functions to deal with DNA, RNA &amp; protein sequence operations;
+* Collection of .blue[Python] modules that provide functions to deal with DNA, RNA & protein sequence operations;
 * It has sibling projects like BioPerl, BioJava and BioRuby.  
 Source: [https://biopython.org/](https://biopython.org)
 ]
@@ -254,7 +227,7 @@ Source: [https://biopython.org/](https://biopython.org)
 
 .panel[.panel-name[R (1/3)]
 .left-column[
-&lt;img src="img/Rlogo.png" width="100%" /&gt;
+<img src="img/Rlogo.png" width="100%" />
 ]
 .right-column[
 ## R
@@ -276,16 +249,16 @@ Source: [https://biopython.org/](https://biopython.org)
 
 .left-column[**Dynamic graph:** 
 ggplot2 + gganimate
-&lt;br&gt;&lt;br&gt;
+<br><br>
 Source: [link]()
 ]
 .right-column[
-&lt;img src="gif/gganimate.gif" width="50%" style="display: block; margin: auto;" /&gt;
+<img src="gif/gganimate.gif" width="50%" style="display: block; margin: auto;" />
 ]
 ]
 .panel[.panel-name[R (4/4)]
 .pull-left[
-&lt;img src="img/rstudio.png" width="100%" /&gt;
+<img src="img/rstudio.png" width="100%" />
 ]
 .pull-right[
 ## R Studio
@@ -302,7 +275,7 @@ Source: [link]()
 
 # And much more!
 
-&lt;img src="img/programming_languages.jpeg" width="60%" style="display: block; margin: auto;" /&gt;
+<img src="img/programming_languages.jpeg" width="60%" style="display: block; margin: auto;" />
 
 
 ---
@@ -338,14 +311,14 @@ class:  middle
 
 GThe process of attaching biological information to sequences.  
 
-&lt;br&gt;
+<br>
 **Consists of two main steps:** 
 - .blue[structural annotation]: identifying genomic elements;
 
 - .blue[functional annotation]: attaching biological information to these elements. 
 
-&lt;br&gt;
-&lt;img src="img/bioinformatics_03_annotation_yourgenome.png" width="70%" style="display: block; margin: auto;" /&gt;
+<br>
+<img src="img/bioinformatics_03_annotation_yourgenome.png" width="70%" style="display: block; margin: auto;" />
 .center[.small[
 Source: [link](https://zhiganglu.com/post/annotation-pipeline-tools/)]
 ]
@@ -365,10 +338,10 @@ DNA annotation or genome annotation is the process of identifying the locations 
 
  
 ---
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/genome-annotation.jpg" alt="Source: https://www.ssbs.edu.in/genome-annotation.htm" width="70%" /&gt;
-&lt;p class="caption"&gt;Source: https://www.ssbs.edu.in/genome-annotation.htm&lt;/p&gt;
-&lt;/div&gt;
+<div class="figure" style="text-align: center">
+<img src="img/genome-annotation.jpg" alt="Source: https://www.ssbs.edu.in/genome-annotation.htm" width="70%" />
+<p class="caption">Source: https://www.ssbs.edu.in/genome-annotation.htm</p>
+</div>
 
 ???
 Genome Annotation is the process to identify, analyze and interpret the relevant information related to the raw DNA sequences. Genome Annotation helps to extract structural location and biological functions of genes. Haemophilus influenza was the first free-living bacterium to be decoded in 1995 by Dr. Owen White. The assembling of the quality reads with a reference genome or de novo assembly in order to obtain the complete genome is a primary requirement for Genome Annotation.
@@ -376,13 +349,13 @@ Genome Annotation is the process to identify, analyze and interpret the relevant
 ---
 # Structural Annotation
 The process of identifying genomic elements such as: 
-&gt; * open reading frames (ORFs) and their localization;
+> * open reading frames (ORFs) and their localization;
 * gene structure;
 * coding regions;
 * regulatory motifs.
 
 
-&lt;img src="img/prokaryote_gene.png" width="50%" style="display: block; margin: auto;" /&gt;
+<img src="img/prokaryote_gene.png" width="50%" style="display: block; margin: auto;" />
 .center[
 .small[Prokaryotic and Eukaryotic gene structure. 
 Source: [link](https://www.researchgate.net/publication/266155655_Accurate_RNA-seq_based_de_novo_annotation_using_mGenengs)
@@ -398,12 +371,12 @@ genomic elements, like genes, exons, introns, repeated regions, promoters, etc
 .pull-left[
 * **Similarity**  
 Similarity between sequences 
-&lt;br&gt;&lt;br&gt;
-&lt;img src="img/scorelink.png" width="70%" style="display: block; margin: auto;" /&gt;
+<br><br>
+<img src="img/scorelink.png" width="70%" style="display: block; margin: auto;" />
 ]
 .pull-right[* ***ab-initio* prediction**  
 Genes are predicted based on gene content and signal detection (e.g. start/stop codon; Ribosome Biding Site (RBS), etc.).
-&lt;img src="img/abinitio.png" width="60%" style="display: block; margin: auto;" /&gt;
+<img src="img/abinitio.png" width="60%" style="display: block; margin: auto;" />
 ]
 ???
 In another words, they predict genes by analyzing statistical features of genes first, then separate the coding sequences and non-coding sequences apart.
@@ -411,13 +384,13 @@ In another words, they predict genes by analyzing statistical features of genes 
 ### Examples of *ab-initio* tools: 
 * Glimmer
 * GenemarkHMM 
-&lt;br&gt;
+<br>
 --
-&lt;br&gt;
+<br>
 * .huge[**PRODIGAL**]  
 **PROkaryotic DYnamic programming Gene-finding ALgorithm**
 
-&gt; - Predicts protein-coding genes 
+> - Predicts protein-coding genes 
 - Handles gaps and partial genes
 - Identifies translation initiation sites
 - Handles finished genomes, draft genomes and metagenomes.
@@ -431,7 +404,7 @@ Automatically learns the properties of the genome from the sequence itself, incl
 The process of **attaching biological information to genomic elements** by describing the biochemical and biological function of proteins. 
 
 Possible analysis:
-&gt; - similarity searches;
+> - similarity searches;
 - gene cluster prediction for secondary metabolites;
 - identification of transmembrane domains in protein sequences;
 - finding gene ontology terms;
@@ -453,16 +426,16 @@ Ex: Characterization of hypotetical proteins
 
 * **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
 
-&lt;br&gt;
+<br>
 
-&lt;img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" /&gt;
+<img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" />
 
-&lt;br&gt;
+<br>
 Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
 
 ---
 class: middle
-&lt;img src="img/Homology.png" width="50%" style="display: block; margin: auto;" /&gt;
+<img src="img/Homology.png" width="50%" style="display: block; margin: auto;" />
 .small[
 .center[
 Photo courtesy of:  Popo H. Liao, via Wikimedia Commons. Source: [link](https://bitesizebio.com/26762/homology-terminology-never-say-wrong-word/)
@@ -502,7 +475,7 @@ Queries to this database can be performed through the BLAST web server, also hos
 
 BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.
 
-&lt;img src="img/blast.png" width="55%" style="display: block; margin: auto;" /&gt;
+<img src="img/blast.png" width="55%" style="display: block; margin: auto;" />
 
 ???
 Widely used sequence similarity search tool
@@ -534,7 +507,7 @@ Some databases use genome context information, similarity scores, experimental d
 .panel[.panel-name[PFAM]
 .left-column[
 .center[
-&lt;img src="img/pfam.gif" width="100%" style="display: block; margin: auto;" /&gt;
+<img src="img/pfam.gif" width="100%" style="display: block; margin: auto;" />
 ]
 ]
 .right-column[
@@ -559,7 +532,7 @@ Source: [https://www.ncbi.nlm.nih.gov/research/cog-project/](https://www.ncbi.nl
 
 .panel[.panel-name[Kegg]
 .left-column[
-&lt;img src="img/KEGG_database_logo.gif" width="100%" /&gt;
+<img src="img/KEGG_database_logo.gif" width="100%" />
 ]
 .right-column[
 **Kyoto Encyclopedia of Genes and Genomes**  
@@ -570,7 +543,7 @@ Source: [https://www.genome.jp/kegg/](https://www.genome.jp/kegg/)
 
 .panel[.panel-name[CAZymes]
 .left-column[
-&lt;img src="img/cazymes.png" width="150%" /&gt;
+<img src="img/cazymes.png" width="150%" />
 ]
 .right-column[
 **Carbohydrate-Active enZymes**  
@@ -591,7 +564,7 @@ Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide
 * Prokaryotic Genomes Automatic Annotation Pipeline (via NCBI) 
 * RAST 
 A web server for annotating bacterial and archaeal genomes that provides annotation results in under a day 
-&lt;br&gt;
+<br>
 
 --
 ### Command-line interfaces
@@ -599,7 +572,7 @@ A web server for annotating bacterial and archaeal genomes that provides annotat
 *
 
 ---
-&lt;img src="img/prokka.png" width="10%" align="right"/&gt;
+<img src="img/prokka.png" width="10%" align="right"/>
 ## PROKKA
 **The approach:**  
 Prokka uses a **variety of databases** to **assign function to predicted CDS features**.  
@@ -607,14 +580,14 @@ It takes a hierarchical approach to make it fast.
 
 --
 Proteins coding genes are annotated in two stages:  
-&gt;**1)** **Prodigal** identifies the coordinates of candidate genes, but does not describe the putative gene product.
+>**1)** **Prodigal** identifies the coordinates of candidate genes, but does not describe the putative gene product.
 
 
-&gt;**2.1)** A small, core set of well characterized proteins are first searched using **BLAST+**. This combination of small database and fast search typically completes about 70% of the workload. 
+>**2.1)** A small, core set of well characterized proteins are first searched using **BLAST+**. This combination of small database and fast search typically completes about 70% of the workload. 
 
-&gt;**2.2)** A series of slower but more sensitive HMM databases are searched using **HMMER3**.
+>**2.2)** A series of slower but more sensitive HMM databases are searched using **HMMER3**.
 
-&lt;br&gt;
+<br>
 .small[
 [Tutorial: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html)
 ]
@@ -648,10 +621,10 @@ Beyond this point, it is the goal and the job of a community annotation to gener
 .panel[.panel-name[FASTA]
 
 DNA and protein sequences can be written in FASTA format.
-First line:"&gt;" followed by the description. 
+First line:">" followed by the description. 
 In the second line the sequence starts.
 
-&lt;img src="img/fasta.png" width="50%" style="display: block; margin: auto;" /&gt;
+<img src="img/fasta.png" width="50%" style="display: block; margin: auto;" />
 
 ]
 
@@ -659,7 +632,7 @@ In the second line the sequence starts.
 
 General feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
 
-&lt;img src="img/gff3_format.png" width="70%" style="display: block; margin: auto;" /&gt;
+<img src="img/gff3_format.png" width="70%" style="display: block; margin: auto;" />
 ]
 
 
@@ -667,7 +640,7 @@ General feature format (gene-finding format, generic feature format, GFF) is a f
 
 The genbank sequence format is a rich format for storing sequences and associated annotations.
 
-&lt;img src="img/gb_full.png" width="50%" style="display: block; margin: auto;" /&gt;
+<img src="img/gb_full.png" width="50%" style="display: block; margin: auto;" />
 
 ]
 ]
@@ -679,7 +652,7 @@ Source: https://training.galaxyproject.org/training-material/topics/genome-annot
 
 ---
 
-&lt;img src="img/melange.jpeg" width="100%" /&gt;
+<img src="img/melange.jpeg" width="100%" />
 
 
 Documentation: https://sandragodinhosilva.github.io/MeLanGE/
@@ -693,7 +666,7 @@ background-size: 25% 100%
 class:  middle
 .right-column[
 # Hands-on 2
-&lt;br&gt;
+<br>
 ### .blue[Genome annotation with the]   
 ### .blue[Protein Families Database (PFAM)]
 ]
@@ -710,7 +683,7 @@ http://weizhong-lab.ucsd.edu/webMGA/server/pfam/
 
 ---
 # WebMGA
-&lt;img src="img/webmga_pfam.png" width="55%" style="display: block; margin: auto;" /&gt;
+<img src="img/webmga_pfam.png" width="55%" style="display: block; margin: auto;" />
 [Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
 
 ---
@@ -732,140 +705,15 @@ class: center, middle
 class: goodbye-slide, inverse, middle, left
 
 .pull-left[
-&lt;img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/&gt;
+<img style="border-radius: 50%;" src="https://sandragodinhosilva.netlify.app/authors/admin/avatar_hu27f7dc34c9db8fd2b063f3fba6be9864_589773_270x270_fill_q75_lanczos_center.jpg"/>
 # Thank you!
 
 ### Here's where you can find me...
 
 .right[
-[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) &lt;br&gt;
-[&lt;svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @SandraGodSilva](https://twitter.com/SandraGodSilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg> sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) <br>
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> @SandraGodSilva](https://twitter.com/SandraGodSilva)
 
 .right[Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)]
 ]]
 
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
-"highlightStyle": "github",
-"highlightLines": true,
-"ratio": "16:9",
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>

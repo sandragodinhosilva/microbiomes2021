@@ -128,10 +128,40 @@ class: center, middle
 [`r icons::fontawesome("link")` sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
 [`r icons::fontawesome("twitter")` @SandraGodSilva](https://twitter.com/SandraGodSilva)
 ---
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
+
+
+class: middle
+.right-column[
+# Table of contents
+* **Part 1:** [Bioinformatics: what are the tools available?](#part1)
+
+* **Hands-on 1:** [Get started with R and RStudio](#handson1)
+
+* **Part2:** [Bioinformatic tools for Genome Annotation](#part2)
+
+* **Hands-on 2:** [Annotate genomes with the Pfam database](#handson2)
+]
+---
+
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
+
+name: part1
+
+class:  middle
+.right-column[
+# Part 2
+### .blue[Bioinformatics: what are the tools available?]
+]
+---
 class:  center, middle
 
 # Bioinformatics
-
+<br>
 Bioinformatics is the science that conjugates  
 **biology** + **statistics** + **computer sciences**  
 to study biological issues through the analysis of data.
@@ -264,7 +294,7 @@ knitr::include_graphics("img/Biopython_logo.svg")
 .right-column[
 ## Biopython
 * Collection of .blue[Python] modules that provide functions to deal with DNA, RNA & protein sequence operations;
-* It has sibling projects like BioPerl, BioJava and BioRuby.
+* It has sibling projects like BioPerl, BioJava and BioRuby.  
 Source: [https://biopython.org/](https://biopython.org)
 ]
 ]
@@ -331,14 +361,37 @@ knitr::include_graphics("img/programming_languages.jpeg")
 
 
 ---
-class: inverse, center, middle
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
 
-## Break
-### **Any questions?**
+name: handson1
+
+class:  middle
+.right-column[
+# Hands-on 1
+### .blue[Introduction to R and RStudio]
+**Link:** [Getting started with R](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
+]
 ---
+
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
+
+name: part2
+
+class:  middle
+.right-column[
+# Part 2
+### .blue[Genome Annotation]
+]
+---
+
+
 # Genome Annotation
 
-Genome anno[tation is the process of attaching biological information to sequences.  
+GThe process of attaching biological information to sequences.  
 
 <br>
 **Consists of two main steps:** 
@@ -399,7 +452,7 @@ Source: [link](https://www.researchgate.net/publication/266155655_Accurate_RNA-s
 identifying the positions of structural
 genomic elements, like genes, exons, introns, repeated regions, promoters, etc
 ---
-# Structural Annotation: Methods
+## Structural Annotation: Methods
 .pull-left[
 * **Similarity**  
 Similarity between sequences 
@@ -712,6 +765,22 @@ knitr::include_graphics("img/melange.jpeg")
 
 
 Documentation: https://sandragodinhosilva.github.io/MeLanGE/
+
+
+---
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
+
+class:  middle
+.right-column[
+# Hands-on 2
+<br>
+### .blue[Genome annotation with the]   
+### .blue[Protein Families Database (PFAM)]
+]
+
+
 ---
 # Your turn!
 
