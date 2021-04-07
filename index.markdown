@@ -1,5 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
@@ -11,10 +10,11 @@ April 2021
 Author: Sandra Godinho Silva  
 sandragodinhosilva@tecnico.ulisboa.pt 
 
+***
+
 # Outline:
 
-* <a href='pages/R_setup.html'> **Hands-on 0: R Setup**
-
+* <a href='pages/R_setup.html'> **Hands-on 0:** R Setup
 
 ### <a href='pages/1_Intro.html'> Day 1: Bioinformatic tools for Genome Annotation
 
@@ -27,11 +27,11 @@ sandragodinhosilva@tecnico.ulisboa.pt
 * **Hands-on 2:** Annotate genomes with the Pfam database
 
 
-### <a href='pages/SM-BGCs.html'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
+### <a href='pages/2021_Microbiomes.pdf'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
 
 * Study case: the marine bacterial *Aquimarina* genus 
 
-* <a href='pages/2021_Microbiomes.pdf'> **Hands-on 3:** Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
+*  **Hands-on 3:** Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
 
 ***
 ### Sources
