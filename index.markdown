@@ -13,7 +13,7 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 # Outline:
 
-### <a href='pages/R_setup.html'> Hands-on 0: R Setup
+* <a href='pages/R_setup.html'> **Hands-on 0: R Setup**
 
 
 ### <a href='pages/1_Intro.html'> Day 1: Bioinformatic tools for Genome Annotation
@@ -31,10 +31,10 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 * Study case: the marine bacterial *Aquimarina* genus 
 
-* <a href='pages/2021_Microbiomes.pdf'> **Hands-on 3: Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE**
+* <a href='pages/2021_Microbiomes.pdf'> **Hands-on 3:** Metagenome mining of SM-BGCs using antiSMASH and BiG-SCAPE
 
 ***
 ### Sources
-The construction of the learning materials for this was inspired in the following sources:
+The construction of these learning materials was inspired in the following sources:
 * [An Introductory Undergraduate course in Bioinformatics](https://rsh249.github.io/bioinformatics/) by [Prof. Rob Harbert](https://github.com/rsh249)  
 * [R Carpentries](https://carpentries.org/)
