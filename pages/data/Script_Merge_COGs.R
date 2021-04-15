@@ -13,7 +13,7 @@
 
 # Install necessary package:
 # If the package dplyr is already installed, comment next line (add #):
-install.packages('dplyr', repos = 'https://cloud.r-project.org')
+#install.packages('dplyr', repos = 'https://cloud.r-project.org')
 
 # Load package:
 library("dplyr")
@@ -112,5 +112,5 @@ COG_final <- COG_final %>%
   select(Accession, everything())
 
 ##############################################################################
-# Creates Tab separated file
-write.table(COG_final, "cog_table.txt", sep="\t", row.names = FALSE, quote=FALSE)
+# Creates CSV (comma separated value) file
+write.csv(COG_final, "cog_table.csv", row.names = FALSE, quote=TRUE)

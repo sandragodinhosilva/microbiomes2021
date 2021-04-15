@@ -8,6 +8,6 @@
 
 # Load necessary packages
 library("dplyr")
-        
+
 ################################################################################
 # Exercise 1: Open "cog_output.file"

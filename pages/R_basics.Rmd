@@ -52,7 +52,7 @@ you may leave the default, which is your home directory "~".
 
 3. Finally click <kbd>Create Project</kbd>. In the "Files" tab of your output
 pane (more about the RStudio layout in a moment), you should see an RStudio
- project file, **Tutorial_r.Rproj**. All RStudio projects end with the
+ project file, **GenomeAnnotation.Rproj**. All RStudio projects end with the
  "**.Rproj**" file extension.
  
  
@@ -64,14 +64,13 @@ Click the <kbd>File</kbd> menu and select <kbd>New File</kbd> and then
 <kbd>R Script</kbd>. Before we go any further, save your script by clicking the
 save/disk icon that is in the bar above the first line in the script editor, or
 click the <kbd>File</kbd> menu and select <kbd>save</kbd>. In the "Save File"
-window that opens, name your file **"Tutorial_r_basics"**. The new script
-**Tutorial_r_basics.R** should appear under "files" in the output pane. By
+window that opens, name your file with some informative name such as **"COGAnnotation**. The new script
+**COGAnnotation.R** should appear under "files" in the output pane. By
 convention, R scripts end with the file extension **.R**.
 
 ## Overview and customization of the RStudio layout
 
-There are the major windows (or panes) of the RStudio
-environment:
+There are the major windows (or panes) of the RStudio environment:
 
 <img src="img/rstudio_session_4pane_layout.png" alt="rstudio default session" style="width: 1000px;"/>
 
@@ -94,8 +93,7 @@ environment:
 
 
 ## Getting to work with R: navigating directories
-Now we can get to work using some commands. We will write, execute, and save the commands we
-learn in our **Tutorial_r_basics.R** script that is loaded in the Source pane.
+Now we can get to work using some commands.
 First, lets see what directory we are in. To do so, type the following command
 into the script:
 
@@ -172,16 +170,6 @@ function:
 ```{r}
 round(3.14159, digits = 2)
 ```
-
-Or, R accepts what we call "positional arguments", if you pass a function
-arguments separated by commas, R assumes that they are in the order you saw
-when we used `args()`. In the case below that means that `x` is 3.14159 and
-digits is 2.
-
-```{r}
-round(3.14159, 2)
-```
-
 
 # R basics
 ## Creating objects in R
@@ -519,68 +507,23 @@ snp_data$position[1]
 A substantial amount of the data we work with in genomics will be tabular data,
 this is data arranged in rows and columns - also known as spreadsheets.
 
-###################
-
-We can now get started with the R command prompt open.
-
-```{r}
-x=2
-print(x) ##Print method
-class(x)
-
-x=seq(1:10) # Create a vector
-class(x)
-print(x)
-print(x[1]) # First index of vector
-print(x[1:5])
-
-y = matrix(nrow=5, ncol=5) # create a 5x5 matrix
-print(y)
-class(y)
-y[1,1] = 5
-print(y)
-y[,1]= x[1:5]
-print(y)
-class(y[,1])
-
-y = cbind(seq(1:5), 
-seq(1:5),
-seq(1:5),
-seq(1:5),
-seq(1:5))
-
-class(y)
-
-
-```
-
-
 ## Read table/tab/csv/txt text files:
 read.table()
 read.csv()
 read.delim()
 
 ```{r}
-cars = read.table('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv', header=T, sep = ',') # Read a comma separated values file
-head(cars)
+cog_table = read.csv("https://raw.githubusercontent.com/sandragodinhosilva/sandragodinhosilva/microbiomes2021/tree/main/pages/data/cog_table.csv")
 
-cars = read.csv('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv')
-
-cars = read.delim('https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/data/mtcars.csv', sep=',')
-
-
+head(cog_table)
 ```
 
 ## Write Files
 
 ```{r}
-write.table(cars, file='mtcars.tab')
-write.csv(cars, file='mtcars.csv')
+write.csv(cars, file='cog_table.csv')
 ```
 
-Where are these files now?
-
-# More resources
 
 ### More about R
 
