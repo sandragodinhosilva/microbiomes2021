@@ -336,7 +336,7 @@ class:  middle
 
 # Genome Annotation
 
-GThe process of attaching biological information to sequences.  
+The process of attaching biological information to sequences.  
 
 &lt;br&gt;
 **Consists of two main steps:** 
@@ -352,15 +352,12 @@ Source: [link](https://zhiganglu.com/post/annotation-pipeline-tools/)]
 ???
 Gene annotation is the plotting of genes onto genome assemblies, and indexing their genomic coordinates.
 DNA annotation or genome annotation is the process of identifying the locations of genes and all of the coding regions in a genome and determining what those genes do.
----
-## Key points:
+
 * Once a genome is sequenced, all of the sequences must be analyzed to understand what their meaning.
 
 * Critical to annotation is the identification of the genes in a genome, the structure of the genes, and the proteins they encode.
 
 * Once a genome is annotated, further work is done to understand how all the annotated regions interact with each other.
-
-???
 
 
  
@@ -448,45 +445,7 @@ Ex: Characterization of hypotetical proteins
 
 .cite[Garbage in, garbage out!]
 
----
-### Some considerations about Homologs, Orthologs, and Paralogs
 
-* **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
-
-&lt;br&gt;
-
-&lt;img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-&lt;br&gt;
-Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
-
----
-class: middle
-&lt;img src="img/Homology.png" width="50%" style="display: block; margin: auto;" /&gt;
-.small[
-.center[
-Photo courtesy of:  Popo H. Liao, via Wikimedia Commons. Source: [link](https://bitesizebio.com/26762/homology-terminology-never-say-wrong-word/)
-]
-]
----
-class: middle
-While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
-* **Orthologous** are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
-
-* If a gene is duplicated in a species, the resulting duplicated genes are **paralogs** of each other, even though over time they might become different in sequence composition and function.
-
-
-???
-Homology forms the basis of organization for comparative biology.
-A homologous trait is often called a homolog (also spelled homologue). In genetics, the term “homolog” is used both to refer to a homologous protein and to the gene ( DNA sequence) encoding it. 
-
-As with anatomical structures, homology between protein or DNA sequences is defined in terms of shared ancestry. 
-
-Two segments of DNA can have shared ancestry because of either:
-* a speciation event (orthologs) 
-* duplication event (paralogs). 
-
-Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
 
 ---
 ## Databases
@@ -588,15 +547,16 @@ Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide
 ## Genome annotation tools
 
 ### Online annotation servers 
-* Prokaryotic Genomes Automatic Annotation Pipeline (via NCBI) 
-* RAST 
+* **Prokaryotic Genomes Automatic Annotation Pipeline** (via NCBI) 
+
+* **RAST**  
 A web server for annotating bacterial and archaeal genomes that provides annotation results in under a day 
 &lt;br&gt;
 
 --
 ### Command-line interfaces
 * Prokka
-*
+
 
 ---
 &lt;img src="img/prokka.png" width="10%" align="right"/&gt;
@@ -676,6 +636,45 @@ The genbank sequence format is a rich format for storing sequences and associate
 ???
 Source: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html
 
+---
+### Some considerations about Homologs, Orthologs, and Paralogs
+
+* **Homologous gene** (homolog): **a gene inherited in two species by a common ancestor**.  
+
+&lt;br&gt;
+
+&lt;img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
+
+---
+class: middle
+&lt;img src="img/Homology.png" width="50%" style="display: block; margin: auto;" /&gt;
+.small[
+.center[
+Photo courtesy of:  Popo H. Liao, via Wikimedia Commons. Source: [link](https://bitesizebio.com/26762/homology-terminology-never-say-wrong-word/)
+]
+]
+---
+class: middle
+While homologous genes can be similar in sequence, similar sequences are not necessarily homologous.
+* **Orthologous** are homologous genes where a gene diverges after a speciation event, but the gene and its main function are conserved.
+
+* If a gene is duplicated in a species, the resulting duplicated genes are **paralogs** of each other, even though over time they might become different in sequence composition and function.
+
+
+???
+Homology forms the basis of organization for comparative biology.
+A homologous trait is often called a homolog (also spelled homologue). In genetics, the term “homolog” is used both to refer to a homologous protein and to the gene ( DNA sequence) encoding it. 
+
+As with anatomical structures, homology between protein or DNA sequences is defined in terms of shared ancestry. 
+
+Two segments of DNA can have shared ancestry because of either:
+* a speciation event (orthologs) 
+* duplication event (paralogs). 
+
+Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
 
 ---
 

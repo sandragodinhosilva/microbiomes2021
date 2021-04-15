@@ -20,14 +20,14 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 * **Part 1:** Bioinformatics: what are the tools available?
 
-* <a href='pages/R_setup.html'> **Hands-on 1:** Get started with R and RStudio
+* <a href='pages/R_basics.html'> **Hands-on 1:** Get started with R and RStudio
 
 * **Part2:** Bioinformatic tools for Genome Annotation
 
 * **Hands-on 2:** Annotate genomes with the Pfam database
 
 
-### <a href='pages/2021_Microbiomes.pdf'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
+### <a href='pages/2021_SecondaryMetabolites.pdf'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
 
 * Study case: the marine bacterial *Aquimarina* genus 
 
