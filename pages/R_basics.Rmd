@@ -344,7 +344,6 @@ Let's create a few more vectors to play around with:
 
 ```{r, purl = FALSE}
 # Some interesting human SNPs
-# while accuracy is important, typos in the data won't hurt you here
 
 snps <- c('rs53576', 'rs1815739', 'rs6152', 'rs1799971')
 snp_chromosomes <- c('3', '11', 'X', '6')
@@ -459,7 +458,7 @@ In the square brackets you place the name of the vector followed by the comparis
 
 ## Lists
 
-Lists are quite useful in R, but we won't be using them in the genomics lessons.
+Lists are quite useful in R, but we won't be using them today.
 That said, you may come across lists in the way that some bioinformatics
 programs may store and/or return data to you. One of the key attributes of a
 list is that, unlike a vector, a list may contain data of more than one mode.
@@ -504,24 +503,30 @@ snp_data$position[1]
 
 ## Working with spreadsheets (tabular data)
 
-A substantial amount of the data we work with in genomics will be tabular data,
+A substantial amount of the data we work with in bioinformatics will be tabular data,
 this is data arranged in rows and columns - also known as spreadsheets.
 
+There are several ways of importing tabular data.
 ## Read table/tab/csv/txt text files:
 read.table()
 read.csv()
 read.delim()
 
+Today we'll read a comma-separated value file with some COG annotation:
 ```{r}
 cog_table = read.csv("https://raw.githubusercontent.com/sandragodinhosilva/sandragodinhosilva/microbiomes2021/tree/main/pages/data/cog_table.csv")
+```
 
+To see the first 5 rows:
+```{r}
 head(cog_table)
 ```
 
+Writing files in R is as easy as it is to read files:
 ## Write Files
 
 ```{r}
-write.csv(cars, file='cog_table.csv')
+write.csv(cars, file='cog_table2.csv')
 ```
 
 
