@@ -138,11 +138,13 @@ class: middle
 # Table of contents
 * **Part 1:** [Bioinformatics: what are the tools available?](#part1)
 
-* **Hands-on 1:** [Get started with R and RStudio](#handson1)
-
 * **Part2:** [Bioinformatic tools for Genome Annotation](#part2)
 
-* **Hands-on 2:** [Annotate genomes with the Pfam database](#handson2)
+* **Hands-on 1:** [Annotate genomes with the COG database](#handson1)
+
+* **Hands-on 2:** [Join COG annotation with a R script](#handson2)
+* **Hands-on 2.1:** [R Setup](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_setup.html)
+* **Hands-on 2.2:** [Get started with R and RStudio](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
 ]
 ---
 
