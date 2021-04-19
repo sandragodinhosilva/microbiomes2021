@@ -18,12 +18,11 @@ sandragodinhosilva@tecnico.ulisboa.pt
 
 * **Part 1:** Bioinformatics: what are the tools available?
 
-* **Part2:** Bioinformatic tools for Genome Annotation
+* **Part 2:** Bioinformatic tools for Genome Annotation
 
 * **Hands-on 2:** Join COG annotation with a R script
-* <a href='pages/R_setup.html'> **Hands-on 2.1:** R Setup
-* <a href='pages/R_basics.html'> **Hands-on 2.2:** Get started with R and RStudio
-
+* <a href='pages/R_setup.html'> **2.1:** R Setup
+* <a href='pages/R_basics.html'> **2.2:** Get started with R and RStudio
 
 ### <a href='pages/2021_SecondaryMetabolites.pdf'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
 
