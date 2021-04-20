@@ -107,11 +107,15 @@ class: middle
 # Table of contents
 * **Part 1:** [Bioinformatics: what are the tools available?](#part1)
 
-* **Hands-on 1:** [Get started with R and RStudio](#handson1)
-
 * **Part2:** [Bioinformatic tools for Genome Annotation](#part2)
 
-* **Hands-on 2:** [Annotate genomes with the Pfam database](#handson2)
+* **Hands-on 1:** [Annotate genomes with the COG database](#handson1)
+
+&gt; * **1.1:** [Rast-WebMGA workflow](#handson1)
+
+&gt; * **1.2:** [Join COG annotation with a R script](#handson2)
+&gt;&gt; * **1.2.1:** [R Setup](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_setup.html)
+&gt;&gt; * **1.2.2:** [Get started with R and RStudio](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
 ]
 ---
 
@@ -123,7 +127,7 @@ name: part1
 
 class:  middle
 .right-column[
-# Part 2
+# Part 1
 ### .blue[Bioinformatics: what are the tools available?]
 ]
 ---
@@ -299,27 +303,11 @@ Source: [link]()
 ]
 
 ---
-
 # And much more!
 
 &lt;img src="img/programming_languages.jpeg" width="60%" style="display: block; margin: auto;" /&gt;
 
-
 ---
-background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
-background-position: 0% 75%
-background-size: 25% 100%
-
-name: handson1
-
-class:  middle
-.right-column[
-# Hands-on 1
-### .blue[Introduction to R and RStudio]
-**Link:** [Getting started with R](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
-]
----
-
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
@@ -332,8 +320,6 @@ class:  middle
 ### .blue[Bioinformatic tools for Genome Annotation]
 ]
 ---
-
-
 # Genome Annotation
 
 The process of attaching biological information to sequences.  
@@ -677,11 +663,78 @@ Two segments of DNA can have shared ancestry because of either:
 Homology among proteins or DNA is often incorrectly concluded on the basis of sequence similarity. The terms “percent homology” and “sequence similarity” are often used interchangeably. As with anatomical structures, high sequence similarity might occur because of convergent evolution, or, as with shorter sequences, because of chance. Such sequences are similar, but not homologous. Sequence regions that are homologous are also called conserved. This is not to be confused with conservation in amino acid sequences in which the amino acid at a specific position has been substituted with a different one with functionally equivalent physicochemical properties. One can, however, refer to partial homology where a fraction of the sequences compared (are presumed to) share descent, while the rest does not. For example, partial homology may result from a gene fusion event.
 
 ---
+background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
+background-position: 0% 75%
+background-size: 25% 100%
 
-&lt;img src="img/melange.jpeg" width="100%" /&gt;
+name: handson1
+
+class:  middle
+.right-column[
+# Hands-on 1
+&lt;br&gt;
+### .blue[Genome annotation with the]   
+### .blue[Clusters of Orthologous Genes (COG) Database]
+]
+
+---
+# Worflow
+
+**Genome annotation with Clusters of Orthologous Genes (COG) Databa**
+
+**K-Base**  
+1) Download bins from K-Base in fasta format
+
+**Rast**  
+2) Upload bins in Rast  
+3) Perform gene annotation  
+4) Download fasta aminoacid files  
+
+**WebMGA**  
+5) Upload downloaded bins in WebMGA   
+6) Perform COG annotation  
+7) Download COG annotation from WebMGA  
+
+**R**  
+8) Join COG annotation into single table - R script
+
+---
+## K-Base  
+&lt;br&gt;
+--
+1) Download bins from K-Base in fasta format
 
 
-Documentation: https://sandragodinhosilva.github.io/MeLanGE/
+---
+## Rast  
+&lt;br&gt;
+--
+2) Upload bins in Rast  
+&lt;br&gt;
+--
+3) Perform gene annotation   
+&lt;br&gt;
+--
+4) Download fasta aminoacid files  
+
+---
+## WebMGA  
+
+--
+5) Upload downloaded bins in WebMGA    
+&lt;br&gt;
+--
+6) Perform COG annotation   
+&lt;br&gt;
+--
+7) Download COG annotation from WebMGA   
+&lt;br&gt;
+---
+
+# WebMGA
+&lt;img src="img/webmga_pfam.png" width="55%" style="display: block; margin: auto;" /&gt;
+[Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
+
 
 
 ---
@@ -689,29 +742,20 @@ background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
 
-name: handson2
+name: handson1.2
 
 class:  middle
 .right-column[
-# Hands-on 2
-&lt;br&gt;
-### .blue[Genome annotation with the]   
-### .blue[Protein Families Database (PFAM)]
+# Hands-on 1.2
+### .blue[Install R and RStudio]  
+**Link:** [R setup](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_setup.html)
+
+
+
+### .blue[Introduction to R and RStudio]
+**Link:** [Getting started with R](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
 ]
 
----
-# Your turn!
-
-Genome annotation with Protein Families Database (PFAM)
-
-Tools: WebMGA + R 
-
-http://weizhong-lab.ucsd.edu/webMGA/server/pfam/
-
----
-# WebMGA
-&lt;img src="img/webmga_pfam.png" width="55%" style="display: block; margin: auto;" /&gt;
-[Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
 
 ---
 ## R script to join annotations from different MAGs
