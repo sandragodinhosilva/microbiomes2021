@@ -830,29 +830,33 @@ class:  middle
 8) Join COG annotation into single table - R script
 
 ---
-## K-Base  
+class: middle
+<img src="img/KBase-logo.png" width="30%" align="right"/>
+# K-Base
 <br>
---
+
 1) Download bins from K-Base in fasta format
 
 
 ---
-## Rast  
+class: middle
+<img src="img/rast.png" width="40%" align="right"/>
+# Rast  
+
+2) Upload bins (fasta files) in Rast  
 <br>
 --
-2) Upload bins in Rast  
-<br>
---
-3) Perform gene annotation   
+3) Perform genome annotation   
 <br>
 --
 4) Download fasta aminoacid files  
 
 ---
+class: middle
+<img src="img/webmga_pfam.png" width="50%" align="right"/>
 ## WebMGA  
 
---
-5) Upload downloaded bins in WebMGA    
+5) Upload genomes (fasta aminoacid files) in WebMGA    
 <br>
 --
 6) Perform COG annotation   
@@ -860,12 +864,7 @@ class:  middle
 --
 7) Download COG annotation from WebMGA   
 <br>
----
 
-# WebMGA
-```{r webmga, echo=FALSE, out.width="55%", fig.align="center"}
-knitr::include_graphics("img/webmga_pfam.png")
-```
 [Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
 
 
