@@ -22,69 +22,11 @@ output:
       ratio: 16:9
       countIncrementalSlides: false
 ---
-```{r meta, echo=FALSE}
-library(metathis)
-meta() %>%
-  meta_general(
-    description = "Intro",
-    generator = "xaringan and remark.js"
-  ) %>% 
-  meta_name("github-repo" = "sandragodinhosilva/microbiomes2021") %>% 
-  meta_social(
-    title = "Intro",
-    url = "https://sandragodinhosilva/microbiomes2021/slides/day-01-basics.html#1",
-    image = "https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/slides/day-01-cover-image.png",
-    image_alt = "Title slide",
-    og_type = "website",
-    og_author = "Sandra Godinho Silva",
-    twitter_card_type = "summary_large_image",
-    twitter_creator = "@SandraGodSilva"
-  )
-```
 
-```{r set-theme, include=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color      = "#0F4C81", # pantone classic blue
-  secondary_color    = "#B6CADA", # pantone baby blue
-  header_font_google = google_font("Raleway"),
-  text_font_google   = google_font("Raleway", "300", "300i"),
-  code_font_google   = google_font("Source Code Pro"),
-  text_font_size     = "25px"
-)
-```
 
-```{r setup, include = FALSE}
-options(htmltools.dir.version = FALSE)
-library(knitr)
-library(broom)
-library(icons)
-library(scales)
-library(openintro)
-library(jsonlite)
-library(tidyverse)
-library(xaringanExtra)
-library(nhsrtheme)
-library(NHSRdatasets)
-# set default options
-opts_chunk$set(echo=FALSE,
-               collapse = TRUE,
-               fig.width = 7.252,
-               fig.height = 4,
-               dpi = 300)
-# set engines
-knitr::knit_engines$set("markdown")
-xaringanExtra::use_tile_view()
-xaringanExtra::use_panelset()
-xaringanExtra::use_clipboard()
-xaringanExtra::use_webcam()
-xaringanExtra::use_broadcast()
-xaringanExtra::use_share_again()
-xaringanExtra::style_share_again(
-  share_buttons = c("twitter", "linkedin", "pocket")
-)
 
-```
+
+
 
 class: title-slide,center,middle, top
 background-image: url(img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg)
@@ -92,14 +34,14 @@ background-position:  75% 75%
 background-size: cover
 
 
-# `r rmarkdown::metadata$title`
+# Bioinformatic tools for Genome annotation
 <br>
 
-#### `r rmarkdown::metadata$subtitle`
+#### Course: Microbiomes (2021)
 <br>
-**`r rmarkdown::metadata$author`**  
-`r rmarkdown::metadata$institute`  
-`r rmarkdown::metadata$date`  
+**Sandra Godinho Silva**  
+Instituto Superior Técnico  
+14/04/2021  
 
 .center[
 .small[
@@ -121,12 +63,12 @@ class: center, middle
 
 .fade[Instituto Superior Técnico<br>Lisbon, Portugal]
 
-[`r icons::fontawesome("orcid")` Orcid](https://orcid.org/0000-0002-4763-0662)
-[`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @sandragodinhosilva](https://github.com/sandragodinhosilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M294.75 188.19h-45.92V342h47.47c67.62 0 83.12-51.34 83.12-76.91 0-41.64-26.54-76.9-84.67-76.9zM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm-80.79 360.76h-29.84v-207.5h29.84zm-14.92-231.14a19.57 19.57 0 1 1 19.57-19.57 19.64 19.64 0 0 1-19.57 19.57zM300 369h-81V161.26h80.6c76.73 0 110.44 54.83 110.44 103.85C410 318.39 368.38 369 300 369z"></path></svg> Orcid](https://orcid.org/0000-0002-4763-0662)
+[<svg viewBox="0 0 496 512" style="fill:currentColor;position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> @sandragodinhosilva](https://github.com/sandragodinhosilva)
 
 ???
-[`r icons::fontawesome("link")` sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
-[`r icons::fontawesome("twitter")` @SandraGodSilva](https://twitter.com/SandraGodSilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg> sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> @SandraGodSilva](https://twitter.com/SandraGodSilva)
 ---
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
@@ -188,9 +130,7 @@ are creating a significant bottleneck:
 ---
 .center[**How to thoroughly analyze this massive amount of data?**]
 
-```{r bigdata, echo=FALSE, out.width="70%", fig.align="center"}
-knitr::include_graphics("img/bigdata_lifesciences.png")
-```
+<img src="img/bigdata_lifesciences.png" width="70%" style="display: block; margin: auto;" />
 .center[
 .small[
 [Stephens et a. PLoS Biology, 2015](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002195)
@@ -198,9 +138,7 @@ knitr::include_graphics("img/bigdata_lifesciences.png")
 
 ---
 ## Integrative OMICS
-```{r integrative, echo=FALSE, out.width="80%", fig.align="center"}
-knitr::include_graphics("img/integrative_omics.png")
-```
+<img src="img/integrative_omics.png" width="80%" style="display: block; margin: auto;" />
 .center[
 .small[[Yugi et al., Trends Biotechnol. 2016 Apr; 34(4):276–290](https://doi.org/10.1016/j.tibtech.2015.12.013)]
 ]
@@ -230,9 +168,7 @@ Allow **accessible**, **reproducible** and **transparent computational research.
 .panel[.panel-name[KBase]
 
 .left-column[
-```{r kbase, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/KBase-logo.png")
-```
+<img src="img/KBase-logo.png" width="100%" />
 ]
 .right-column[The U.S. Department of Energy Systems Biology Knowledgebase [KBase](https://www.kbase.us/)  is an open-source software and data platform designed to meet the grand challenge of systems biology — predicting and designing biological function from the biomolecular (small scale) to the ecological (large scale).  
 [Kbase: https://www.kbase.us/](https://www.kbase.us/)
@@ -241,9 +177,7 @@ knitr::include_graphics("img/KBase-logo.png")
 
 .panel[.panel-name[Galaxy]
 .left-column[
-```{r galaxy, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/galaxy.png")
-```
+<img src="img/galaxy.png" width="100%" />
 ]
 .right-column[Galaxy provides a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user. 
 [Galaxy project - Europe: https://usegalaxy.eu/](https://usegalaxy.eu/)
@@ -259,26 +193,20 @@ name: scripting
 
 .panel[.panel-name[Bash]
 .left-column[
-```{r bash, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/bash.png")
-```
+<img src="img/bash.png" width="100%" />
 ]
 .right-column[
 * Default login shell for most Linux distributions;
 * Simple bash scripts are really useful for data manipulation.
 
 <br><br>
-```{r bashex, echo=FALSE, out.width="80%"}
-knitr::include_graphics("img/bash_ex.png")
-```
+<img src="img/bash_ex.png" width="80%" />
 ]
 ]
 
 .panel[.panel-name[Python (1/2)]
 .left-column[
-```{r python, echo=FALSE, out.width="80%"}
-knitr::include_graphics("img/python.png")
-```
+<img src="img/python.png" width="80%" />
 ]
 .right-column[
 ## Python
@@ -291,9 +219,7 @@ Source: [https://www.python.org/](https://www.python.org)]
 .panel[.panel-name[Python (2/2)]
 
 .left-column[
-```{r biopython, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/Biopython_logo.svg")
-```
+<img src="img/Biopython_logo.svg" width="100%" />
 ]
 .right-column[
 ## Biopython
@@ -305,9 +231,7 @@ Source: [https://biopython.org/](https://biopython.org)
 
 .panel[.panel-name[R (1/3)]
 .left-column[
-```{r rlogo, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/Rlogo.png")
-```
+<img src="img/Rlogo.png" width="100%" />
 ]
 .right-column[
 ## R
@@ -333,16 +257,12 @@ ggplot2 + gganimate
 Source: [link]()
 ]
 .right-column[
-```{r gif, echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("gif/gganimate.gif")
-```
+<img src="gif/gganimate.gif" width="50%" style="display: block; margin: auto;" />
 ]
 ]
 .panel[.panel-name[R (4/4)]
 .pull-left[
-```{r rstudio, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/rstudio.png")
-```
+<img src="img/rstudio.png" width="100%" />
 ]
 .pull-right[
 ## R Studio
@@ -358,9 +278,7 @@ knitr::include_graphics("img/rstudio.png")
 ---
 # And much more!
 
-```{r programming, echo=FALSE, out.width="60%",fig.align = "center"}
-knitr::include_graphics("img/programming_languages.jpeg")
-```
+<img src="img/programming_languages.jpeg" width="60%" style="display: block; margin: auto;" />
 
 ---
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
@@ -386,9 +304,7 @@ The process of attaching biological information to sequences.
 - .blue[functional annotation]: attaching biological information to these elements. 
 
 <br>
-```{r gn, echo=FALSE, out.width="70%",fig.align = "center"}
-knitr::include_graphics("img/bioinformatics_03_annotation_yourgenome.png")
-```
+<img src="img/bioinformatics_03_annotation_yourgenome.png" width="70%" style="display: block; margin: auto;" />
 .center[.small[
 Source: [link](https://zhiganglu.com/post/annotation-pipeline-tools/)]
 ]
@@ -404,14 +320,13 @@ DNA annotation or genome annotation is the process of identifying the locations 
 
 
 ---
-```{r elixir, echo=FALSE, out.width="100%", fig.align="center"}
-knitr::include_graphics("img/elixir.png")
-```
+<img src="img/elixir.png" width="100%" style="display: block; margin: auto;" />
  
 ---
-```{r genome_annot, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Source: https://www.ssbs.edu.in/genome-annotation.htm"}
-knitr::include_graphics("img/genome-annotation.jpg")
-```
+<div class="figure" style="text-align: center">
+<img src="img/genome-annotation.jpg" alt="Source: https://www.ssbs.edu.in/genome-annotation.htm" width="70%" />
+<p class="caption">Source: https://www.ssbs.edu.in/genome-annotation.htm</p>
+</div>
 
 ???
 Genome Annotation is the process to identify, analyze and interpret the relevant information related to the raw DNA sequences. Genome Annotation helps to extract structural location and biological functions of genes. Haemophilus influenza was the first free-living bacterium to be decoded in 1995 by Dr. Owen White. The assembling of the quality reads with a reference genome or de novo assembly in order to obtain the complete genome is a primary requirement for Genome Annotation.
@@ -425,9 +340,7 @@ The process of identifying genomic elements such as:
 * regulatory motifs.
 
 
-```{r gene_structure, echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("img/prokaryote_gene.png")
-```
+<img src="img/prokaryote_gene.png" width="50%" style="display: block; margin: auto;" />
 .center[
 .small[Prokaryotic and Eukaryotic gene structure. 
 Source: [link](https://www.researchgate.net/publication/266155655_Accurate_RNA-seq_based_de_novo_annotation_using_mGenengs)
@@ -444,15 +357,11 @@ genomic elements, like genes, exons, introns, repeated regions, promoters, etc
 * **Similarity**  
 Similarity between sequences 
 <br><br>
-```{r sim, echo=FALSE, out.width="70%", fig.align="center"}
-knitr::include_graphics("img/scorelink.png")
-```
+<img src="img/scorelink.png" width="70%" style="display: block; margin: auto;" />
 ]
 .pull-right[* ***ab-initio* prediction**  
 Genes are predicted based on gene content and signal detection (e.g. start/stop codon; Ribosome Biding Site (RBS), etc.).
-```{r ab, echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("img/abinitio.png")
-```
+<img src="img/abinitio.png" width="60%" style="display: block; margin: auto;" />
 ]
 ???
 In another words, they predict genes by analyzing statistical features of genes first, then separate the coding sequences and non-coding sequences apart.
@@ -525,9 +434,7 @@ Queries to this database can be performed through the BLAST web server, also hos
 
 BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.
 
-```{r blast, echo=FALSE, out.width="55%", fig.align="center"}
-knitr::include_graphics("img/blast.png")
-```
+<img src="img/blast.png" width="55%" style="display: block; margin: auto;" />
 
 ???
 Widely used sequence similarity search tool
@@ -559,9 +466,7 @@ Some databases use genome context information, similarity scores, experimental d
 .panel[.panel-name[PFAM]
 .left-column[
 .center[
-```{r pfam, echo=FALSE, out.width="100%", fig.align="center"}
-knitr::include_graphics("img/pfam.gif")
-```
+<img src="img/pfam.gif" width="100%" style="display: block; margin: auto;" />
 ]
 ]
 .right-column[
@@ -586,9 +491,7 @@ Source: [https://www.ncbi.nlm.nih.gov/research/cog-project/](https://www.ncbi.nl
 
 .panel[.panel-name[Kegg]
 .left-column[
-```{r kegg, echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/KEGG_database_logo.gif")
-```
+<img src="img/KEGG_database_logo.gif" width="100%" />
 ]
 .right-column[
 **Kyoto Encyclopedia of Genes and Genomes**  
@@ -599,9 +502,7 @@ Source: [https://www.genome.jp/kegg/](https://www.genome.jp/kegg/)
 
 .panel[.panel-name[CAZymes]
 .left-column[
-```{r cazymes, echo=FALSE, out.width="150%"}
-knitr::include_graphics("img/cazymes.png")
-```
+<img src="img/cazymes.png" width="150%" />
 ]
 .right-column[
 **Carbohydrate-Active enZymes**  
@@ -615,9 +516,7 @@ Source: [http://www.cazy.org/](http://www.cazy.org/)
 
 ]
 ---
-```{r performance, echo=FALSE, out.width="150%"}
-knitr::include_graphics("img/performance.png")
-```
+<img src="img/performance.png" width="150%" />
 
 .center[
 .small[Prakash, Tulika & Taylor, Todd. (2012). Functional assignment of metagenomic data: Challenges and applications.
@@ -648,9 +547,7 @@ A web server for annotating bacterial and archaeal genomes that provides annotat
 
 
 .pull-left[
-```{r interpro, echo=FALSE, out.width="70%", fig.align="center"}
-knitr::include_graphics("img/interpro.png")
-```
+<img src="img/interpro.png" width="70%" style="display: block; margin: auto;" />
 ]
 .pull-right[
 ## InterPro
@@ -720,9 +617,7 @@ Beyond this point, it is the goal and the job of a community annotation to gener
 ---
 
 .pull-left[
-```{r rasttk, echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("img/rasttk.png")
-```
+<img src="img/rasttk.png" width="50%" style="display: block; margin: auto;" />
 ]
 .pull-right[
 ## Rast
@@ -763,9 +658,7 @@ DNA and protein sequences can be written in FASTA format.
 First line:">" followed by the description. 
 In the second line the sequence starts.
 
-```{r fasta, echo=FALSE, out.width="50%",fig.align = "center"}
-knitr::include_graphics("img/fasta.png")
-```
+<img src="img/fasta.png" width="50%" style="display: block; margin: auto;" />
 
 ]
 
@@ -773,9 +666,7 @@ knitr::include_graphics("img/fasta.png")
 
 General feature format (gene-finding format, generic feature format, GFF) is a file format used for describing genes and other features of DNA, RNA and protein sequences.
 
-```{r gff3, echo=FALSE, out.width="70%",fig.align = "center"}
-knitr::include_graphics("img/gff3_format.png")
-```
+<img src="img/gff3_format.png" width="70%" style="display: block; margin: auto;" />
 ]
 
 
@@ -783,9 +674,7 @@ knitr::include_graphics("img/gff3_format.png")
 
 The genbank sequence format is a rich format for storing sequences and associated annotations.
 
-```{r genbank, echo=FALSE, out.width="50%",fig.align = "center"}
-knitr::include_graphics("img/gb_full.png")
-```
+<img src="img/gb_full.png" width="50%" style="display: block; margin: auto;" />
 
 ]
 ]
@@ -934,8 +823,8 @@ class:  middle
 ### Here's where you can find me...
 
 .left[
-[`r icons::fontawesome("link")` sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) <br>
-[`r icons::fontawesome("twitter")` @SandraGodSilva](https://twitter.com/SandraGodSilva)
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg> sandragodinhosilva.netlify.com](https://sandragodinhosilva.netlify.com) <br>
+[<svg viewBox="0 0 512 512" style="height:1em;fill:currentColor;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg">  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> @SandraGodSilva](https://twitter.com/SandraGodSilva)
 
 .left[Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan)]
 ]]
@@ -949,18 +838,14 @@ Some considerations about Homologs, Orthologs, and Paralogs
 
 <br>
 
-```{r homologs, echo=FALSE, out.width="70%", fig.align="center"}
-knitr::include_graphics("img/zinc-finger-seq-alignment2.png")
-```
+<img src="img/zinc-finger-seq-alignment2.png" width="70%" style="display: block; margin: auto;" />
 
 <br>
 Homologous DNA: sequence alignment of a homologous protein from two different species.  The “*” represents a conserved amino acid in the two proteins. Figure: [link](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1950/2017/05/31184035/zinc-finger-seq-alignment2.png)
 
 
 class: middle
-```{r homology, echo=FALSE, out.width="50%", fig.align="center"}
-knitr::include_graphics("img/Homology.png")
-```
+<img src="img/Homology.png" width="50%" style="display: block; margin: auto;" />
 .small[
 .center[
 Photo courtesy of:  Popo H. Liao, via Wikimedia Commons. Source: [link](https://bitesizebio.com/26762/homology-terminology-never-say-wrong-word/)

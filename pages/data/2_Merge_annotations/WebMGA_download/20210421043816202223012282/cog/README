@@ -1,0 +1,3 @@
+cog.txt: COG family annotation
+cog-class.txt: COG class annotation
+cog-raw.txt: blast output

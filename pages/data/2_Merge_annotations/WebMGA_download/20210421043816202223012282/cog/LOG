@@ -1,0 +1,5 @@
+Wed Apr 21 04:38:16 PDT 2021
+program	cog
+Seqfile	SampleX_bin.001.fasta
+Parameter set	-evalue 0.001
+
