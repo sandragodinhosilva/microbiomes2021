@@ -3,7 +3,7 @@ title: "Bioinformatic tools for Genome annotation"
 subtitle: "Course: Microbiomes (2021)"
 author: "Sandra Godinho Silva"
 institute: "Instituto Superior Técnico"
-date: "14/04/2021"
+date: "21/04/2021"
 output:
   xaringan::moon_reader:
     seal: false
@@ -793,11 +793,11 @@ knitr::include_graphics("img/gb_full.png")
 Source: https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/genome-annotation/tutorial.html
 
 ---
+name: handson1
+
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
-
-name: handson1
 
 class:  middle
 .right-column[
@@ -808,6 +808,7 @@ class:  middle
 ]
 
 ---
+
 # Worflow
 
 **Genome annotation with Clusters of Orthologous Genes (COG) Databa**
@@ -877,36 +878,41 @@ background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
 
-name: handson1.2
+name: handson2
 
 class:  middle
 .right-column[
 # Hands-on 1.2
-### .blue[Install R and RStudio]  
-**Link:** [R setup](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_setup.html)
+### .blue[1.2.1 Install R and RStudio]  
+**Link:** [1.2.1 R setup](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_setup.html)
 
 
 
-### .blue[Introduction to R and RStudio]
+### .blue[1.2.2 Introduction to R and RStudio]
 **Link:** [Getting started with R](https://sandragodinhosilva.github.io/microbiomes2021/pages/R_basics.html)
+
+
+### .blue[1.2.3 Run R script to join COG annotation files]
 ]
 
-
+]
 ---
+
 ## Workflow to join COG annotation in a single file
 For each bin:  
 >1) Download COG annotation from WebMGA (will be a zipped file)  
 2) Unzip file;  
 3) Look for the .txt file named "cog";  
-4) Rename this file with the bin's name (Ex: cog_SAMPLEX_bin1)
+4) Rename this file with the bin's name (Ex: cog_SAMPLEX_bin1)   
 
+<br>
+--
 For all bins:
 >5) Move all cog annotation files to the same folder;  
 6)  Download R script and move it to this folder;  
 7) Open all cog annotation files and delete the character "#" from the first line;  
 8) Run R script.
 
-<br>
 **Final output:** COG table with annotations for all bins
 
 
@@ -923,8 +929,6 @@ class: center, middle
 background-image: url("img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg")
 background-position: 0% 75%
 background-size: 25% 100%
-
-name: part1
 
 class:  middle
 .right-column[
