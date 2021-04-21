@@ -1,1 +1,0 @@
-#Accession	Name	No_orfs	Coverage	Abundance	Description

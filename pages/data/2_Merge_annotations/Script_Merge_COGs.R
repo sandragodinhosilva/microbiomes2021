@@ -22,7 +22,7 @@ library("dplyr")
 # ATTENTION
 
 # Define directory where WebMGA files are (substitute with your path):
-setwd("C:/Users/Sandra/OneDrive - Universidade de Lisboa/PhD_Related/6_Microbiomes_teaching/microbiomes2021/pages/data")
+setwd("C:/Users/Sandra/OneDrive - Universidade de Lisboa/PhD_Related/6_Microbiomes_teaching/microbiomes2021/pages/data/2_Merge_annotations")
 
 # Check if in correct directory:
 getwd()

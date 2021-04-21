@@ -903,7 +903,8 @@ For each bin:
 For all bins:
 >5) Move all cog annotation files to the same folder;  
 6)  Download R script and move it to this folder;  
-7) Run R script.
+7) Open all cog annotation files and delete the character "#" from the first line;  
+8) Run R script.
 
 <br>
 **Final output:** COG table with annotations for all bins
