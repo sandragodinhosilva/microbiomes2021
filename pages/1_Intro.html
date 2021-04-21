@@ -207,7 +207,7 @@ Allow **accessible**, **reproducible** and **transparent computational research.
 &lt;img src="img/galaxy.png" width="100%" /&gt;
 ]
 .right-column[Galaxy provides a system that enables researchers without informatics expertise to perform computational analyses through the web. A user interacts with Galaxy through the web by uploading and analyzing the data. Galaxy interacts with underlying computational infrastructure (servers that run the analyses and disks that store the data) without exposing it to the user. 
-[Galaxy project: https://galaxyproject.org/](https://galaxyproject.org/)
+[Galaxy project - Europe: https://usegalaxy.eu/](https://usegalaxy.eu/)
 ]]
 ]
 
@@ -535,9 +535,9 @@ Source: [https://www.genome.jp/kegg/](https://www.genome.jp/kegg/)
 **Carbohydrate-Active enZymes**  
 Enzymes involved in the synthesis, metabolism, and transport of carbohydrates.  
 CAZymes are organized in families in the continuously updated database [CAZy](www.cazy.org).  
-Source: [http://www.cazy.org/](http://www.cazy.org/)
-???
-Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide lyases (PLs), carbohydrate esterases (CEs) and carbohydrate binding modules (CBMs). 
+
+Includes: glycoside hydrolases (GHs), glycosyltransferases (GTs), polysaccharide lyases (PLs), carbohydrate esterases (CEs) and carbohydrate binding modules (CBMs).  
+Source: [http://www.cazy.org/](http://www.cazy.org/) 
 ]
 ]
 
@@ -554,9 +554,8 @@ Briefings in bioinformatics. 10.1093/bib/bbs033.
 ]
 
 ---
-## Genome annotation tools
+## Functional assignment workflows
 
-### Functional assignment workflows
 * **Prokaryotic Genomes Automatic Annotation Pipeline** (via NCBI) 
 
 * **InterPro**
@@ -751,34 +750,38 @@ class: middle
 # K-Base
 &lt;br&gt;
 
-1) Download bins from K-Base in fasta format
-
+1) Download bins from K-Base in fasta format;  
+&lt;br&gt;
+[Link](hhttps://narrative.kbase.us/narratives)
 
 ---
 class: middle
 &lt;img src="img/rast.png" width="40%" align="right"/&gt;
 # Rast  
 
-2) Upload bins (fasta files) in Rast  
+2) Upload bins (fasta files) in Rast;  
 &lt;br&gt;
 --
-3) Perform genome annotation   
+3) Perform genome annotation;   
 &lt;br&gt;
 --
-4) Download fasta aminoacid files  
+4) Download fasta aminoacid files;  
+&lt;br&gt;
+
+[Link](https://rast.nmpdr.org/rast.cgi)
 
 ---
 class: middle
 &lt;img src="img/webmga_pfam.png" width="50%" align="right"/&gt;
 ## WebMGA  
 
-5) Upload genomes (fasta aminoacid files) in WebMGA    
+5) Upload genomes (fasta aminoacid files) in WebMGA;    
 &lt;br&gt;
 --
-6) Perform COG annotation   
+6) Perform COG annotation;   
 &lt;br&gt;
 --
-7) Download COG annotation from WebMGA   
+7) Download COG annotation from WebMGA.   
 &lt;br&gt;
 
 [Link](http://weizhong-lab.ucsd.edu/webMGA/server/)
@@ -806,14 +809,24 @@ class:  middle
 
 
 ---
-## R script to join annotations from different MAGs
+## Workflow to join COG annotation in a single file
+For each bin:  
+&gt;1) Download COG annotation from WebMGA (will be a zipped file)  
+2) Unzip file;  
+3) Look for the .txt file named "cog";  
+4) Rename this file with the bin's name (Ex: cog_SAMPLEX_bin1)
+
+For all bins:
+&gt;5) Move all cog annotation files to the same folder;  
+6)  Download R script and move it to this folder;  
+7) Run R script.
+
 &lt;br&gt;
+**Final output:** COG table with annotations for all bins
+
 
 **Download script:** 
-.small[https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/Script_Merge_COGs.R
-]
-&lt;br&gt;
-
+[Script_Merge_COGs.R](https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/Script_Merge_COGs.R)  
 Note R extension!
 ---
 class: center, middle

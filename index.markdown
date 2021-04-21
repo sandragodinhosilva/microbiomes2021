@@ -27,6 +27,8 @@ sandragodinhosilva@tecnico.ulisboa.pt
 * <a href='pages/R_setup.html'> **1.2.1:** R Setup
 * <a href='pages/R_basics.html'> **1.2.2:** Get started with R and RStudio
 
+Download R script to join COG annotation: https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/Script_Merge_COGs.R
+
 ### <a href='pages/2021_SecondaryMetabolites.pdf'> Day 2: Metagenome mining of secondary metabolite biosynthetic gene clusters (SM-BGCs)
 
 * Study case: the marine bacterial *Aquimarina* genus 
