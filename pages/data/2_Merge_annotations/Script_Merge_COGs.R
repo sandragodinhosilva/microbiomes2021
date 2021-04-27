@@ -4,8 +4,6 @@
 # This script can:
   # open cog files
   # merge results into a single table
-# Steps where code modification is necessary are highlighted with "ATTENTION"
-# The remaining comments are just here to help you understand the code
 
 # Author: Sandra Godinho Silva (sandragodinhosilva@tecnico.ulisboa.pt)
 # Last version: 15-04-2021
@@ -13,16 +11,18 @@
 
 # Install necessary package:
 # If the package dplyr is already installed, comment next line (add #):
-#install.packages('dplyr', repos = 'https://cloud.r-project.org')
+install.packages('dplyr', repos = 'https://cloud.r-project.org')
 
 # Load package:
 library("dplyr")
 
 ################################################################################
-# ATTENTION
+# automatically define current directory as working path:
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 
 # Define directory where WebMGA files are (substitute with your path):
-setwd("C:/Users/Sandra/OneDrive - Universidade de Lisboa/PhD_Related/6_Microbiomes_teaching/microbiomes2021/pages/data/2_Merge_annotations")
+#setwd("path/to/directory/with/files")
 
 # Check if in correct directory:
 getwd()
