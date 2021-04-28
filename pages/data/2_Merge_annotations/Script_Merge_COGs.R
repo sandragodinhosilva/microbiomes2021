@@ -5,6 +5,9 @@
   # open cog files
   # merge results into a single table
 
+# Attention: set correct directory
+# Attention: make sure cog files don't start first line with #
+
 # Author: Sandra Godinho Silva (sandragodinhosilva@tecnico.ulisboa.pt)
 # Last version: 15-04-2021
 ################################################################################
@@ -17,12 +20,14 @@ install.packages('dplyr', repos = 'https://cloud.r-project.org')
 library("dplyr")
 
 ################################################################################
-# automatically define current directory as working path:
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# Attention!
+# Set directory: 
 
+# Option 1) From RStudio, use the menu to change your working directory under: 
+# Session > Set Working Directory > Choose Directory.
 
-# Define directory where WebMGA files are (substitute with your path):
-#setwd("path/to/directory/with/files")
+# Option 2) Manually define directory where cog files are (substitute with your path):
+# setwd("/path/to/my/directory")
 
 # Check if in correct directory:
 getwd()

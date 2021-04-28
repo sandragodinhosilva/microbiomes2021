@@ -721,16 +721,17 @@ div.tocify {
 <p>A substantial amount of the data we work with in bioinformatics will be tabular data, this is data arranged in rows and columns - also known as spreadsheets.</p>
 <p>There are several ways of importing tabular data. ## Read table/tab/csv/txt text files: read.table() read.csv() read.delim()</p>
 <p>Today we’ll read a comma-separated value file with some COG annotation:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>cog_table <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://github.com/sandragodinhosilva/microbiomes2021/blob/e469500b7bede488d1f290c8d5bf7acf954eef24/pages/data/2_Merge_annotations/cog_table.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>cog_table <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/2_Merge_annotations/cog_table.csv&quot;</span>)</span></code></pre></div>
 <p>To see the first 5 rows:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cog_table)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["X..DOCTYPE.html."],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"<html lang=en data-color-mode=auto data-light-theme=light data-dark-theme=dark>","_rn_":"1"},{"1":"<head>","_rn_":"2"},{"1":"<meta charset=utf-8>","_rn_":"3"},{"1":"<link rel=dns-prefetch href=https://github.githubassets.com>","_rn_":"4"},{"1":"<link rel=dns-prefetch href=https://avatars.githubusercontent.com>","_rn_":"5"},{"1":"<link rel=dns-prefetch href=https://github-cloud.s3.amazonaws.com>","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Accession"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Description"],"name":[3],"type":["chr"],"align":["left"]},{"label":["cog_SampleX_bin.001"],"name":[4],"type":["int"],"align":["right"]},{"label":["cog_SampleX_bin.002"],"name":[5],"type":["int"],"align":["right"]},{"label":["cog_SampleX_bin.003"],"name":[6],"type":["int"],"align":["right"]}],"data":[{"1":"COG0002","2":"ArgC","3":"Acetylglutamate semialdehyde dehydrogenase","4":"1","5":"1","6":"1","_rn_":"1"},{"1":"COG0004","2":"AmtB","3":"Ammonia permease","4":"1","5":"2","6":"0","_rn_":"2"},{"1":"COG0005","2":"Pnp","3":"Purine nucleoside phosphorylase","4":"2","5":"1","6":"0","_rn_":"3"},{"1":"COG0006","2":"PepP","3":"Xaa-Pro aminopeptidase","4":"8","5":"1","6":"4","_rn_":"4"},{"1":"COG0007","2":"CysG","3":"Uroporphyrinogen-III methylase","4":"2","5":"1","6":"0","_rn_":"5"},{"1":"COG0008","2":"GlnS","3":"Glutamyl- and glutaminyl-tRNA synthetases","4":"2","5":"2","6":"2","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Writing files in R is as easy as it is to read files: ## Write Files</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cars, <span class="at">file=</span><span class="st">&#39;cog_table2.csv&#39;</span>)</span></code></pre></div>
+<hr />
 <div id="more-about-r" class="section level3">
 <h3>More about R</h3>
 <ul>

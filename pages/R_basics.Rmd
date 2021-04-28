@@ -514,7 +514,7 @@ read.delim()
 
 Today we'll read a comma-separated value file with some COG annotation:
 ```{r}
-cog_table = read.csv("https://github.com/sandragodinhosilva/microbiomes2021/blob/e469500b7bede488d1f290c8d5bf7acf954eef24/pages/data/2_Merge_annotations/cog_table.csv")
+cog_table = read.csv("https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/2_Merge_annotations/cog_table.csv")
 ```
 
 To see the first 5 rows:
@@ -529,7 +529,7 @@ Writing files in R is as easy as it is to read files:
 write.csv(cars, file='cog_table2.csv')
 ```
 
-
+***
 ### More about R
 
 -   [Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf)
@@ -543,12 +543,3 @@ write.csv(cars, file='cog_table2.csv')
 
 ***
 ### [Home](https://sandragodinhosilva.github.io/microbiomes2021/)
-
-
-
-
-
-
-
-
-

@@ -903,22 +903,40 @@ For each bin:
 >1) Download COG annotation from WebMGA (will be a zipped file)  
 2) Unzip file;  
 3) Look for the .txt file named "cog";  
-4) Rename this file with the bin's name (Ex: cog_SAMPLEX_bin1)   
-
-<br>
+4) Rename this file with the bin's name (Ex: cog_SAMPLEX_bin1)    
+  
 --
-For all bins:
+For all bins:  
 >5) Move all cog annotation files to the same folder;  
-6)  Download R script and move it to this folder;  
-7) Open all cog annotation files and delete the character "#" from the first line;  
-8) Run R script.
+6) Open all cog annotation files and delete the character "#" from the first line;  
+7) Download R script and move it to this folder;  
+8) Run R script (continue in next page)
 
 **Final output:** COG table with annotations for all bins
-
 
 **Download script:** 
 [Script_Merge_COGs.R](https://raw.githubusercontent.com/sandragodinhosilva/microbiomes2021/main/pages/data/2_Merge_annotations/Script_Merge_COGs.R)  
 Note R extension!
+---
+
+## Workflow to join COG annotation in a single file 
+
+**Last step: Run R script:**   
+
+Make sure: cog files and R script are in the same direcrory.
+
+Detailed steps:  
+1) Put script in the same folder where all cog files are;  
+2) Open R script in RStudio;  
+3) Make sure that you are in the correct directory:
+> **Option 1)** From RStudio, use the menu to change your working directory under: **Session > Set Working Directory > Choose Directory.*<KBD>**  
+**Option 2)** Manually define directory where cog files are (substitute with your path): **setwd("/path/to/my/directory")**
+
+
+4) Click "Run".  
+
+**Final output:** COG table with annotations for all bins
+
 ---
 class: center, middle
 
